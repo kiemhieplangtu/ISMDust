@@ -1,0 +1,609 @@
+%%
+%% Beginning of file 'sample.tex'
+%%
+%% Modified 2005 December 5	
+%%
+%% This is a sample manuscript marked up using the
+%% AASTeX v5.x LaTeX 2e macros.
+
+%% The first piece of markup in an AASTeX v5.x document
+%% is the \documentclass command. LaTeX will ignore
+%% any data that comes before this command.
+
+%% The command below calls the preprint style
+%% which will produce a one-column, single-spaced document.
+%% Examples of commands for other substyles follow. Use
+%% whichever is most appropriate for your purposes.
+%%
+%%\documentclass[12pt,preprint]{aastex}
+%% manuscript produces a one-column, double-spaced document:
+
+%\documentclass[manuscript]{aastex}
+%\documentclass[iop]{emulateapj}
+\documentclass[preprint]{emulateapj}
+%\documentclass[iop,numberedappendix]{emulateapj}
+%\usepackage{url}
+
+%% preprint2 produces a double-column, single-spaced document:
+
+ %\documentclass[preprint2]{aastex}
+
+%% Sometimes a paper's abstract is too long to fit on the
+%% title page in preprint2 mode. When that is the case,
+%% use the longabstract style option.
+
+ %\documentclass[preprint2,longabstract]{aastex}
+
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+%% If you are submitting to a journal that translates manuscripts
+%% into SGML, you need to follow certain guidelines when preparing
+%% your macros. See the AASTeX v5.x Author Guide
+%% for information.
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{cancel,soul,ulem,amsmath} 
+
+\def\hi{H{\sc i}}
+\def\arcsec{\hbox{$^{\prime\prime}$}}
+\def\arcmin{\hbox{$^{\prime}$}}
+\def\av{$A_{v}$}
+\def\deg{$^\circ$}
+\def\cm2{cm$^{-2}$}
+\def\cc{cm$^{-3}$}
+\def\kms{km s$^{-1}$}
+\def\s{s$^{-1}$}
+\def\nh3{NH$_3$}
+\def\n2h{N$_2$H$^+$}
+\def\co{$^{12}$CO}
+\def\13co{$^{13}$CO}
+\def\c18o{C$^{18}$O}
+\def\hc3n{HC$_3$N}
+\def\h2{H$_2$}
+\def\nh{n$_H$}
+\def\NHI{$N_{HI}$}
+\def\NHm{$N_{H_{2}}$}
+\def\NH{$N_{H}$}
+\def\t353{$\tau_{353}$}
+\def\s353{$\sigma_{353}$}
+\def\LH{$L_{H}$}
+\def\cp{C$^+$}
+\def\lp{\>\> .}
+\def\lc{\>\> ,}
+\def\Ms{$M_{\odot}$}
+\def\mic{$\mu$m}
+\def\Av{A$_V$}
+\def\xco{$X_{co}$}
+
+\def\aj{AJ}
+\def\aaps{A\&AS}
+\def\aap{A\&A}
+\def\apjs{ApJS}
+\def\nat{Nature}
+\def\apj{ApJ}
+
+\newcommand{\chg}[1]{\textbf{\color{green}#1}}
+\newcommand{\chb}[1]{\textbf{\color{blue}#1}}
+%\newcommand{\st}[1]{\textbf{\color{red}\sout{#1}}}
+
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\shorttitle{Hiep - paper draft}
+\shortauthors{Hiep Nguyen \& Joanne R. Dawson}
+
+\begin{document}
+
+\title{Hiep - paper draft}% Force line breaks with \\
+
+\author{Hiep Nguyen\altaffilmark{1,2}, 
+J. R. Dawson\altaffilmark{1,2},
+} 
+
+\altaffiltext{1}{Department of Physics and Astronomy and MQ Research Centre in Astronomy, Astrophysics and Astrophotonics, Macquarie 
+ University, NSW 2109, Australia}
+\altaffiltext{2}{Australia Telescope National Facility, CSIRO Astronomy and Space Science, PO Box 76, Epping, NSW 1710, Australia}
+\begin{abstract}
+Many studies have proved the existence of the ``dark interstellar medium'' (dark ISM) which is not detected by traditional radio emission from atomic hydrogen (HI) and carbon monoxide (CO) molecules. To probe this gas component, interstellar dust has been used as a proxy for total gas column density \NH. By comparing the thermal dust data from Planck satellite (Release 1.2) and the Sloan Digital Sky Survey (Schlafly et al. 2011) with archival HI and OH data from the Millennium survey (Heiles \& Troland 2003), we confirm the tight linear correlations between optical depth \t353, dust radiance $R$, reddening $E(B-V)$ and the total proton column density \NH. While using the true \NHI\ from Millennium survey as the total gas column density (along sightlines where neither CO nor OH is detected) to estimate our own dust opacity \s353=\t353/N$_{H}$ and dust specific luminosity \LH=4$\pi$R/N$_{H}$, we confirm/state that the variation of \s353 in Planck Collaboration 2014 is due to the evolution of dust grains in the ISM and the change in their \LH\ may come from the presence of the dark gas.
+
+%In recent years, Hydroxyl (OH) has emerged as a powerful indicator of dark-ISM. In this study, we use HI and OH data from the Arecibo Millennium survey (Heiles \& Troland 2003) which observed absorption and emission pairs towards 79 extragalatic radio continuum sources. The $\Lambda$-doubling transitions of ground-state OH at 1665.402 and 1667.359 MHz were observed along with HI towards 48 of the 79 survey positions. By newly reducing this unpublished data using channel-by-channel method, OH absorption was detected in 23 sightlines, we find that the OH 1665 and 1667 lines satisfy the optically thin assumption with the optical depth $\tau$ less than 0.25 and they are in general not in Local Thermal Equilibrium. (These results are consistent with DiLi et al. (2017) who used the same OH dataset?).
+\textbf{\color{red}[JO NOTE: Rearranged and commented out some stuff to reflect the current focus of the paper. Finer polishing can come later.]}
+
+We also estimate the molecular hydrogen column densities $N_{H_{2}}$ from these linear relationships and hence the OH/H$_{2}$ abundance ratio $X_{OH}$, for which few literature measurements exist. The $X_{OH}$ ratios derived from the three $N_{H}$ proxies are consistent and vary in the range from ?? to ?? with the mean value around $5.0\times 10^{-8}$. Since these results are obtained in a wide ranges of longitude $l$ and latitude $b$ with some sightlines through the Galactic plane, it suggests that OH main lines are excellent tracers of molecular gas in the ISM???
+\end{abstract}
+
+\keywords{ISM: clouds --- ISM: molecules --- ISM: dust, reddening, extinction.}
+
+\section{Introduction}
+Stars in our Milky Way are formed in dense, cold clouds of molecular hydrogen, H$_{2}$. Yet there is still much uncertainty surrounding how this molecular gas is formed. It is crucial to understand the physical conditions within these clouds, so that we can begin to understand how warm, diffuse atomic hydrogen gas can be converted into cold and turbulent molecular form. Since molecular hydrogen is the most abundant molecule within these clouds, we would ideally study them by observing H$_{2}$ emission lines. However, these regions are extremely cold: their temperature is $\sim10$K -- just above absolute zero -- meaning that H$_{2}$ cannot be excited even the lowest rotational transition. Instead H$_{2}$ emission is useful only for studying high temperature regions such as the hot post-shock gas in protostellar flows. Thus, other observable tracers are needed to explore the physical parameters of molecular hydrogen clouds. 
+
+In practice, neutral hydrogen in the interstellar medium (ISM) has been observed via two important radio spectral lines: the strong 21 cm emission from neutral atomic hydrogen (HI) allows us to study the atomic precursors to molecular clouds, and the microwave 2.6-mm emission from carbon monoxide molecule (CO) is widely used as a tracer for cold, dense molecular hydrogen in the Milky Way and in galaxies, in general, through the X-factor X$_{CO} = 2.0 \times 10^{20}$ (cm$^{-2}$ km$^{-1}$ s) (Bolatto et al. 2013). \par
+%CO is the second most abundant chemical within molecular regions and its lowest rotational transition is easily excited at low temperatures. It has been, so far, the most important tracer of molecular hydrogen.%
+Nevertheless, recent works have continually discovered there are more evidences for auxiliary gas that is not seen in either HI or CO, this undetected gas component is called "dark gas" followed by Grenier et al. (2005) who found the overabundance of diffuse gamma-ray emission flux from Energetic Gamma Ray Experiment Telescope (EGRET) data compared to what can be observed by cosmic ray (mostly proton) via nucleon-nucleon collision. Moreover, comparison between Infrared Astronomy Satellite (IRAS) dust images and gas maps in Hi and CO also helps to reveal the apparent 'excess' of dust emission. Ade et al. (Planck collaboration, 2011) obviously show that the dust optical depth excesses off the linear correlation with total gas column density (N$^{tot}_{H}$) within the intermediate extinction range A$_{V} \sim 0.4-2.5$ mag.\par
+
+This means CO molecule is not a perfect tracer for H$_{2}$ (Tielens \& Hollenbach 1985; van Dishoeck \& Black 1988); consequently, observations of CO alone miss an important fraction of molecular hydrogen. A significant amount of H$_{2}$ mass may lie outside CO-bright areas, in the outer regions of the molecular cloud, where carbon is in the gas phase of C or C+. Molecular hydrogen here effectively shields itself or is shielded by dust against the effects of ultraviolet photodissociation, whereas CO is photodissociated. This H$_{2}$ gas remains “dark” in most molecular transitions because it does mostly not emit at low temperature; and CO as well as other trace molecules are not present. 
+\textbf{[JO NOTE: This intro is really good! But it will probably need to be modified once the content of the paper is locked down, since (1) at present it focusses heavily on CO-dark H2, which this work actually only has limited ability to probe, (2) some more background on the dust will be needed.]}
+
+The structure of this article is as follows. In Section 2, the observations and the data processing techniques are briefly summarized. We then describe the results on HI in Section 3. In Section 4, the results from OH observations are discussed. Section 5 shows the featured outcomes from the dust and gas in the ISM. We also estimate the OH/H$_{2}$ abundance ratio in Section 6. And we conclude in Section 7.
+
+\section{Observations}
+In this study, we used the all-sky maps of the dust model data measured by Planck/IRAS (optical depth and radiance maps), \sout{[JO NOTE: Do you mean the Radiance map? I thought E(B-V) was from Shafley?]} the reddening $E(B-V)$ all-sky map from Schlafly et al. (2011), OH data from Arecibo Millennium Survey, HI data from both 21-SPONGE Survey and Millennium Survey, CO data from Delingha 14m Telescope (not publicly available???).
+\label{sec:observations}
+
+\subsection{HI and OH}
+\label{subsec:data_hi_oh}
+When use values in table? When use spectral data?
+We use the HI data taken from Millennium Arecibo 21-Centimeter Absorption-Line Survey with the L-wide receiver towards 79 strong radio sources (typically S $\gtrsim 2$ Jy) through out the Milky Way. The two main lines of OH at 1665.402 and 1667.359 MHz were observed simultaneously with HI towards 49 survey positions.
+The observations are described in details by Heiles \& Troland (2001, 2003a, 2003b - hereby HT03). Briefly, they applied the so-called Z17 ON/OFF-source measurements in which $50\%$ of the integration time was spent ON source, the remaining time for 16 OFF positions around the source. The bandwidth of the observations is 0.78 MHz, with the channel width of 381 KHz, corresponding to a velocity resolution of 0.068 \kms. A RMS of 28 mK per channel was achieved with ??? hours of total integration time. OH absorption was detected in 21 sightlines. The distribution of all observed sources in Galactic coordinates is presented in Fig.~\ref{fig:posdistri}. Indeed, we adopt the results from HT03 for the access of the total \NH\ and use the MS spectral data to compute the optically-thin \NHI.
+
+In order to improve the statistics, we also use the HI absorption results from the Very Large Array (VLA) 21-SPONGE Survey observing 30 continuum sources (Murray et. al 2015) with 14 common positions compared to Millennium Survey (SHOW 14 COMMON SOURCES SOMEWHERE), therefore, 93 sight-lines in total. \sout{[JO NOTE: We have no OH from SPONGE, is that right? HIEP: YES, THAT'S RIGHT]}
+
+% In the cases of common sources, the results from the 21-SPONGE survey are taken.
+
+\subsection{CO}
+\label{subsec:CO}
+	We are allowed to work on the CO data from a follow-up survey of 48 Millennium sight-lines with/having observed OH absorption. The J=1-0 transitions of CO, \13co, and \c18o\ were observed with the Delingha 13.7 m telescope in China. The \co\  J=2-1 data for 45 sources and J=3-2 data for 8 sources with strong CO emission were taken with the  Caltech Submillimeter Observatory (CSO) 10.4m on top of Mauna Kea.
+    
+	The astronomical software package Gildas/CLASS\footnote{$http://www.iram.fr/IRAMFR/GILDAS/$} was used for reducing spectroscopic CO data obtained from single-dish telescopes. \par
+    Due to the large uncertainty of X-factor converting CO integral intensity into $H_{2}$ column density, we are ONLY interested in 26 sight-lines where CO emission lines are NOT detected. \textbf{JO NOTE: Note to remind you to justify this decision in the context of the science we wish to do (which we will have laid out already in the intro probably.)}
+    
+\subsection{Planck/IRAS data for\\ thermal dust emission and color excess}
+\label{subsec:dat_pl_iras}
+To trace the total gas column density $N_{H}$ we use the all-sky maps of the optical depth at 353 GHz ($\tau_{353}$), dust radiance $R$ achieved from Planck satellite data. The $\tau_{353}$ map obtained by a modified black-body (MBB) fit from 353, 545, and 857 GHz data of the first 15 months observed by the Planck satellite and 100 micron data measured by the IRAS satellite. Both sets of data have angular resolutions of 5 arcmin.
+For details, see Planck Collaboration 2013. In this work we use the Release R1.20 of the Planck maps. \sout{JO NOTE: I thought Marc-Antoine said not to use the Planck E(B-V) because it was essentially just a linear rescaling of another quantity (tau? R? I forget!)]}
+
+Besides, we also employ the all-sky E(B-V) map by Schlafly et al. (2011) using the colors of stars with spectra in the Sloan Digital
+Sky Survey as another proxy of \NH.
+
+\section{HI}
+\label{sec:hi}
+As mentioned in Section \ref{subsec:data_hi_oh}, the total HI column densities $N_{HI}$ were derived along 94 line-of-sights from Millennium and 21-SPONGE surveys (Heiles et al. 2003, Murray et al. 2015). In order to understand how much HI could be underestimated from the optically thin assumption (i.e optical depth $\tau \ll 1$), we use the "expected emission profiles" from Heiles \& Troland (2003) to compute the optically thin HI column density \textbf{[JO NOTE: Note to remind you that the intro will need to discuss in some detail the issue of whether ``dark gas'' is cold HI or CO-dark H2. Suggest including mention of various works arguing for each, plus maybe an explanation of what Grenier, Planck papers have concluded in that regard.]} (N$^{*}_{HI}$):
+
+\begin{equation}
+N^{*}_{HI} = 1.8224 \times 10^{18} W_{HI} \ (cm^{-2})
+\label{eq_nhi_thin} 
+\end{equation}
+
+\noindent where W$_{HI}$ is the HI integrated intensity.
+
+In Figure \ref{fig:thin_nhi_ms_sp} we compare the optically thin HI column densities, $N^{*}_{HI}$, of 14 common sightlines from  Arecibo Millennium Survey (MS) and 21-SPONGE survey. $N^{*}_{HI}$ from 21-SPONGE survey is obviously higher than from MS about 26\%, the difference is due to the difference between the beam efficiency $\eta_{b}$ of Arecibo telescope and VLA \textbf{[JO NOTE: Not quite. It's that Carl did not apply a beam efficiency to the MS data. Once the correct value is applied, the results are consistent.]}, 26\% corresponds to $\eta_{b} = 0.8$. Murray et al. 2015 also found that if a beam efficiency factor of 0.81 is applied to HT03 emission profiles, they will agree with the beam-efficiency-scaled emission profiles from 21-SPONGE survey. Hence, in this work we will scale $N_{HI}$ from HT03 by the factor of 1.26.\textbf{[JO NOTE: Nice explanation! Probably need to move it to the observations section though, since it's really just a data correction...? I suppose the issue of why it's OK to also correct the optically thick columns by the same factor might bear a couple of sentences of explanation, but I think that can also come in the observations section, particularly if you clarify there that you do not re-do Carl's HI analysis, and just use the values in his table.]}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/nhi_MS_scale_factor.png}
+\caption{(Not good, improve later) Histogram of the ratio N$_{HI}$/N$^{*}_{HI}$}
+\label{fig:thin_nhi_ms_sp}
+\end{figure}
+
+The $N^{*}_{HI}$ estimates are made using the optically thin assumption $\tau_{HI} \ll 1$ and should give an underestimate in cases where there is appreciable cold gas. As illustrated in Figure \ref{fig:hist_nhi_over_thin}, if we use the optically thin assumption, there are 14/94 sight-lines where the true column density N$_{HI}$ is underestimated more than 25\%, mostly in high column density region (labeled in the Figure \ref{fig:hist_nhi_over_thin}). On average, the HI mass increases by \~10\% compared to the optically thin assumption  - i.e. an opacity correction. This is consistent with the typical value ($\sim$10\%) throughout the Galaxy (XX et. al xxxx).
+
+Figure \ref{fig:ratio_vs_nhithin} shows the correlation between N$_{HI}$ and N$^{*}_{HI}$ towards all 91 positions. It is obvious that the ratio $R=N_{HI}/N^{*}_{HI}$ increases linearly as the function of the ten-base logarithm of ($N^{*}_{HI}/10^{20}$) with the slope of xx and the offset of xx. Our result is consistent with its from Lee et al. 2015 (0.32$\pm$0.06 for slope and 0.81$\pm$0.05 for offset) and Heiles \& Troland (0.26$\pm$0.08 for slope and 0.91$\pm$0.04 for offset). Note that result from Lee et al. considered only in Persus molecular cloud and result from Heiles \& Troland was shown in Figure 13 in Lee et al. 2015. These may suggest a general relation between N$_{HI}$ and N$^{*}_{HI}$ through out the Milky Way due to the large ranges of both latitude and longitude of the observed positions. If this is the case, optically thin HI column density N$^{*}_{HI}$ might be considered as the proxy for the total HI column density N$_{HI}$. \textbf{[We should probably discuss exactly what you want to say here. And also compare mor with other work (I think there have been many studies on this - let's ask Snez). Also, do other people usually express this relation in terms of a ``cold gas fraction''? Check for consistency.]}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/hist_nhi_over_thin.png}
+\caption{(Not good, improve later) Histogram of the ratio N$_{HI}$/N$^{*}_{HI}$}
+\label{fig:hist_nhi_over_thin}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/ratio_vs_nhithin.png}
+\caption{Histogram of the ratio N$_{HI}$/N$^{*}_{HI}$}
+\label{fig:ratio_vs_nhithin}
+\end{figure}
+
+\section{Derivation of Optical Depth, Excitation Temperature and Column Density for OH(1665) and OH(1667)}
+\label{sec:derive_tex}
+
+\textbf{[JO NOTE: Some comment on relation to published (?) Ningyu/Di paper?]}
+
+The radiative transfer equations for ON/OFF source measurements can be written as:
+\begin{equation}
+T_A^{ON}(v) =(T_{bg}-T_{c})e^{-\tau_{v}} + T_{ex}(1-e^{-\tau_{v}}) + T_{rx} \ \ (K)
+\label{eq_ton}
+\end{equation}
+\begin{equation}
+T_A^{OFF}(v)=T_{bg}e^{-\tau_{v}} + T_{ex}(1-e^{-\tau_{v}}) + T_{rx} \ \ (K)
+\label{eq_toff} 
+\end{equation}
+
+\textbf{[JO NOTE: Clarify meaning of Trx]}
+\noindent Here $T_A^{OFF} (v)$ and $T_A^{ON} (v)$ are the (continuum-included) antenna temperatures of the emission line and the absorption line respectively. $T_{ex}$ is the excitation temperature, $\tau_{v}$ is the optical depth and $T_{c}$ is the antenna temperature of the continuum source, which is assumed to be smaller than the main beam of the telescope. $T_{bg}$ is the background brightness temperature including the 2.7K isotropic radiation from CMB and the Galactic synchrotron background at the source position. In the following, we estimate the synchrotron contribution at 1665.402 MHz and 1667.359 MHz from the 408MHz continuum map (Haslam et al. 1982) by adopting a temperature spectral index of 2.8, such that
+\begin{equation}
+T_{bg} = 2.7 + T_{bg408}(\nu_{OH}/408.)^{2.8}\ \ \ \ (K),
+\label{eq4c} 
+\end{equation}
+\noindent resulting in typical values of around 3.5 K. The  background continuum contribution from Galactic HII regions may be safely ignored, since the continuum sources we observed are either at high Galactic latitudes or Galactic Anti-Center longitudes. $T_{rx}$ is the receiver temperature with the average of $\sim 50$ K in Stokes I parameter (or $\sim25$ K in brightness temperature). Thus, apart from the line (meaning the baseline of emission spectrum), the off-source temperature is:
+\begin{equation}
+T_A^{OFF}(v)= T_{bg} + T_{rx} \ \ (K)
+\label{eq_toff_offline}
+\end{equation}
+In the absence of information about the true gas distribution, we assume that OH clouds cover fully both the continuum source and the main beam of the telescope. The beam efficiency is presumed to be $\sim100\%$, which is a reasonable assumption for Arecibo, for which $\sim90\%$ of the power is contained within the main beam and inner sidelobe [CONFIRM SIDELOBE SIZE/POWER AND UPDATE]. Therefore, we can assume that the antenna temperature equals the brightness temperature of the OH lines.
+In this work we use a simple method solving the two Transfer Equations (equations \ref{eq_ton} and (\ref{eq_toff})) on a channel-by-channel basis to derive the excitation temperature $T_{ex}$ and the optical depth $\tau_{v}$ for OH(1665) and OH(1667):
+\begin{equation}
+e^{-\tau_{v}} = \frac{T_A^{ON}(v) - T_A^{OFF}(v)}{T_{c}}
+\label{eq_etau} 
+\end{equation}
+\begin{equation}
+T_{ex} = \frac{T_A^{OFF}(v)-T_{bg}e^{-\tau_{v}} - T_{rx}}{1-e^{-\tau_{v}}} \ \ (K)
+\label{eq_tex}
+\end{equation}
+\noindent The procedure is described as follows: \par
+1. Compute the opacity spectrum $e^{-\tau_{v}}$ (as well as optical depth spectrum $\tau_{v}$ and its RMS $\sigma_{\tau_{v}}$) by using equation \ref{eq_etau}. \par
+2. Fit the OH opacity spectrum with a set of N-Gaussian components to estimate the physical properties of OH clouds along the line-of-sight, each component is assumed to correspond to a single OH clump: \textbf{[JO NOTE: reword to make it clear that Gaussian fits only used to later identify positions of lines.tx]}
+\begin{equation}
+\tau(v) = \sum\limits_{n=0}^{N-1} \tau_{0,n}e^{-[(v-v_{0,n})/\delta v_{n}]^2}. 
+\label{tau_ngauss} 
+\end{equation}
+\noindent This least-squares fit gives the values of peak optical depth ($\tau_{0,n}$), central velocity ($v_{0,n}$) and width ($\delta v_{n}$) for component $n$. \par
+3. Use the equation \ref{eq_tex} to calculate the excitation temperature spectrum, $T_{ex}$. It is apparently obvious that $T_{ex}$ spectra are flat within the width of Gaussian components (as illustrated in Figure xx). Hence, we choose only the range within the width $\delta v_{n}$ from $(v_{0,n}-\delta v_{n}/2)$ to $(v_{0,n}-\delta v_{n}/2)$ to calculate the mean values of $T_{ex}$ for each Gaussian component with the criterion that $\tau_{v}$ within these velocity ranges must be large than $2\sigma_{\tau}$. For the case of 3C123, we adopted the value of T$_{bg}$ to be 25.0 K.
+
+\par
+4. Compute the column densities of OH(1667) and OH(1665) components independently using the following equations:
+\begin{equation}
+N_{\mathrm{OH}(1667)}=\frac{8\pi kT_{ex,1667}{{\nu}^2_{1667}}}{A_{1667}c^{3}h}\frac{16}{5}\int\tau_{1667}dv\ (cm^{-2})
+\label{eq_noh67}
+\end{equation}
+\begin{equation}
+N_{\mathrm{OH}(1665)}=\frac{8\pi kT_{ex,1665}{{\nu}^2_{1665}}}{A_{1665}c^{3}h}\frac{16}{3}\int\tau_{1665}dv \ (cm^{-2})
+\label{eq_noh65}
+\end{equation}
+where $A_{1667}=7.778\times 10^{-11} s^{-1}$ and $A_{1665}=7.177\times 10^{-11} s^{-1}$ are the Einstein A-coefficients for the OH main lines (Destombes 1977). Substituting the constants into the above equations, they can be written as:
+
+\begin{equation}
+\frac{N_{\mathrm{OH}(1667)}}{[10^{14}cm^{2}]}=2.3663 \cdot \tau_{1667} \cdot \frac{T_{ex,1667}}{[K]} \cdot \frac{\delta v_{1667}}{[km s^{-2}]}
+\label{eq_noh67rd}
+\end{equation}
+\begin{equation}
+\frac{N_{\mathrm{OH}(1665)}}{[10^{14}cm^{2}]}=4.2641 \cdot \tau_{1665} \cdot \frac{T_{ex,1665}}{[K]} \cdot \frac{\delta v_{1665}}{[km s^{-2}]}
+\label{eq_noh65rd}
+\end{equation}
+
+\noindent The values are tabulated in Table xx, and discussed further below. 
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/tex_spec_P0428+20.png}
+\caption{Illustration of derived parameters from the fit to the absorption profile (upper panel), the expected emission (middle panel) profile and Tex spectrum (lower panel) for the source P0428+20. The vertical dashed-lines displays the FWHM of Gaussian components.}
+\label{fig:p042820.png}
+\end{figure}
+
+% \begin{figure}
+% \includegraphics[width=1.0\linewidth]{fig/abs_em_oh1_3C409.png}
+% \caption{Data for the source 3C409. See Fig. 3 for complete description.}
+% \label{fig:3c409.png}
+% \end{figure}
+
+% \begin{figure}
+% \includegraphics[width=1.0\linewidth]{fig/tau_peak_hist.png}
+% \caption{Histogram of peak optical depth for the OH Gaussian components. Black shows the 1667 MHz line and red shows 1.8 times the 1665 MHz line.}
+% \label{fig:taupeak_hist} 
+% \end{figure}
+
+% \begin{figure}
+% \includegraphics[width=1.0\linewidth]{fig/Tex_hist.png}
+% \caption{Histograms of excitation temperature $T\rm_{ex}$ for two OH main lines and the background continuum temperature $T\rm_{bg}$.}
+% \label{fig:Tex_hist} 
+% \end{figure}
+
+\subsection{OH Excitation, Optical Depth and Column Density}
+\label{subsec:oh_excitation}
+
+[to be added...] \textbf{[JO NOTE: probably little or nothing needed here.]}
+
+
+
+\section{ Proxies for Total neutral gas\\ column density}
+\label{sec:proxies-for-nh}
+In this section we will study the correlations between dust optical depth at 353 GHz \t353, dust radiance $R$, reddening $E(B-V)$ and the total gas column density $N_{H}$. Many proxies have recently been used to estimate $N_{H}$, generally with the assumption that a single linear relationship holds between the proxy and $N_{H}$. Our sample of emission/absorption pairs gives us accurate HI gas columns in the low-to-moderate column density range, and our OH and CO data allows us to exclude all those with molecular gas (dark or not). This means we can compare the performance of the various proxies (within this range), and investigate departures from linearity seen by e.g. Planck collaboration (2014) \sout{[JO NOTE: With what aim? Good to give a bit of context here. Presumably the point is that many proxies are used for total NH, generally with the assumption that a single linear relationship holds between the proxy and NH. Our sample of emission/absorption pairs gives us accurate HI gas columns in the low-to-moderate column density range, and our OH and CO data allows us to exclude all those with molecular gas (dark or not). This means we can compare the performance of the various proxies (within this range), and investigate departures from linearity seen by e.g. Planck collaboration (2014)]} In order to simplify the problem, we will consider only 19 sightlines where neither CO nor OH is detected and 16 sightlines with low \NHI ($N_{HI}$$<$3.0$\times$$10^{20}cm^{-2}$). We do not unfortunately have either CO data for all low-N$_{HI}$ sightlines or OH data for 5 of them, but 11/16 sightlines without OH detection. The regions with the density less than 3.0$\times$$10^{20}cm^{-2}$ are considered too low to seek for molecular tracers/too low to form a significant amount of \h2\ and therefore molecular tracers (Planck Collaboration 2011) since the column of atomic hydrogen is not enough to shield a molecular region against dissociation by the interstellar radiation field (ISRF). \sout{[JO NOTE: define what is meant by this. They were considered too low to seek for molecular tracers?]} Thus, we are confident to assume that there is only neutral hydrogen along these 35 sightlines \sout{[JO NOTE: Stress this is an excellent assumption]}. Moreover, as mentioned in Section \ref{sec:hi}, the HI column density from Arecibo Millennium Survey has been scaled by the beam efficiency of ~0.79, corresponding to the factor of 1.26.
+
+\subsection{ \NH\ from dust optical depth \t353\ }
+\label{subsec:nh-from-t353}
+The all-sky map of dust optical depth \t353 is obtained from modified black body (MBB) empirical fit using IRAS and Planck satellite maps at 3000, 857, 545 and 353 GHz \textbf{\color{red}[JO (16/6/17): make it clear that its not us who did this work]}:
+
+\begin{equation}
+I_{\nu} = \tau_{353}B_{\nu}(T_{obs})(\frac{\nu}{353})^{\beta_{obs}}
+\label{eq_mbbfit}
+\end{equation}
+
+\noindent Optical depth $\tau_{353}$, dust temperature $T_{obs}$ and spectral index $\beta_{obs}$ are three parameters. $B_{\nu}(T_{obs})$ is the Planck function for dust at temperature $T_{obs}$ which is, in this model, considered to be uniform along the sightlines (see Planck 2014 for more details).
+
+In the optically thin limit, the relation between dust optical depth \t353 and total gas column density \NH\ can be described as following:
+
+\begin{equation}
+\tau_{353} = \frac{I_{353}}{B_{353}(T_{obs})} = \kappa_{0}\ r\ \mu \ m_{H}\ N_{H} 
+= \sigma_{353} \ N_{H}
+\label{eq_t353_nh}
+\end{equation}
+
+\noindent with \s353\ being the dust opacity (also known as conversion factor \textbf{\color{red}[JO (16/6/17): Confirm: do other people actually call it that or is it just me?!]} ), $\kappa_{0}$ the dust emissivity cross-section per unit mass ($cm^{2} g^{-1}$), $r$ the dust-to-gas mass ratio, $\mu$ the mean molecular weight and $m_{H}$ the mass of Hydrogen atom.
+
+Many efforts have been undertaken using this relationship, particularly with regards to the search for ``dark gas''. It is clear that \t353 and \NH\ are linearly correlated only if \s353 is a constant. However, Planck 2014 showed that \s353 varies with \NH (Fig.20 or Figure \ref{fig:s353_vs_nh} in this paper), it is roughly flat at a minimum in the narrow range of low \NH (1.0-3.0$\times$$10^{20}cm^{-2}$) \textbf{\color{red}[JO (16/6/17): Maybe state that this is the range in which estimates of N(HI) in that paper were considered reliable?]}, then it increases by almost the factor of 2 at higher column density (15.0$\times$$10^{20}cm^{-2}$). The origin of variations in \s353 may relate to the change in dust properties via $\kappa_{0}$, but may also include a dark gas contribution through \NH\ itself. Our column density range fortunately overlaps with the place where deviations begin to be seen, hence we are in a position to test the dark gas hypothesis versus the dust properties one. \sout{[JO NOTE: Probably good to describe here efforts that have been undertaken using this relationship, particularly with regards to the search for ``dark gas''. This is a good place to contrast Fukui's treatment with others, and mention something about the range of sigma values, and the change in sigma with HI column that was observed by Marc-Antoine. State that the origin of variations in sigma may be dust properties (Marc-Antoine could advise on an appropriately sophisticated explanation), but may also include a dark gas contribution. State that our column density range overlaps with the place where deviations begin to be seen, hence we are in a position to test the dark gas hypothesis vs the dust properties one.]}
+
+Figure \ref{fig:tau_vs_nhi} shows the correlation between the \NH\ and $\tau_{353}$, the value of conversion factor \s353\ from the ODR linear fit is $(6.8 \pm 0.3)\times 10^{-27} cm^{2}H^{-1}$ (blue line). A strong linear trend can be seen with the Pearson coefficient of 0.96.  It is worth noting that the data points are varied/fluctuated ??? further away from the linear line from lower to higher column density regime. Our result is consistent with it obtained from Planck collaboration 2013, $(6.6\pm 1.7)\times10^{-27} cm^{2}H^{-1}$ (black line) \sout{[[JO NOTE: Will need some explanation on the two values from the Planck paper, what they mean, and why the black one is thought to be the best one. Can/should we consider fitting just the low column density points (as Marc-Antoine did to get the black line) and seeing what we get?]]}. The conversion factor from Fukui et al. 2015 also illustrated as black line, they derived a smaller factor under the assumption that optically thick HI can be recovered based on dust temperatures (??? or something ???). That factor looks different to what we find using accurate measured HI column densities suggesting their theory that much of the HI in the Milky Way is in the CNM phase is not well supported. \textbf{[JO NOTE: Some careful wording will be needed here, but this is OK for the moment.]}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/tau_vs_nhi.png}
+\caption{\t353\ vs NHI along 19 lines-of-sight without CO and OH detection together with 16 LOS with low NHI.}
+\label{fig:tau_vs_nhi}
+\end{figure}
+
+To understand the reason why we have the fluctuation of data points out of the linear trend, especially, the systematic offset above the best fit line at higher column densities \sout{[JO NOTE: ``scattering'' may not be the best word. You mean the systematic offset above the best fit line at higher columns, right?]} as seen in Figure \ref{fig:tau_vs_nhi}, we also deduce our own dust opacity \s353\ from Planck \t353\ data and the true HI column densities. \textbf{\color{red}[JO (16/6/17): This is sort of repetitious now - we have already discussed the offset above, and indeed expect to see it. And it would probably be trivial to mention the numerical value of our $\sigma_{353}$ when we initially present the linear correlation above. Therefore I think some minor reorganisation is required]}. We plot \s353\ as the function of total gas column density $N_{H}$ in Figure \ref{fig:s353_vs_nh} superimposed on the result from Planck collaboration 2013. Similar to Planck data, we can also see the "up-kick" in the column density range of $[5.0-30.0]\times 10^{20} (cm^{-2})$.
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/sig353_vs_nh.png}
+\caption{Dust opacity \s353 versus total column density $N_{HI}$ (red) along 19 sightlines without CO and OH detection together with 16 low-N$_{HI}$ sightlines ($N_{HI}$$<$3.0$\times$$10^{20}cm^{-2}$). \s353 from Planck collaboration 2014 within the same $N_{HI}$ range is superimposed, cyan for CO X-factor X$_{CO}$=1.0$\times$$10^{20}$, black for X$_{CO}$=2.0$\times$$10^{20}$ and violet for X$_{CO}$=3.0$\times$$10^{20}$. Dot-dashed horizontal line represents the mean values of dust opacity $<$\s353$>$ for $N_{HI}$ from 1.0$\times$$10^{20}$ to 4.0$\times$$10^{20}cm^{-2}$, dashed line for $<$\s353$>$ from Planck 2014.}
+\label{fig:s353_vs_nh}
+\end{figure}
+
+From equation \ref{eq_t353_nh}, the emission cross-section $\kappa_{0}$ is variable since it depends on the composition and structure of dust grain. The other factors are either constants or slightly change. The total gas column densities are indeed the true column densities of pure HI without any fraction of "dark gas", hence $N_{H}$ are expected to be unchanged. Thus, we can explain that the \textbf{scattering/fluctuations ???} seen in Figure \ref{fig:tau_vs_nhi} are due to the variation of the emission cross-section $\kappa_{0}$. The "up-kick" in Figure \ref{fig:s353_vs_nh} is caused by the dust evolution from lower column density to higher column density regime: Denser gas leads to higher dust density, dust grains collide to each other more frequently, small dust grains stick onto the surface of bigger dust grain through coagulation, hence the total surface area of the final dust grain increases. Since the emission capability of any object depends on its total area and controversially its absorption capability is proportional to the projected area perpendicular to the direction of coming-radiations, larger surface area enhances the emission cross-section $\kappa_{0}$ of dust grain. Ultimately, \s353\ rises in the higher density region. This rising of \s353\ is truly existing and is not caused by any unaccounted dark gas. \textbf{\color{red}[JO (16/6/17): I don't quite follow this explanation on $\kappa_0$. Won't the sticking together of dust grains \textit{reduce} the total available surface area? Flagged for Marc-Antoine's comment.]}
+
+\subsection{ \NH\ from dust radiance $R$}
+\label{subsec:nh-from-radiance}
+Dust radiance (also known as dust integrated intensity) is defined from Planck 2014 as:
+
+\begin{equation}
+\begin{split}
+R = \int_{\nu}^{} I_{\nu} d\nu = \int_{\nu}^{} \tau_{353}B_{\nu}(T_{obs})(\frac{\nu}{353})^{\beta_{obs}} d\nu\\
+= G_{0}\ \sigma_{a}\ r\ \mu \ m_{H}\ N_{H}
+\end{split}
+\label{eq_r_nh}
+\end{equation}
+\noindent where $G_{0}$ is the ambient radiation field intensity \sout{[JO NOTE: Stars can be anywhere, not necessarily nearby - G0 is just the ambient radiation field.]}, $\sigma_{a}$ is the absorption cross-section of dust grain proportional to the area looked by the coming radiation. These two quantities do not vary immensely, and are usually considered as constants.
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/r_vs_nh.png}
+\caption{ Dust radiance R vs $N_{HI}$ along 19 lines-of-sight without CO and OH detection together with 16 LOS with low NHI.}
+\label{fig:r_vs_nh}
+\end{figure}
+
+Figure \ref{fig:r_vs_nh} plots the R as the function of N(H). A linear fit was performed with the slope of $(4.05\pm 0.32)\times 10^{31} W^{-1}sr$, closed to the value obtained in Planck2013 $(3.75\pm 0.08)\times 10^{31} W^{-1}sr$. The Pearson coefficient for this linearity is 0.974.
+
+Follow the Planck 2014, we also plot in Figure \ref{fig:lh_vs_nh} the dust specific luminosity $L_{H}$=4$\pi$$R/N_{H}$ as the function of $N_{H}$. Both data sets show that $L_{H}$ decreases/drops where $N_{H}$$<$1.2$\times$$10^{20}cm^{-2}$ and keeps roughly constant at a minimum in small range 1.2$\times$$10^{20}$$<$$N_{H}$$<$3.0$\times$$10^{20}cm^{-2}$. However, while they see the rise of $L_{H}$ in higher column densities from $[3.0-15.0]\times 10^{20} (cm^{-2})$, we notice that it is still constant. contains only HI along sightlines meaning that their shape of the rise of $L_{H}$ in higher column densities from $[3.0-15.0]\times 10^{20} (cm^{-2})$ can be explained by the presence of dark gas. \textbf{\color{red}[JO NOTE: I removed my incomplete text here. Just a note that this explanation needs to be crystal clear and also well backed up by whatever text has preceded this part of the paper.]} This could indeed be another convincing evidence for dark gas, and in some extent we can use dust specific luminosity (or dust radiance) to trace the dark gas  in the ISM. The dark gas "hump" shape in Figure \ref{fig:lh_vs_nh} from Planck 2014 data is seen in the range of \NH\ from 3.0$\times 10^{20} (cm^{-2})$ to 70.0$\times 10^{20} (cm^{-2})$, corresponding to the visual extinction \Av\ from 0.17-2.78 $mag$ and peak at \NH\ $\sim 15\times 10^{20} (cm^{-2})$ (or \Av$\sim 0.8$$mag$). The reason is that: when \Av is low, \h2\ is destroyed by UV photo-dissociation and in high \Av regions, CO can be formed and therefore \h2\ would be traced by CO. \textbf{[HIEP: BUT I DON'T KNOW WHY $L_{H}$ INCREASES MASSIVELY AFTER THE HUMP, MAYBE BECAUSE OF X-FACTOR???, PLEASE CHECK AGAIN THIS INTERPRETATION].}
+
+Since dust grains are in thermal equilibrium, R is simply equal to the amount of energy absorbed (or emitted) by dust and it does not either depend on the shape of spectral energy distribution (SED) or the dust cooling efficiency. In addition, from the facts that (1) $R$ is obtained from the integral of $I_{\nu}$ over frequency, and (2) the Cosmic Infrared Background Anisotropies (CIBA) decorrelates in frequency meaning the integral of CIBA over frequency is close to zero, thus R is in fact not contaminated by CIBA.\sout{[JO NOTE/state: Probably need either more or less explanation here. i.e. Either define CIBA and explain more of the basics, or omit.]}.
+The 3 factors in equation \ref{eq_r_nh} dust-to-gas ratio $r$, absorption cross-section $\sigma_{a}$ and radiation field intensity $G_{0}$ do not widely vary. $L_{H}$ fluctuates only in a narrow range from ?? to ??, thus dust radiance $R$ is not scattered extensively away from the linear relationship with $N_{H}$ as seen in Figure \ref{fig:r_vs_nh}. \sout{[JO EDIT: Suggest demonstrating this lack of scatter explicitly in a similar plot to Fig 6. Also, commenting on the significance - Radiance is a better proxy than tau? (Consistent with Planck 2014?)]} 
+
+As we discussed earlier, \t353 is a parameter derived from a MBB fit. It is contaminated by the CIBA because it is the quotient of $I_{353}$ and the Planck function $B_{353}(T_{obs})$. \t353 is proportional to \NH\ only if \s353 is constant, but \s353 largely varies in low-to-moderate \NH\ due to the dependence of \t353 on dust emissivity cross-section $\kappa_{0}$. Meanwhile, dust radiance $R$ seems to be a measurable quantity and it correlates with \NH\ in wider range. This suggests that radiance could be a better proxy for \NH\ than \t353 in low-to-moderate \NH\ range.
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/LH_vs_nh.png}
+\caption{$L_{H}$\ vs $N_{HI}$ along 19 lines-of-sight without CO and OH detection together with 16 LOS with low NHI.}
+\label{fig:lh_vs_nh}
+\end{figure}
+
+\subsection{ \NH\ from dust reddening $E(B-V)$}
+\label{subsec:nh-from-ebv}
+Reddening caused by the \textbf{[HIEP: Please correct me here]} (absorption??? and) scattering of light by dust and other matter in the interstellar medium is defined as:
+
+\begin{equation}
+\begin{split}
+E(B-V) = \frac{A_{v}}{R_{v}} = \frac{ \sigma_{a} }{ R_{v} } r\ \mu \ m_{H}\ N_{H}
+\end{split}
+\end{equation}
+
+\noindent where $A_{v}$ is the dust extinction, $R_{v}$ is the absorption cross-section of dust grain proportional to the area looked by the coming radiation. $R_{v}$ is correlated with the average size of the dust grains causing the extinction. In the Milky Way, the typical value for $R_{v}$ is 3.1 but varies between 2.5 and 6.0 along different sightlines.
+
+Bohlin et al. 1979 found the average value of the ratio $N_{H}/E(B-V)$ to be $5.8\times 10^{21}\ atoms\ cm^{-2}\ mag^{-1}$ (or $\langle(B-V)/N_{H}\rangle$ = $1.72\times 10^{-22}\ mag\ cm^{2}$) using spectral region near $L_{\alpha}$ obtained from Copernicus satellite survey toward 100 stars.
+
+Planck collaboration 2013 also estimated the ratio $E(B-V)$ using Sloan Digital Sky Survey (SDSS) measurements of 105 783 quasars in the area of 8400 deg$^{2}$ mostly in the northern Galactic hemisphere. They found the ratio $E(B-V)/N_{H} = (1.42-1.46)\times 10^{-22}\ mag\ cm^{2}$, a factor 0.82-0.85 lower than measured by Bohlin et al. 1978. \textbf{(HIEP: REASON WHY?? WE MAY NOT NEED TO MENTION REASONS WHY HERE)}
+
+In this study, we use the all-sky map of $E(B-V)$ from Schlafly et al. 2011 to estimate the ratio $E(B-V)/N_{H}$ as displayed in Figure \ref{fig:ebv_vs_nh}.
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/ebv_vs_nh.png}
+\caption{ Reddening vs $N_{HI}$ along 19 lines-of-sight without CO and OH detection together with 16 LOS with low NHI.}
+\label{fig:ebv_vs_nh}
+\end{figure}
+
+$E(B-V)$ and $N_{H}$ are strongly linearly correlated with the Pearson coefficient of 0.988. As we can see in Figure \ref{fig:ebv_vs_nh} E(B-V) does not to widely fluctuate off the linear correlation with $N_{H}$ because, similar to dust radiance, $E(B-V)$ depends on the absorption properties of dust grains, $\sigma_{a}$ in fact, which does not change much in the dust evolution. The obtained ratio $E(B-V)/N_{H} = (1.08\pm 0.07)\times 10^{-22}\ mag\ cm^{2}$, factor 0.63 lower than the ratio from Bohlin at al. 1978 and 0.75 times lower than it from Planck 2013. \sout{[JO NOTE: Use same convention as above - i.e. 0.63 times Bohlin's value etc. As for the interpretation and wider discussion here, I think we need to know more about why Bohlin's treatment might be expected to differ from ours, and factors like (e.g.) whether we might expect limitations arising from our limited column density range. Some discussion and reading needed.]}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/ebvR12_vs_nh.png}
+\caption{ Reddening $E(B-V)$ (from Planck 2014) versus $N_{HI}$ along 19 lines-of-sight without CO and OH detection together with 16 LOS with low NHI.}
+\label{fig:ebvr12_vs_nh}
+\end{figure}
+
+We also plot $E(B-V)$ map from Planck 2014 (Release 1.2) versus our \NH\ in Figure \ref{fig:ebvr12_vs_nh}. The average value of derived $E(B-V)/N_{H}$ ratio is 1.34$\times 10^{-22}\ mag\ cm^{2}$. This corresponds to a factor 0.93 lower compared to their ratio $E(B-V)/N_{H} = (1.42-1.46)\times 10^{-22}\ mag\ cm^{2}$.
+
+\section{OH abundance ratio X$_{OH}$}
+\label{sec:xoh}
+The 2.6mm emission line of CO has been used to probe the physical properties of \h2 clouds, but in the regimes where CO is not detectable, other molecular/atomic transitions (e.g OH ground state main lines at 1665 and 1667MHz, CH ground state main line at 3335 MHz, ortho $1_{10}$-$1_{01}$ and para $2_{20}$-$2_{11}$ transitions of C$_{3}$H$_{2}$ at 18.3 and 21.6 GHz, $^3$P$_1$$\rightarrow$$^3$P$_0$ fine structure line of atomic carbon at 492 GHz, etc.) have been considered as potential alternative tracers of \h2. However, it is worth noting that Cotten et al. (2013 - 2013MNRAS.436.1152C) claimed CO(1-0) observations at higher sensitivity (greater than the 0.1-0.2 K rms) can trace molecular gas in regions where \Av$\sim$0.3 mag. Among these alternatives, the ground-state main lines of OH are the easiest to observe; they are readily detectable in translucent/diffuse molecular clouds (Magnani \& Siskind 1990; Barriault et al. 2010b), OH is considered as a precursor molecule necessary to the formation of CO in diffuse regions (Black \& Dalgarno 1977), and thus it is expected to be abundant in low CO density/abundance regimes.
+
+[IMPORTANT: Plot also W(OH) vs E(B-V)]
+
+To estimate the \h2 column density from OH, we have to determine the OH abundance ratio with respect to \h2, $X_{OH} = N_{OH}/N_{H_{2}}$. 
+
+Many efforts (models or observations) have been devoted to derive the OH abundance ratio in different environment conditions:
+
+- Models of translucent and diffuse molecular clouds with \Av\ from 0.1 to 1 mag and $T_{K}$ from 50 to 100 K by Viala (1986) found that the $X_{OH}$ varied from 3.8$\times$10$^{-9}$ to 9.4$\times$10$^{-9}$. 
+
+- Also from comprehensive models of diffuse and translucent clouds with \nh\ from 250 to 1000 \cc and $T_{K}$ from 20 to 100 K, van Dishoeck \& Black (1986) yielded OH abundances ranging from 2.7$\times$$10^{-9}$ to 1.7$\times$$10^{-7}$.
+
+- Andersson \& Wannier (1993) obtained the OH abundance of $\sim$$10^{−7}$ from the model of halo around dark molecular clouds. 
+
+- Magnani et al. (1988) found the $X_{OH}$ in the range 2$\times$$10^{-7}$ to 4$\times$$10^{-6}$ for a small sample of translucent clouds. Weselak et al. (2010) derived OH abundance of $1.05\pm0.24$$\times$$10^{-7}$from OH absorption line observations of 5 translucent sightlines; almost identical to the $X_{OH}$ estimated by Liszt \& Lucas (2002).  
+
+The past studies indicate that the OH abundance ratio in molecular regions varies in a wide range (4$\times$10$^{-9}$ to 1$\times$10$^{-6}$), in this paper we also determine our own OH abundance along our sightlines, we use observations from Arecibo telescope to provide N(OH) and \NHI; then employ \t353, $R$, $E(B-V)$ (along with our own conversion factors) as surrogates for $N_{H_{2}}$=$\frac{1}{2}(N_{H}-N_{HI})$. In this manner, a direct estimates of the OH/H$_2$ abundance ratio can be obtained from 3 different methods. This means that we can check the consistence among the derived OH abundances.
+
+% \sout{We see so far the strong linear correlations between \t353, $R$, $E(B-V)$ and $N_{H}$ despite of the fluctuation about the linear fit due to the evolution of dust grain properties. In this section, we will use \t353, $R$, $E(B-V)$ (along with our own conversion factors) as the proxies for the total gas columns $N_{H}$ to derive the OH abundance ratio, $X_{OH} = N_{OH}/N_{H_{2}}$ \textbf{[JO NOTE: Perhaps move this paragraph into the start of the next section?]}.}
+
+\sout{Say why it's important 
+for which few literature measurements exist??.}
+
+The $X_{OH}$ ratios derived from the three $N_{H}$ proxies are consistent and appear to be constant around $5.0\times 10^{-8}$???. In fact, it varies in a range from ?? to ??.
+
+- Show some cases where no CO but OH. the plot???
+
+-Since these results are obtained in a wide ranges of longitude $l$ and latitude $b$ with
+some sightlines through the Galactic plane, it suggests that OH main lines are excellent
+tracers of molecular gas in ISM??
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/hist_xoh.png}
+\caption{ Histogram of OH abundance ratio $X_{OH}$ derived from 3 \NH\ proxies: \t353, $E(B-V)$, $R$}
+\label{fig:hist_xoh}
+\end{figure}
+
+
+\section{Conclusions}
+\label{sec:conclusion}
+The true \NHI\ along 93 sightlines obtained from Arecibo Millennium Survey and 21-SPONGE survey spreads in a wide range from low to moderate column densities. When combining with thermal dust data from Planck collaboration and OH data also from Arecibo telescope, this gives us an excellent opportunity to reveal the presence of dark gas, to perceive the evolution of dust grains in different environment, as well as to estimate the OH/H$_{2}$ abundance ratio. We have the conclusions as follows:
+
+1. HI
+
+2. OH
+
+3. Dust evolution from \s353
+
+4. Dark gas from \LH
+
+5. X(OH) varies from ?? to ?? with the mean value of ??
+
+\section*{Acknowledgments}
+This research was supported by the Macquarie University and CSIRO Astronomy and Space Science in Sydney, Australia. H.N. acknowledges
+a Doctoral research scholarship from Macquarie University.  We  are  grateful  to ???
+
+\begin{thebibliography}{}
+%\bibliographystyle{apj}
+%\bibliography{apj-jour,bibliography}
+%
+%\bibitem[Dickey et 
+%al.(1981)]{1981A&A....98..271D} Dickey, J.~M., Crovisier, J., \& Kazes, I.\ 1981, \aap, 98, 271 
+%
+%\bibitem[Fukui et al.(2014)]{2014arXiv1403.0999F} Fukui, Y., Torii, K., 
+%Onishi, T., et al.\ 2014, arXiv:1403.0999 
+%
+%\bibitem[Grenier et al.(2005)]{2005Sci...307.1292G} Grenier, I.~A., 
+%Casandjian, J.-M., \& Terrier, R.\ 2005, Science, 307, 1292 
+%
+%\bibitem[Heiles \& Troland(2003)]{2003ApJS..145..329H} Heiles, C., \& Troland, T.~H.\ 2003, \apjs, 145, 329 
+%
+%\bibitem[Langer et al.(2010)]{2010A&A...521L..17L} Langer, W.~D., Velusamy, T., Pineda, J.~L., et al.\ 2010, \aap, 521, LL17 
+%
+%\bibitem[Li(2002)]{2002PhDT........10L} Li, D.\ 2002, Ph.D.~Thesis,  
+%
+%\bibitem[Li et al.(2013)]{2013IAUS..291..325L} Li, D., Nan, R., 
+%\& Pan, Z.\ 2013, IAU Symposium, 291, 325 
+%\bibitem[Liszt 
+%\& Lucas(1996)]{1996A&A...314..917L} Liszt, H., \& Lucas, R.\ 1996, \aap, 314, 917 
+%
+%\bibitem[Lucas 
+%\& Liszt(1996)]{1996A&A...307..237L} Lucas, R., \& Liszt, H.\ 1996, \aap, 307, 237 
+%
+%
+%\bibitem[McClure-Griffiths, N.M. et al. 2014]{2015aska.confE.130M} McClure-Griffiths, N. M., Stanimirovic, S., Murray, C., Li, D., et al.\ 2014, \ska, confE, 130 
+%
+%\bibitem[Planck Collaboration et 
+%al.(2011)]{2011A&A...536A..19P} Planck Collaboration, Ade, P.~A.~R., Aghanim, N., et al.\ 2011, \aap, 536, AA19 
+%
+%
+%\bibitem[Schmelz 
+%\& Baan(1988)]{1988AJ.....95..672S} Schmelz, J.~T., \& Baan, W.~A.\ 1988, \aj, 95, 672 
+%
+%\bibitem[Stanimirovi{\'c} et al.(2014)]{2014ApJ...793..132S} 
+%Stanimirovi{\'c}, S., Murray, C.~E., Lee, M.-Y., Heiles, C., 
+%\& Miller, J.\ 2014, \apj, 793, 132 
+%
+%
+%\bibitem[Tielens(2005)]{Tielens:2005} Tielens, A. G. G. M. 2005,  Physics and Chemistry of the Interstellar Medium, Cambridge University Press.
+%
+%\bibitem[de Vries et al. (1987)]{vries87-iras} de Vries, H.~W., 
+%Heithausen, A., \& Thaddeus, P.\ 1987, \apj, 319, 723 
+%
+%\bibitem[Weinreb et al.(1963)]{1963Natur.200..829W} Weinreb, S., Barrett, 
+%A.~H., Meeks, M.~L., \& Henry, J.~C.\ 1963, \nat, 200, 829
+%
+%
+%
+\end{thebibliography}
+\clearpage
+
+% \begin{sidewaystable}[h!]
+% \fontsize{5}{4}\selectfont
+% \centering
+% \caption{Table of Gaussian Fit Parameters}
+% \label{table:1}
+% \renewcommand{\arraystretch}{1.5}
+% \begin{tabular}{ lllllllcclllllc  }
+%  \hline
+%  \hline
+% \multirow{2}{*}{$Source$} & \multicolumn{1}{c}{\multirow{2}{*}{$l/b$}} & \multicolumn{7}{c}{OH(1665)} & \multicolumn{6}{c}{OH(1667)}\\
+% \cline{3-8}
+% \cline{10-15}
+%  & & \multicolumn{1}{c}{$\tau$} & \multicolumn{1}{c}{$V_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} & \multicolumn{1}{c}{$T_{ex}$} & \multicolumn{1}{c}{$N(OH)$} & \multicolumn{1}{c}{$F$\tablenotemark{a} or $O$ \tablenotemark{b}} & & \multicolumn{1}{c}{$\tau$} & \multicolumn{1}{c}{$V_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} & \multicolumn{1}{c}{$T_{ex}$} & \multicolumn{1}{c}{$N(OH)$} & \multicolumn{1}{c}{$F$\tablenotemark{a} or $O$ \tablenotemark{b}} \\
+ 
+% (Name) & \multicolumn{1}{c}{$(^{o})$} & \multicolumn{1}{c}{$\ $} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(K)$} & \multicolumn{1}{c}{$(10^{14}cm^{-2})$} & \multicolumn{1}{c}{$\ $} & & \multicolumn{1}{c}{$\ $} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(K)$} & \multicolumn{1}{c}{$(10^{14}cm^{-2})$} & \multicolumn{1}{c}{$\ $} \\ 
+% \hline
+
+
+% 3C105 & 187.6/-33.6 & 0.0158 $\pm$ 0.0003 & 8.14 $\pm$ 0.01 & 0.97 $\pm$ 0.02 & 4.17 $\pm$ 0.25 & 0.27 $\pm$ 0.13 & 0 & &  0.0268 $\pm$ 0.0003 & 8.17 $\pm$ 0.0 & 0.96 $\pm$ 0.01 & 3.69 $\pm$ 0.17 & 0.22 $\pm$ 0.06 & 0 \\
+% 3C105 & 187.6/-33.6 & 0.0062 $\pm$ 0.0003 & 10.23 $\pm$ 0.02 & 1.03 $\pm$ 0.05 & 5.95 $\pm$ 0.63 & 0.16 $\pm$ 0.22 & 1 & &  0.0107 $\pm$ 0.0003 & 10.26 $\pm$ 0.01 & 1.03 $\pm$ 0.03 & 5.53 $\pm$ 0.44 & 0.14 $\pm$ 0.11 & 1 \\
+% 3C109 & 181.8/-27.8 & 0.0022 $\pm$ 0.0003 & 9.16 $\pm$ 0.1 & 1.0 $\pm$ 0.24 & 13.61 $\pm$ 1.83 & 0.13 $\pm$ 0.37 & 0 & &  0.0036 $\pm$ 0.0004 & 9.22 $\pm$ 0.07 & 1.02 $\pm$ 0.17 & 13.83 $\pm$ 1.25 & 0.12 $\pm$ 0.18 & 0 \\
+% 3C109 & 181.8/-27.8 & 0.0035 $\pm$ 0.0003 & 10.44 $\pm$ 0.06 & 0.95 $\pm$ 0.15 & 9.15 $\pm$ 1.17 & 0.13 $\pm$ 0.28 & 1 & &  0.0057 $\pm$ 0.0004 & 10.58 $\pm$ 0.05 & 1.04 $\pm$ 0.11 & 8.72 $\pm$ 0.79 & 0.12 $\pm$ 0.15 & 1 \\
+% 3C123 & 170.6/-11.7 & 0.0191 $\pm$ 0.0008 & 3.65 $\pm$ 0.06 & 1.19 $\pm$ 0.11 & 18.04 $\pm$ 0.89 & 1.75 $\pm$ 0.65 & 0 & &  0.0347 $\pm$ 0.0012 & 3.71 $\pm$ 0.06 & 1.22 $\pm$ 0.1 & 18.1 $\pm$ 0.63 & 1.82 $\pm$ 0.38 & 0 \\
+% 3C123 & 170.6/-11.7 & 0.0431 $\pm$ 0.0023 & 4.43 $\pm$ 0.01 & 0.53 $\pm$ 0.03 & 15.71 $\pm$ 0.61 & 1.52 $\pm$ 0.31 & 1 & &  0.0919 $\pm$ 0.004 & 4.46 $\pm$ 0.01 & 0.53 $\pm$ 0.02 & 16.15 $\pm$ 0.37 & 1.86 $\pm$ 0.18 & 1 \\
+% 3C123 & 170.6/-11.7 & 0.0338 $\pm$ 0.0008 & 5.37 $\pm$ 0.01 & 0.92 $\pm$ 0.04 & 18.31 $\pm$ 0.56 & 2.42 $\pm$ 0.41 & 2 & &  0.0784 $\pm$ 0.0012 & 5.47 $\pm$ 0.01 & 0.92 $\pm$ 0.02 & 16.56 $\pm$ 0.31 & 2.82 $\pm$ 0.2 & 2 \\
+% 3C131 & 171.4/-7.8 & 0.0065 $\pm$ 0.0005 & 4.55 $\pm$ 0.02 & 0.56 $\pm$ 0.06 & 8.19 $\pm$ 0.76 & 0.13 $\pm$ 0.15 & 0 & &  0.0103 $\pm$ 0.0006 & 4.56 $\pm$ 0.02 & 0.62 $\pm$ 0.05 & 5.61 $\pm$ 0.52 & 0.08 $\pm$ 0.08 & 0 \\
+% 3C131 & 171.4/-7.8 & 0.0074 $\pm$ 0.0006 & 6.8 $\pm$ 0.06 & 2.97 $\pm$ 0.2 & 7.09 $\pm$ 0.43 & 0.66 $\pm$ 0.47 & 1 & &  0.0111 $\pm$ 0.0005 & 6.68 $\pm$ 0.05 & 3.32 $\pm$ 0.15 & 7.39 $\pm$ 0.3 & 0.64 $\pm$ 0.25 & 1 \\
+% 3C131 & 171.4/-7.8 & 0.0167 $\pm$ 0.0007 & 6.59 $\pm$ 0.01 & 0.42 $\pm$ 0.02 & 3.18 $\pm$ 0.42 & 0.09 $\pm$ 0.1 & 2 & &  0.0259 $\pm$ 0.0008 & 6.58 $\pm$ 0.01 & 0.43 $\pm$ 0.02 & 3.93 $\pm$ 0.29 & 0.1 $\pm$ 0.05 & 2 \\
+% 3C131 & 171.4/-7.8 & 0.0521 $\pm$ 0.0007 & 7.23 $\pm$ 0.0 & 0.55 $\pm$ 0.01 & 4.37 $\pm$ 0.12 & 0.54 $\pm$ 0.07 & 3 & &  0.0858 $\pm$ 0.0007 & 7.23 $\pm$ 0.0 & 0.59 $\pm$ 0.01 & 4.57 $\pm$ 0.08 & 0.54 $\pm$ 0.03 & 3 \\
+% 3C132 & 178.9/-12.5 & 0.0033 $\pm$ 0.0002 & 7.82 $\pm$ 0.03 & 0.89 $\pm$ 0.08 & 9.63 $\pm$ 1.04 & 0.12 $\pm$ 0.23 & 0 & &  0.0056 $\pm$ 0.0003 & 7.79 $\pm$ 0.02 & 0.81 $\pm$ 0.05 & 13.32 $\pm$ 0.63 & 0.14 $\pm$ 0.09 & 0 \\
+% 3C133 & 177.7/-9.9 & 0.1009 $\pm$ 0.001 & 7.66 $\pm$ 0.0 & 0.53 $\pm$ 0.0 & 3.32 $\pm$ 0.11 & 0.75 $\pm$ 0.08 & 0 & &  0.2132 $\pm$ 0.0016 & 7.68 $\pm$ 0.0 & 0.52 $\pm$ 0.0 & 2.5 $\pm$ 0.62 & 0.65 $\pm$ 0.35 & 0 \\
+% 3C133 & 177.7/-9.9 & 0.0508 $\pm$ 0.0217 & 7.68 $\pm$ 0.15 & 1.89 $\pm$ 0.28 & \multicolumn{1}{c}{-}            & \multicolumn{1}{c}{-}               & 1.0 $\pm$ 0.0 & &  0.1539 $\pm$ 0.1082 & 7.53 $\pm$ 0.16 & 0.81 $\pm$ 0.16 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-}      & 1.0 $\pm$ 0.0 \\
+% 3C133 & 177.7/-9.9 & 0.0148 $\pm$ 0.001 & 7.94 $\pm$ 0.02 & 1.23 $\pm$ 0.03 & 4.78 $\pm$ 1.71 & 0.37 $\pm$ 1.09 & 1 & &  0.0333 $\pm$ 0.0015 & 7.96 $\pm$ 0.02 & 1.23 $\pm$ 0.02 & 4.89 $\pm$ 1.11 & 0.47 $\pm$ 0.59 & 1 \\
+% 3C154 & 185.6/4.0 & 0.0266 $\pm$ 0.0006 & -2.32 $\pm$ 0.01 & 0.74 $\pm$ 0.03 & 3.17 $\pm$ 0.29 & 0.27 $\pm$ 0.15 & 0 & &  0.0428 $\pm$ 0.0007 & -2.34 $\pm$ 0.01 & 0.71 $\pm$ 0.02 & 3.21 $\pm$ 0.18 & 0.23 $\pm$ 0.06 & 0 \\
+% 3C154 & 185.6/4.0 & 0.01 $\pm$ 0.0005 & -1.39 $\pm$ 0.04 & 0.83 $\pm$ 0.09 & 4.94 $\pm$ 0.72 & 0.17 $\pm$ 0.25 & 1 & &  0.0179 $\pm$ 0.0006 & -1.34 $\pm$ 0.03 & 0.91 $\pm$ 0.06 & 4.21 $\pm$ 0.37 & 0.16 $\pm$ 0.11 & 1 \\
+% 3C154 & 185.6/4.0 & 0.0038 $\pm$ 0.0004 & 2.23 $\pm$ 0.06 & 1.12 $\pm$ 0.16 & 5.17 $\pm$ 1.61 & 0.09 $\pm$ 0.47 & 2 & &  0.0054 $\pm$ 0.0005 & 2.18 $\pm$ 0.06 & 1.33 $\pm$ 0.14 & 2.91 $\pm$ 0.99 & 0.05 $\pm$ 0.23 & 2 \\
+% 3C167 & 207.3/1.2 & 0.0109 $\pm$ 0.0019 & 18.53 $\pm$ 0.11 & 1.27 $\pm$ 0.26 & 4.34 $\pm$ 1.12 & 0.26 $\pm$ 0.63 & 0 & &  0.0108 $\pm$ 0.0013 & 17.66 $\pm$ 0.16 & 2.71 $\pm$ 0.4 & 4.23 $\pm$ 0.75 & 0.29 $\pm$ 0.5 & 0 \\
+% 3C18 & 118.6/-52.7 & 0.003 $\pm$ 0.0003 & -8.53 $\pm$ 0.11 & 2.5 $\pm$ 0.19 & 7.19 $\pm$ 0.99 & 0.23 $\pm$ 0.58 & 0 & &  0.006 $\pm$ 0.0003 & -8.33 $\pm$ 0.05 & 2.5 $\pm$ 0.1 & 6.83 $\pm$ 0.43 & 0.24 $\pm$ 0.2 & 0 \\
+% 3C18 & 118.6/-52.7 & 0.0056 $\pm$ 0.0004 & -7.82 $\pm$ 0.02 & 0.68 $\pm$ 0.06 & 2.75 $\pm$ 1.02 & 0.04 $\pm$ 0.22 & 1 & &  0.0078 $\pm$ 0.0005 & -7.85 $\pm$ 0.01 & 0.6 $\pm$ 0.04 & 1.0 $\pm$ 0.0 & 0.01 $\pm$ 0.0 & 1 \\
+% 3C207 & 213.0/30.1 & 0.0152 $\pm$ 0.0002 & 4.55 $\pm$ 0.01 & 0.77 $\pm$ 0.01 & 3.2 $\pm$ 0.21 & 0.16 $\pm$ 0.08 & 0 & &  0.0268 $\pm$ 0.0002 & 4.55 $\pm$ 0.0 & 0.78 $\pm$ 0.01 & 2.91 $\pm$ 0.1 & 0.14 $\pm$ 0.03 & 0 \\
+% 3C409 & 63.4/-6.1 & 0.0062 $\pm$ 0.0007 & 14.63 $\pm$ 0.14 & 1.86 $\pm$ 0.15 & 7.96 $\pm$ 0.95 & 0.39 $\pm$ 0.59 & 0 & &  0.0057 $\pm$ 0.0008 & 14.7 $\pm$ 0.18 & 1.68 $\pm$ 0.18 & 0.03 $\pm$ 25.26 & 0.0 $\pm$ 7.54 & 0 \\
+% 3C409 & 63.4/-6.1 & \multicolumn{1}{c}{-}& \multicolumn{1}{c}{-}& \multicolumn{1}{c}{-}               & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-}& \multicolumn{1}{c}{-} & &  0.1952 $\pm$ 0.1376 & 14.79 $\pm$ 0.09 & 2.22 $\pm$ 0.38 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & 1.0 $\pm$ 0.0 \\
+% 3C409 & 63.4/-6.1 & 0.0199 $\pm$ 0.0012 & 15.4 $\pm$ 0.01 & 0.89 $\pm$ 0.04 & 2.35 $\pm$ 0.43 & 0.18 $\pm$ 0.23 & 1 & &  0.0273 $\pm$ 0.0016 & 15.41 $\pm$ 0.01 & 0.86 $\pm$ 0.03 & 0.2 $\pm$ 0.0 & 0.01 $\pm$ 0.0 & 1 \\
+% 3C410 & 69.2/-3.8 & 0.0121 $\pm$ 0.0003 & 6.25 $\pm$ 0.01 & 1.03 $\pm$ 0.03 & 6.96 $\pm$ 0.48 & 0.37 $\pm$ 0.24 & 0 & &  0.025 $\pm$ 0.0004 & 6.29 $\pm$ 0.01 & 1.19 $\pm$ 0.02 & 4.41 $\pm$ 0.21 & 0.31 $\pm$ 0.09 & 0 \\
+% 3C410 & 69.2/-3.8 & 0.0043 $\pm$ 0.0003 & 10.7 $\pm$ 0.04 & 0.7 $\pm$ 0.09 & 7.89 $\pm$ 1.66 & 0.1 $\pm$ 0.32 & 1 & &  0.0084 $\pm$ 0.0005 & 10.72 $\pm$ 0.04 & 0.8 $\pm$ 0.09 & 4.47 $\pm$ 0.78 & 0.07 $\pm$ 0.13 & 1 \\
+% 3C410 & 69.2/-3.8 & 0.0053 $\pm$ 0.0003 & 11.67 $\pm$ 0.04 & 0.84 $\pm$ 0.09 & 5.13 $\pm$ 1.22 & 0.1 $\pm$ 0.32 & 2 & &  0.0114 $\pm$ 0.0005 & 11.68 $\pm$ 0.03 & 0.81 $\pm$ 0.07 & 3.72 $\pm$ 0.57 & 0.08 $\pm$ 0.12 & 2 \\
+% 3C454.3 & 86.1/-38.2 & 0.0023 $\pm$ 0.0001 & -9.67 $\pm$ 0.03 & 1.63 $\pm$ 0.07 & 4.09 $\pm$ 1.07 & 0.07 $\pm$ 0.36 & 0 & &  0.0044 $\pm$ 0.0001 & -9.55 $\pm$ 0.02 & 1.37 $\pm$ 0.04 & 5.91 $\pm$ 0.61 & 0.08 $\pm$ 0.13 & 0 \\
+% 3C75 & 170.3/-44.9 & 0.0072 $\pm$ 0.0003 & -10.36 $\pm$ 0.03 & 1.32 $\pm$ 0.07 & 3.58 $\pm$ 0.55 & 0.14 $\pm$ 0.26 & 0 & &  0.0142 $\pm$ 0.0003 & -10.36 $\pm$ 0.02 & 1.25 $\pm$ 0.04 & 3.72 $\pm$ 0.3 & 0.16 $\pm$ 0.11 & 0 \\
+% 4C13.67 & 43.5/9.2 & 0.0474 $\pm$ 0.0037 & 4.88 $\pm$ 0.05 & 1.3 $\pm$ 0.12 & 7.44 $\pm$ 0.45 & 1.95 $\pm$ 0.59 & 0 & &  0.057 $\pm$ 0.004 & 4.95 $\pm$ 0.05 & 1.46 $\pm$ 0.12 & 7.41 $\pm$ 0.31 & 1.46 $\pm$ 0.3 & 0 \\
+% 4C22.12 & 188.1/0.0 & 0.0059 $\pm$ 0.0009 & -2.84 $\pm$ 0.06 & 0.79 $\pm$ 0.17 & 5.34 $\pm$ 1.18 & 0.11 $\pm$ 0.3 & 0 & &  0.0103 $\pm$ 0.001 & -2.73 $\pm$ 0.04 & 0.8 $\pm$ 0.11 & 5.26 $\pm$ 0.64 & 0.1 $\pm$ 0.12 & 0 \\
+% 4C22.12 & 188.1/0.0 & 0.0172 $\pm$ 0.0011 & -1.78 $\pm$ 0.02 & 0.56 $\pm$ 0.05 & 4.22 $\pm$ 0.48 & 0.17 $\pm$ 0.15 & 1 & &  0.0356 $\pm$ 0.0012 & -1.78 $\pm$ 0.01 & 0.54 $\pm$ 0.02 & 3.79 $\pm$ 0.23 & 0.17 $\pm$ 0.06 & 1 \\
+% G196.6+0.2 & 196.6/0.2 & 0.0043 $\pm$ 0.0005 & 3.22 $\pm$ 0.1 & 1.67 $\pm$ 0.25 & 7.4 $\pm$ 1.17 & 0.23 $\pm$ 0.55 & 0 & &  0.0065 $\pm$ 0.0005 & 3.43 $\pm$ 0.09 & 2.5 $\pm$ 0.24 & 6.35 $\pm$ 0.62 & 0.24 $\pm$ 0.3 & 0 \\
+% G197.0+1.1 & 197.0/1.1 & 0.0124 $\pm$ 0.0005 & 4.83 $\pm$ 0.03 & 1.84 $\pm$ 0.09 & 4.51 $\pm$ 0.32 & 0.44 $\pm$ 0.28 & 0 & &  0.0188 $\pm$ 0.0007 & 4.72 $\pm$ 0.03 & 1.59 $\pm$ 0.07 & 4.66 $\pm$ 0.25 & 0.33 $\pm$ 0.13 & 0 \\
+% G197.0+1.1 & 197.0/1.1 & 0.0057 $\pm$ 0.0008 & 7.46 $\pm$ 0.04 & 0.61 $\pm$ 0.1 & 1.0 $\pm$ 0.0 & 0.01 $\pm$ 0.0 & 1 & &  0.0075 $\pm$ 0.0011 & 7.34 $\pm$ 0.04 & 0.6 $\pm$ 0.1 & 1.0 $\pm$ 0.0 & 0.01 $\pm$ 0.0 & 1 \\
+% G197.0+1.1 & 197.0/1.1 & 0.0053 $\pm$ 0.0006 & 16.41 $\pm$ 0.09 & 1.17 $\pm$ 0.22 & 6.29 $\pm$ 0.96 & 0.17 $\pm$ 0.35 & 2 & &  0.0094 $\pm$ 0.0017 & 16.34 $\pm$ 0.12 & 0.95 $\pm$ 0.19 & 5.44 $\pm$ 0.67 & 0.11 $\pm$ 0.15 & 2 \\
+% G197.0+1.1 & 197.0/1.1 & 0.0069 $\pm$ 0.0008 & 17.65 $\pm$ 0.05 & 0.71 $\pm$ 0.12 & 4.58 $\pm$ 0.94 & 0.1 $\pm$ 0.24 & 3 & &  0.0124 $\pm$ 0.001 & 17.45 $\pm$ 0.12 & 1.22 $\pm$ 0.21 & 5.48 $\pm$ 0.45 & 0.2 $\pm$ 0.15 & 3 \\
+% G197.0+1.1 & 197.0/1.1 & 0.0237 $\pm$ 0.0009 & 32.01 $\pm$ 0.01 & 0.56 $\pm$ 0.02 & 3.61 $\pm$ 0.31 & 0.2 $\pm$ 0.11 & 4 & &  0.0428 $\pm$ 0.0012 & 32.01 $\pm$ 0.01 & 0.53 $\pm$ 0.02 & 4.08 $\pm$ 0.19 & 0.22 $\pm$ 0.05 & 4 \\
+% P0428+20 & 176.8/-18.6 & 0.0015 $\pm$ 0.0002 & 3.6 $\pm$ 0.08 & 1.06 $\pm$ 0.2 & 8.42 $\pm$ 2.05 & 0.06 $\pm$ 0.36 & 0 & &  0.0029 $\pm$ 0.0003 & 3.55 $\pm$ 0.04 & 0.75 $\pm$ 0.09 & 4.05 $\pm$ 1.28 & 0.02 $\pm$ 0.12 & 0 \\
+% P0428+20 & 176.8/-18.6 & 0.0076 $\pm$ 0.0002 & 10.7 $\pm$ 0.02 & 1.1 $\pm$ 0.04 & 8.42 $\pm$ 0.39 & 0.3 $\pm$ 0.16 & 1 & &  0.0137 $\pm$ 0.0003 & 10.7 $\pm$ 0.01 & 1.11 $\pm$ 0.02 & 7.63 $\pm$ 0.23 & 0.27 $\pm$ 0.07 & 1 \\
+% T0526+24 & 181.4/-5.2 & 0.0158 $\pm$ 0.0058 & 7.58 $\pm$ 0.29 & 1.66 $\pm$ 0.74 & 8.66 $\pm$ 1.39 & 0.96 $\pm$ 1.35 & 0 & &  0.0359 $\pm$ 0.0059 & 7.49 $\pm$ 0.15 & 1.97 $\pm$ 0.39 & 6.98 $\pm$ 0.6 & 1.16 $\pm$ 0.61 & 0 \\
+% T0629+10 & 201.5/0.5 & 0.004 $\pm$ 0.0026 & 0.16 $\pm$ 0.19 & 0.63 $\pm$ 0.5 & 3.88 $\pm$ 1.15 & 0.04 $\pm$ 0.2 & 0 & &  0.0113 $\pm$ 0.0023 & 0.33 $\pm$ 0.22 & 0.97 $\pm$ 0.43 & 4.03 $\pm$ 1.05 & 0.1 $\pm$ 0.26 & 0 \\
+% T0629+10 & 201.5/0.5 & 0.0384 $\pm$ 0.0149 & 3.13 $\pm$ 0.32 & 1.01 $\pm$ 0.47 & 2.11 $\pm$ 0.33 & 0.35 $\pm$ 0.35 & 1 & &  0.0769 $\pm$ 0.0046 & 4.17 $\pm$ 0.06 & 3.17 $\pm$ 0.22 & 4.76 $\pm$ 1.49 & 2.75 $\pm$ 3.11 & 1 \\
+% T0629+10 & 201.5/0.5 & 0.0168 $\pm$ 0.0016 & 1.47 $\pm$ 0.13 & 1.43 $\pm$ 0.47 & 2.57 $\pm$ 0.23 & 0.26 $\pm$ 0.2 & 2 & &  0.0206 $\pm$ 0.0034 & 1.3 $\pm$ 0.1 & 0.8 $\pm$ 0.2 & 0.5 $\pm$ 0.0 & 0.02 $\pm$ 0.01 & 2 \\
+% T0629+10 & 201.5/0.5 & 0.1603 $\pm$ 0.032 & 3.61 $\pm$ 0.02 & 0.61 $\pm$ 0.04 & 2.98 $\pm$ 0.06 & 1.24 $\pm$ 0.27 & 3 & &  0.2147 $\pm$ 0.0045 & 3.55 $\pm$ 0.0 & 0.6 $\pm$ 0.02 & 3.44 $\pm$ 0.12 & 1.05 $\pm$ 0.09 & 3 \\
+% T0629+10 & 201.5/0.5 & 0.1726 $\pm$ 0.009 & 4.35 $\pm$ 0.05 & 2.3 $\pm$ 0.14 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-}  & 1.0 $\pm$ 0.0 & &  0.0876 $\pm$ 0.0622 & 6.21 $\pm$ 1.49 & 3.79 $\pm$ 1.13 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & 1.0 $\pm$ 0.0 \\
+% T0629+10 & 201.5/0.5 & 0.0814 $\pm$ 0.002 & 4.62 $\pm$ 0.01 & 0.78 $\pm$ 0.04 & 2.43 $\pm$ 0.14 & 0.66 $\pm$ 0.14 & 4 & &  0.1004 $\pm$ 0.0044 & 4.64 $\pm$ 0.01 & 0.36 $\pm$ 0.02 & 3.08 $\pm$ 0.25 & 0.26 $\pm$ 0.07 & 4 \\
+% T0629+10 & 201.5/0.5 & 0.0751 $\pm$ 0.0019 & 6.09 $\pm$ 0.02 & 1.04 $\pm$ 0.05 & 3.7 $\pm$ 0.1 & 1.24 $\pm$ 0.14 & 5 & &  0.1011 $\pm$ 0.0043 & 6.1 $\pm$ 0.01 & 0.64 $\pm$ 0.04 & 3.23 $\pm$ 0.24 & 0.5 $\pm$ 0.12 & 5 \\
+% T0629+10 & 201.5/0.5 & 0.0373 $\pm$ 0.0031 & 6.99 $\pm$ 0.02 & 0.49 $\pm$ 0.06 & 3.97 $\pm$ 0.15 & 0.31 $\pm$ 0.07 & 6 & &  0.0744 $\pm$ 0.0036 & 6.93 $\pm$ 0.02 & 0.64 $\pm$ 0.05 & 2.67 $\pm$ 0.3 & 0.3 $\pm$ 0.13 & 6 \\
+% T0629+10 & 201.5/0.5 & 0.0174 $\pm$ 0.0018 & 7.9 $\pm$ 0.05 & 0.83 $\pm$ 0.13 & 3.6 $\pm$ 0.23 & 0.22 $\pm$ 0.11 & 7 & &  0.0295 $\pm$ 0.0025 & 7.95 $\pm$ 0.03 & 0.71 $\pm$ 0.08 & 2.23 $\pm$ 0.69 & 0.11 $\pm$ 0.2 & 7 \\
+
+
+
+% \hline
+% \end{tabular}
+% \tablenotetext{1}{$F$: Weighted average of emission fraction $F$ described in \ref{sec:derive_tex}}
+% \tablenotetext{2}{$O$: Order of the cold components along the line of sight, beginning with 0; larger numbers mean
+% larger distances along the line of sight.}
+% \end{sidewaystable}
+
+
+\end{document}
+
+%%% THE END %%%
+
+
+
+ - 

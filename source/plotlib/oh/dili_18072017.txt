@@ -1,0 +1,815 @@
+%%
+%% Beginning of file 'sample.tex'
+%%
+%% Modified 2005 December 5	
+%%
+%% This is a sample manuscript marked up using the
+%% AASTeX v5.x LaTeX 2e macros.
+
+%% The first piece of markup in an AASTeX v5.x document
+%% is the \documentclass command. LaTeX will ignore
+%% any data that comes before this command.
+
+%% The command below calls the preprint style
+%% which will produce a one-column, single-spaced document.
+%% Examples of commands for other substyles follow. Use
+%% whichever is most appropriate for your purposes.
+%%
+%%\documentclass[12pt,preprint]{aastex}
+%% manuscript produces a one-column, double-spaced document:
+
+%\documentclass[manuscript]{aastex}
+%\documentclass[iop]{emulateapj}
+\documentclass[preprint]{emulateapj}
+%\documentclass[iop,numberedappendix]{emulateapj}
+%\usepackage{url}
+
+%% preprint2 produces a double-column, single-spaced document:
+
+ %\documentclass[preprint2]{aastex}
+
+%% Sometimes a paper's abstract is too long to fit on the
+%% title page in preprint2 mode. When that is the case,
+%% use the longabstract style option.
+
+ %\documentclass[preprint2,longabstract]{aastex}
+
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+%% If you are submitting to a journal that translates manuscripts
+%% into SGML, you need to follow certain guidelines when preparing
+%% your macros. See the AASTeX v5.x Author Guide
+%% for information.
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{cancel,soul,ulem,amsmath} 
+
+\def\hi{H{\sc i}}
+\def\arcsec{\hbox{$^{\prime\prime}$}}
+\def\arcmin{\hbox{$^{\prime}$}}
+\def\deg{$^\circ$}
+\def\cm2{cm$^{-2}$}
+\def\cc{cm$^{-3}$}
+\def\kms{km s$^{-1}$}
+\def\s{s$^{-1}$}
+\def\nh3{NH$_3$}
+\def\n2h{N$_2$H$^+$}
+\def\co{$^{12}$CO}
+\def\13co{$^{13}$CO}
+\def\c18o{C$^{18}$O}
+\def\hc3n{HC$_3$N}
+\def\h2{H$_2$}
+\def\nh{n(H$_2$)}
+\def\cp{C$^+$}
+\def\lp{\>\> .}
+\def\lc{\>\> ,}
+\def\Ms{$M_{\odot}$}
+\def\mic{$\mu$m}
+\def\Av{A$_V$}
+\def\xco{$X_{co}$}
+
+\def\aj{AJ}
+\def\aaps{A\&AS}
+\def\aap{A\&A}
+\def\apjs{ApJS}
+\def\nat{Nature}
+\def\apj{ApJ}
+\def\ska{ASKA,ConfE}
+
+\newcommand{\chg}[1]{\textbf{\color{green}#1}}
+\newcommand{\chb}[1]{\textbf{\color{blue}#1}}
+%\newcommand{\st}[1]{\textbf{\color{red}\sout{#1}}}
+
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\shorttitle{Quantifying Dark Gas through OH Absorptions toward Continuum Sources}
+\shortauthors{Li et al.}
+
+\begin{document}
+
+\title{Does OH Trace the Dark Molecular Gas (DMG)? }% Force line breaks with \\
+
+\author{Di Li\altaffilmark{1,2,3}, 
+Ningyu Tang\altaffilmark{1,3},
+Hiep Nguyen\altaffilmark{4,5},
+J. R. Dawson\altaffilmark{4,5},
+Carl Heiles\altaffilmark{6},
+Duo Xu\altaffilmark{1,3},
+Zhichen Pan\altaffilmark{1,3},
+Thomas Troland\altaffilmark{7}, 
+and the PRIMO collaboration
+} 
+
+\altaffiltext{1}{National Astronomical Observatories, CAS, Beijing 100012, China; Email: dili@nao.cas.cn, nytang@nao.cas.cn}
+\altaffiltext{2}{Key Laboratory of Radio Astronomy, Chinese Academy of Science}
+\altaffiltext{3}{University of Chinese Academy of Sciences, Beijing 100049, China}
+\altaffiltext{4}{Department of Physics and Astronomy and MQ Research Centre in Astronomy, Astrophysics and Astrophotonics, Macquarie 
+ University, NSW 2109, Australia}
+\altaffiltext{5}{Australia Telescope National Facility, CSIRO Astronomy and Space Science, PO Box 76, Epping, NSW 1710, Australia}
+\altaffiltext{6}{Department of Astronomy, University of California, Berkeley, 601 Campbell Hall 3411, Berkeley, CA 94720-3411}
+\altaffiltext{7}{Department of Physics and Astronomy, University of Kentucky, Lexington, Kentucky 40506}
+\begin{abstract}
+
+Hydroxyl (OH) is expected to be abundant in diffuse interstellar molecular gas as it forms along with \h2\ under similar conditions and within a similar extinction range. 
+We have analyzed absorption measurements of the $\Lambda$-doubling transitions of OH at 1665 MHz and 1667 MHz toward 43 extragalactic continuum sources, along with the J=1-0 emission of $^{12}$CO, \13co, and \c18o, and the J=2-1 of $^{12}$CO. The OH data were taken during the  Millennium Survey and were unpublished until now. The 3mm data were taken with the 13.7m Delingha telescope and the 1mm data with the 10.4m dish of the  Caltech Submillimeter Observatory (CSO). The excitation temperatures of OH were found to be generally close to the brightness temperature of the diffuse continuum background and follow an analogous log-normal distribution
+\begin{equation*}
+f(x) \propto \frac{1}{ \sqrt{2\pi}\sigma } \rm{exp}[-\frac{[ln(T_{ex})-ln(3.75\ K)]^2}{2\sigma^2}] \lp
+\label{eq:lognormal}
+\end{equation*}
+Under such a distribution with fitted $\sigma \sim 0.5$, 90\% of OH gas has excitation temperature within 2 K of that of the background, providing a plausible explanation for the apparent difficulty of detecting this abundant molecule in emission. For gas within the intermediate extinction rage (A$\rm_V$\ $\sim$ 0.05--2 mag), the detection rate of OH with a detection limit $N(\mathrm{OH})\simeq 10^{12}$ cm$^{-2}$  is approximately constant, while the detection rate of CO seems to grow with extinction. We conclude that OH is abundant in diffuse molecular gas and OH absorption a good tracer of ``dark molecular gas''. The self-shielding threshold of CO formation is not apparent in our data, supporting the existence of widely distributed diffuse CO gas. The next generation of highly sensitive radio telescopes, namely, FAST and SKA, will make feasible the systematic inventory of diffuse molecular gas through decomposing cm molecular  (e.g.\ OH and CH) absorption profiles toward background continuum sources with numbers orders of magnitude higher than those available now.
+
+\end{abstract}
+
+\keywords{ISM: clouds --- ISM: evolution --- ISM: molecules.}
+
+\section{Introduction}
+ The two relatively denser phases of the interstellar medium (ISM) are the atomic Cold Neutral Medium (CNM) traced by the \hi\ $\lambda$21cm hyperfine structure line and the `standard' molecular (H$_2$) clouds , usually traced by CO. CO has historically been the most important tracer of molecular hydrogen, which remains largely invisible due to its lack of emission in the temperature range of molecular ISM. Empirically, CO intensities have been used as an indicator of the total molecular mass in the Milky Way and external galaxies through the so-called ``X-factor" (\xco), with numerous  caveats, not least of which is the large opacities of CO transitions.  Gases in these two phases dominate the masses of star forming clouds on a galactic scale. The measured ISM gas mass from \hi\ and CO is thus the foundation of many key quantities in understanding galaxy evolution and star formation, such as the star formation efficiency.
+ 
+ A growing body of evidence, however,  indicates the existence of gas traced by neither \hi\ nor CO.  Comparative studies (e.g.\ de Vries et al.\ 1987) of Infrared Astronomy Satellite (IRAS) dust images and gas maps in \hi\ and CO revealed an apparent `excess' of dust emission. The Planck collaboration (2011) clearly show excess dust opacity  in the intermediate extinction range $A_V \sim$ 0.05--2 mag, roughly corresponding to the self-shielding thresholds of \h2\ and \13co, respectively. The missing gas, or rather, the undetected gas component, is widely referred to as dark gas, popularized as a common term by Grenier et al.\ (2005). These authors found more diffuse gamma-ray emission observed by Energetic Gamma Ray Experiment Telescope (EGRET) than can be explained by cosmic-ray interactions with the observed H-nuclei, the total quantity of which were presumed to be [N(\hi)+\xco*CO]. Observations of the THz fine structure \cp\ line also help reveal dark gas, in that the \cp\ line strength in diffuse gas is stronger than can be produced by collisional excitation with only \hi\ gas (Langer et al.\ 2010; Pineda et al.\ 2013). A minority of the ISM community have argued that dark gas can be explained by underestimated HI opacities (Fukui et al.\ 2015), which is in contrast with some other recent works (Stanimirovi{\'c} et al.\ 2014).  We focus here on the dark molecular gas (DMG), or more specifically CO-dark molecular gas.
+
+ISM chemistry and PDR models predict the existence of \h2\ in regions where CO is not detectable (Wolfire et al.\ 2010).
+ CO can be of  low abundance due to photo-dissociation  in unshielded regions and/or can be heavily sub-thermal due to lack of collision in diffuse gas.  OH, or Hydroxyl, was the first interstellar molecule detected in radio bands (Weinreb et al.\ 1963). It can form efficiently through relatively rapid routes including charge-exchange reactions and initiated by cosmic ray ionization once \h2\ becomes available (van Dishoeck \& Black 1988). Starting from H$^+$, 
+\begin{align}
+& \mathrm{O+H^+\to O^+ + H} \lc \nonumber \\
+& \mathrm{O^++H_2\to OH^+ + H}\ . \label{eq:ohplus} 
+\end{align}
+Also starting from H$_2^+$,
+\begin{align}
+& \mathrm{H_2^+ + H_2\to H_3^+ + H} \lc \nonumber \\
+& \mathrm{H_3^+ + O \to OH^+ + H_2}\ . \label{eq:ohplus2} 
+\end{align}
+OH$^+$ then reacts with H$_2$ to form H$_2$O$^+$ and continues onto H$_3$O$^+$.
+\begin{align}
+& \mathrm{OH^+ + H_2 \to H_2O^+ + H} \lc \nonumber \\
+& \mathrm{H_2O^+ + H_2 \to H_3O^+ + H}\ .\label{eq:h3op} 
+\end{align}
+H$_2$O$^+$ and H$_3$O$^+$ recombine with electron to form OH.
+
+OH can join the carbon reaction chains through interaction with C$^+$ and eventually reaches CO.
+ \begin{align}
+& \mathrm{OH+C^+\to CO^++ H} \lc \nonumber \\
+& \mathrm{CO^++H_2 \to HCO^++ H} \lc  \nonumber \\
+& \mathrm{HCO^++e^-\to CO+ H}\ .\label{eq:co}  
+\end{align}
+Wide-spread and abundant OH, along with HCO$^+$ and \cp\, is thus expected in diffuse and intermediate extinction regions. 
+
+OH has indeed been detected widely throughout the Galactic Plane (e.g. Caswell \& Haynes 1975; Turner 1979; Boyce \& Cohen 1994; Dawson et al. 2014; Bihr et al.\ 2015), in local molecular clouds (e.g. Sancisi et al. 1974; Wouterloot \& Habing 1985; Harju, Winnberg \& Wouterloot 2000), and in high-latitude translucent and cirrus clouds (Grossmann et al. 1990; Barriault et al. 2010; Cotten et al. 2012). Crucially, a small number of studies have confirmed OH extending outside CO-bright regions (Wannier et al. 1993, Liszt \& Lucas 1996, Allen et al. 2012, 2015), and/or associated with narrow HI absorption features (Dickey, Crovisier \& Kazes 1981; Liszt \& Lucas 1996; Li \& Goldsmith 2003), confirming its viability as a dark gas tracer. Notably, OH and HCO$^{+}$ have been shown to be tightly correlated in absorption measurements against extragalactic continuum sources (Liszt \& Lucas 1996, Lucas \& Liszt 1996).
+
+Because OH in emission is typically very weak, large-scale OH maps remain rare, particularly for diffuse molecular gas, which should presumably be dominated by DMG. Detectability often hinges on the presence of bright continuum background against which the OH lines can be seen in absorption, either the bright diffuse emission of the inner Galactic Plane (e.g. Dawson et al. 2014) or bright, compact extragalactic sources (e.g. Nguyen-Q-Rieu et al. 1976, Crutcher 1977, 1979, Dickey et al. 1981, Colgan et al. 1989, Liszt \& Lucas 1996). This latter approach has the additional advantage that on-source and off-source comparison can be made directly to derive optical depths and excitation temperatures. This is the approach we take in this work.
+
+Heiles \& Troland (2003a,b) published the  Millennium Survey of 21-cm line absorption toward 79 continuum sources. The ON-OFF technique and Gaussian decomposition analysis allowed them to provide direct measurements of the excitation temperature and density of \hi\ components. Given that Millennium sources are off plane, the absorption components biased towward local gas. The large gain of Arecibo and the substantial integration time spent on each source made the Millennium Survey one of the most sensitive surveys of the diffuse ISM.
+Among the significant findings is the fact that a substantial fraction of the CNM lies below the canonical 100K temperature predicted by phased ISM models (Field, Goldsmith \& Habing 1969; McKee \& Ostriker 1977) for maintaining pressure balance. 
+Such findings attest to the capability of absorption measurements in revealing gas confused by or just weaker in the general Galactic radiation field.
+
+The L-wide receiver at Arecibo allows for simultaneous observation of \hi\ and OH, which was accomplished by the Millennium survey, but the OH data have remained unpublished until now. To analyze these OH absorption measurements in the context of DMG, we conducted 3mm and 1mm CO observations toward the Millennium sources and performed combined analysis of their excitation and abundances.
+
+This paper is organized as follows: In section \ref{sec:observations}, we describe the observations of \hi, OH, and CO. In section \ref{sec:oh_properties}, we analyze the OH line excitations and other properties. In section \ref{sec:comparison}, we explore the relation between these three spectral tracers. Discussions and conclusions are presented in section \ref{sec:abs_survey} and section \ref{sec:conclusion}, respectively. 
+
+\section{Observations}
+\label{sec:observations}
+
+\subsection{\hi\ and OH}
+\label{subsec:oh}
+During the Millennium survey, the $\Lambda$-doubling transitions of ground-state OH at 1665.402 and 1667.359 MHz were obtained simultaneously with \hi\ with the Arecibo L-wide receiver towards 48 of the 79 survey positions. These sources typically had S $\gtrsim 2$ Jy, so produced antenna temperatures in excess of about 20 K at Arecibo.
+The observations followed the strategy described by Heiles \& Troland (2001, 2003a, 2003b) -- the so-called Z17 method for obtaining and analyzing absorption spectra toward continuum sources. In this method, half of the integrations were spent on source, with the remaining time divided evenly among 16 OFF positions. The OFF spectra were then used to reconstruct the ``expected'' background gas spectrum, which would have been seen were there no continuum source present. The bandwidth of the OH observations was 0.78 MHz, with a channel width of 381 KHz, corresponding to a velocity resolution of 0.068 \kms. A RMS of 28 mK per channel was achieved with 2 hours of total integration time. 21 sightlines exhibited OH absorption. The distribution of all observed sources in Galactic coordinates is presented in Fig.~\ref{fig:posdistri}. 
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/detection.eps}
+\caption{The location of background continuum sources in Galactic coordinates. Open circles represents sources with detected \hi\ absorption. Squares represent
+sources with detected \hi\ and OH absorption. Red triangles represent sources with CO detection, in which every detected OH component is also seen in CO. Blue dots represent sources with CO detections, in which some OH components do not contain  corresponding CO detections. We call these sources ``partial CO detections". }
+\label{fig:posdistri} 
+\end{figure}
+
+\subsection{CO}
+\label{subsec:CO}
+	We conducted a follow-up CO survey of the 43 Millennium sight-lines for which OH data was taken. %with OH absorption detection.  
+The J=1-0 transitions of CO, \13co, and \c18o\ were observed with the Purple Mountain Observatory Delingha (PMODLH) 13.7 m telescope of the Chinese Academy of Sciences. The three transitions were observed simultaneously with the 3mm SIS receiver in March 2013, May 2013, May 2014, and May 2016. The FFTS wide-band spectral backend has a bandwidth of 1 GHz at a frequency resolution of 61.0 kHz, which corresponds to 0.159 \kms at 115.0 GHz and 0.166 \kms at 110.0 GHz. Position-switching mode was used with reference positions selected from the IRAS Sky Survey Atlas\footnote{$http://irsa.ipac.caltech.edu/data/ISSA/$}.  The system temperature varied from 210 K to 350 K for CO, and 140 K  to 225 K for the \13co and \c18o bands. The resulting RMS is $\sim$ 60 mK for a 0.159 \kms\ channel for $^{12}$CO and $\sim$ 30 mK for a 0.166 \kms\ channel for $^{13}$CO and C$^{18}$O. respectively.    
+	% FFTS1 of CSO backend 
+	
+	The \co\  J=2-1 data were taken with the  Caltech Submillimeter Observatory (CSO) 10.4m on top of Mauna Kea in July, October, and December of 2013.  The system temperature varied from 230 to 300 K for CO(2-1), resulting in a rms of $\sim 35$ mK at a velocity resolution of 0.16 \kms of FFTS1W spectrometer. 
+	
+To achieve consistent sensitivity among sight-lines, $^{12}$CO J=2-1 spectra toward 3 sources were also obtained with the IRAM 30m telescope in frequency-switching mode on the 22nd and 23rd of May, 2016.  The integration time of these observation were between 30 and 90 minutes to reach a rms of less than 20 mK at a velocity resolution of 0.25 \kms.
+	
+	The astronomical software package Gildas/CLASS\footnote{$http://www.iram.fr/IRAMFR/GILDAS/$} was used for data reduction including baseline removal and gaussian fitting. 
+
+\section{OH Properties}
+\label{sec:oh_properties}
+
+\subsection{Radiative Transfer and Gaussian Analysis}
+\label{sec:oh_emi_abs}
+
+\label{sec:TE}
+The equations of radiative transfer for ON/OFF source measurements may be written as
+%\begin{equation}
+%\begin{split}
+%T_A^{ON} (v)/\eta_{b} = \ &[(T_{ex}-T_{bg})(R\Omega_{cs}/\Omega_{mb}+R') - RT_{c}/\eta_{b}] \\ & \cdot (1-e^{-\tau_{v}}) \lc
+%\end{split}
+%\end{equation}
+
+%\begin{equation}
+%T_A^{OFF} (v)/\eta_{b}=R'(T_{ex}-T_{bg})(1-e^{-\tau_ {v}})
+%\label{eq4b} \lc
+%\end{equation}
+
+%\noindent where $T_A^{OFF} (v)$ and $T_A^{ON} (v)$ are the (continuum-subtracted) antenna temperatures of OH emission line (off background source) and OH absorption (on background source),  $T_{ex}$ the excitation temperature, $\tau_{v}$ the optical depth, $T_{c}$ the antenna temperature of the continuum source, $\eta_b$ the main beam efficiency, and $\Omega_{cs}$ and $\Omega_{mb}$ being the solid angle of the continuum source and the telescope main beam, respectively. $R$ is the source filling factor, the fraction of the continuum source covered by the OH cloud, and $R'$ is the beam filling factor, the fraction of the main beam covered by the OH clouds outside the continuum source. 
+\begin{align}
+& T_A^{ON} (v)/\eta_{b} =(T_{ex}-T_{bg}-T_{c})(1-e^{-\tau_{v}})\ \ \ \ (K)\ \label{eq4a_simp}, \\
+& T_A^{OFF} (v)/\eta_{b}=(T_{ex}-T_{bg})(1-e^{-\tau_{v}})\ \ \ \ (K) \label{eq4b_simp} \lc
+\end{align}
+where we assumed $\eta_{b} = 0.5$ according to Heiles et al.\ (2001) %\textbf{\color{red}[JO NOTE: Surely not? Carl has said that the Arecibo main beam efficiency at 1420 MHz should be close to 0.9. Claire Murray finds it is about 0.8 in her 2015 paper by comparing this Millennium Survey data with 21-SPONGE. In Hiep's analysis we do definitely do not assume $\eta_b$ is 0.5. We assumed it was 1.0, based on Carl's recommendation at the time. Stokes I is a separate issue if that's where this factor is coming from...??]} 
+in all subsequent calculations. $T_{bg}$ is the background brightness temperature, consisting of the 2.7K isotropic CMB and the Galactic synchrotron background at the source position, which we estimated based on the 408MHz continuum map (Haslam et al.\ 1982) and a spectral index of -2.8 such that
+\begin{equation}
+T_{bg} = 2.7 + T_{bg408}(\nu_{OH}/408 MHz)^{-2.8} \lp
+\label{eq4c} 
+\end{equation}
+The  background continuum contribution from Galactic HII regions can be safely ignored, since our sources are either at high Galactic latitudes or Galactic Anti-Center longitudes.
+Typical $T_{bg}$ values are thus found to be around 3.3 K. 
+
+We decomposed the OH spectra into Gaussian components to evaluate the physical properties of OH clouds along the line-of-sight. Following the methodology of Heiles \& Troland (2003), we assumed a two-phase medium, in which cold gas components are seen in both absorption and emission (i.e.\ in both the opacity and brightness temperature profiles), while warm gas only in emission, i.e.\ only in brightness temperature (see Heiles \& Troland 2003 for further detail).  Such ``warm'' and ``cold'' OH components has been observed by Liszt \& Lucas (1996).
+
+In brief, the expected profile $T_{exp}(v)$ consists of both emission and absorption components:
+\begin{equation}
+T_{exp}(v) = T_{B,cold}(v) + T_{B,warm}(v) \lc
+\label{eq4d} 
+\end{equation}
+\noindent where $T_{B,cold}(v)$ is the brightness temperature of the cold gas and $T_{B,warm}(v)$ is the brightness temperature of the the warm gas. Both components contribute to the emission profile. 
+
+The opacity spectrum is obtained by combining the on and off-source spectra (equations \ref{eq4a_simp} and \ref{eq4b_simp}), and contains only cold gas seen in absorption. First, we fit the opacity spectrum $e^{-\tau(v)}$ with a set of N-Gaussian components with the assumption that each component is independent and isothermal with an excitation temperature $T_{ex,n}$:
+\begin{equation}
+\tau(v) = \sum\limits_{n=0}^{N-1} \tau_{0,n}e^{-[(v-v_{0,n})/\delta v_{n}]^2}. 
+\label{eqtau} 
+\end{equation}
+Here $\tau_{0,n}$, $v_{0,n}$, $\delta v_{n}$ are respectively the peak optical depth, central $V_{lsr}$, and 1/$e$-width of component $n$. All the values of $\tau_{0,n}$, $v_{0,n}$ and $\delta v_{n}$ were then obtained through least-squares fitting.
+
+Next we fit the expected emission profile, $T_{exp}$, which is assumed to also consist of the $N$ cold components seen in the absorption spectrum, plus any warm components seen only in emission. The contribution of the cold components is given by
+\begin{equation}
+T_{B,cold}(v) = \sum\limits_{n=0}^{N-1} T_{ex,n}(1-e^{-\tau_{v}}) e^{-\sum\limits_{m=0}^{M-1} \tau_{m}(v)}\lc
+\label{eqtbc} 
+\end{equation}
+where subscript $m$ describes $M$ absorption clouds lying in front of the $n^{th}$ cloud. We obtained the values of excitation temperature $T_{ex,n}$ from this fit. As in Heiles \& Troland (2003), we experimented with all possible orders along the line of sight and retained the one that yields the smallest residuals.
+
+For the warm gas, we also used a set of K Gaussian functions to represent the contribution to the expected profile $T_{exp}(v)$. Supposing that a fraction $F_{k}$ of each $k^{th}$ component lies in front of all the absorption components, the brightness temperature of the warm gas is given by
+\begin{equation}
+\begin{split}
+T_{B,warm}(v) =\ & \sum\limits_{k=0}^{K-1} [F_{k} + (1-F_{k})e^{-\tau_{v}}]\\ & \times T_{0,k}e^{-[(v-v_{0,k})/\delta v_{k}]^2}\lc
+\label{eqtbw}
+\end{split}
+\end{equation}
+where $T_{0,k}$, $v_{0,k}$, $\delta v_{k}$ are respectively the peak brightness temperature, central $V_{lsr}$， and 1/$e$-width of the $k^{th}$ emission component. 
+In the few cases where a warm component is detected, we usually found that $F_{k}$ equals 1.0 (see Table \ref{table:1}). Example spectra and fits are shown in Figures \ref{fig:p042820.eps} and \ref{fig:3c409.eps}.%
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/abs_em_oh1_P042820.eps}
+\caption{Illustration of derived parameters from the fits to the absorption (upper panel) and expected emission (lower panel) profiles for the source P0428+20. The thin solid lines show the data, the thick solid lines are the fits. The solid lines under the dashed-lines present the residuals for absorption and expected emission fit respectively.}
+\label{fig:p042820.eps}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/abs_em_oh1_3C409.eps}
+\caption{Data for the source 3C409. See Fig.2 for complete description.}
+\label{fig:3c409.eps}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/tau_peak_hist.eps}
+\caption{Histogram of peak optical depth for the OH Gaussian components. Black shows the 1667 MHz line and red shows 1.8 times the 1665 MHz line.}
+\label{fig:taupeak_hist} 
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/Tex_hist.eps}
+\caption{Histograms of excitation temperature $T\rm_{ex}$ for two OH main lines and the background continuum temperature $T\rm_{bg}$. Note that histogram of $T\rm_{bg}$ is scaled by the factor of 0.5, then is taken the floor.}
+\label{fig:Tex_hist} 
+\end{figure}
+
+\subsection{OH Excitation and Optical Depth}
+\label{subsec:oh_excitation}
+Our fitting scheme above provides measurements of excitation conditions and quantities of the OH gas. 
+
+Figure \ref{fig:taupeak_hist} shows a histogram of optical depths in the two OH main lines, with the 1665 line scaled by a factor of 9/5 (see below). The measured optical depth of both lines peaks at very low values of $\sim0.01$, with a longer tail extending as high as 0.21 in the 1667 line. As can be seen in table \ref{table:1}, the uncertainties on these values are generally very small. The OH gas probed by absorption is thus generally optically thin. %\textbf{\color{red}[JO NOTE: I am quite opposed to this statement. To say that the gas ``largely conforms'' to LTE is an imprecise and potentially confusing statement, and can be very misleading to the casual reader. I would suggest removing mention of LTE here until it can be discussed properly later.]}
+
+As seen in Figure \ref{fig:Tex_hist}, OH excitation temperatures in the two main lines peak at $\sim3$--4 K and are similar for the two lines. The majority ($\sim90\%$) of the components show $T_{ex}$ values within 2 K of the diffuse continuum background temperature, $T_{bg}$, consistent with measurements from past work (e.g. Nguyen-Q-Rieu et al.\ 1976; Crutcher 1979; Dickey et al.\ 1981).  The probability density distribution (PDF) of OH excitation temperature can be fitted by a analogous normalized lognormal function, 
+\begin{equation}
+f(x) \propto \frac{1}{ \sqrt{2\pi}\sigma} \rm{exp}[-\frac{[ln(T_{ex})-ln(T^0_{ex})]^2}{2\sigma^2}] \lp
+\label{eq:lognormal}
+\end{equation}
+ The fitting paprameter depends on the weighting and binning of the data. We chose the solution that preserves the tail of relatively high $T_{ex}$. The fitting results are shown in Figure \ref{fig:Tex_hist_fit} and Table \ref{table:Tex_hist_fit}.  The statistical uncertainties are small. Similar numerical values apply to both 1665 and 1667 transitions. A simple average of the two sets of fitted parameters is also presented in \ref{table:Tex_hist_fit}. 
+Given the unbiased nature of absorption-selected sightlines, such a generic distribution function may be representative of OH excitation conditions in the Galactic ISM (particularly local ISM) and will be refined by future observations. 
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/tspin_hist_logn.eps}
+\caption{Fitting results of PDF of OH excitation temperature for both OH 1665 and 1667 lines. }
+\label{fig:Tex_hist_fit} 
+\end{figure}
+
+\begin{deluxetable}{lcccc}% l is short for first character of left, not '| |'
+\tablewidth{0pt}
+\tablecaption{ Fitting parameters of lognormal distribution  in Figure \ref{fig:Tex_hist_fit}. \label{table:Tex_hist_fit}}
+\tablehead{
+ Line     & Fitted $T^0_{ex}$$^a$  & Fitted $\sigma$$^a$
+ }
+\startdata
+ OH 1665 &  3.42 & 0.631   \\   
+ OH 1667 &  4.08 & 0.457	\\
+ OH average &  3.75 & 0.544
+ \enddata
+ \tablenotetext{a} {Parameter defined in Equation \ref{eq:lognormal}.}
+\end{deluxetable}
+
+ The combined results of $T_{ex}$ and $\tau$ reflect the complexities in OH excitation.
+When the level populations of the OH ground states are in LTE, the excitation temperature of the 1665 and 1667 MHz lines are equal, and their optical depth ratio ($R_{67/65}=\tau_{1667}/\tau_{1665}$) is 1.8. In general, however, we do not expect OH to be thermally excited. The satellite lines (at 1612 and 1720 MHz) commonly show highly anomalous excitation patterns, with $T_{ex}$ that are strongly subthermal in one line, and either very high or negative (mazing) in the other (e.g. Dawson et al. 2014). This may occur due to far-IR or infrared pumping, which can lead to selective overpopulation of either the $F=1$ or the $F=2$ level pair (e.g. Guibert et al. 1978). The result is that the main line $T_{ex}$ may be very similar, despite the system as a whole being strongly non-thermally excited. 
+
+
+As shown in Figure \ref{fig:delspin_vs_tauratio}, most OH components deviate from LTE at more than the formal $1\sigma$ uncertainties propagated through from the Gaussian fits. The difference between the excitation temperatures, though, mainly falls within 2 K ($|\Delta T\rm_{ex}| < 2$ K), consistent with values observed in previous absorption measurements toward continuum sources (e.g., Nguyen-Q-Rieu et al.\ 1976; Crutcher 1977, 1979; Dickey et al.\ 1981). 
+
+ \begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/delspin_vs_tauratio.eps}
+\caption{Optical depth ratio ($\tau_{1667}/\tau_{1665}$) as a function of  excitation temperature difference ($T\rm_{ex}(1667)-T_{ex}(1665)$) for the 1667 and 1665 MHz OH lines. The horizontal and vertical dashed lines indicate 1.8 and 0.0, the values for LTE excitation. Error bars indicate the $1\sigma$ formal uncertainties propagated through from the Gaussian fits. Black points are those consistent with LTE to within the $1\sigma$ errors; red points are inconsistent. The vertical shaded region represents $|\Delta T\rm_{ex}| < 2$ K. \sout{Note that a single datapoint at $\Delta T\rm_{ex} = 7.9$ K, which has exceptionally large uncertainties, falls outside the range of this plot and was thus excluded}.}
+\label{fig:delspin_vs_tauratio} 
+\end{figure}
+
+\subsection{OH Column Density}
+\label{subsec:oh_column}
+	The column densities of the OH components were computed independently from each line according to:
+\begin{equation}
+N(\mathrm{OH})_{1667}=\frac{8\pi kT_{ex,1667}{{\nu}^2_{1667}}}{A_{1667}c^{3}h}\frac{16}{5}\int \tau_{1667} \,dv \lc
+\label{5a}
+\end{equation}
+\begin{equation}
+N(\mathrm{OH})_{1665}=\frac{8\pi kT_{ex,1665}{{\nu}^2_{1665}}}{A_{1665}c^{3}h}\frac{16}{3}\int \tau_{1665} \,dv \lc
+\label{eq5b}
+\end{equation}
+where $A_{1667}=7.778\times 10^{-11}$ and $A_{1665}=7.177\times 10^{-11} s^{-1}$ are the Einstein A-coefficients of the OH main lines (Destombes 1977). The values are tabulated in Table \ref{table:1} and discussed below. 
+
+\section{The Relation Between HI, CO, and OH}
+\label{sec:comparison}
+\subsection{OH and \hi\ }
+\label{subsec:hioh}
+Regardless of the complexities in the OH excitation, the measured line ratios  are generally close to the LTE value of 5/9 with a relatively small scatter. For consistency, we estimated the total OH column density as $N(OH)=N(1665)*5/14+N(1667)*9/14$.
+The thus obtained OH column densities are plotted against \hi\ column densities of each Gaussian components in Figure \ref{fig:Noh_vs_NHI} on a Gaussian component-by-component basis. Since the \hi\ components are always wider than OH lines, the sum of of all OH components were used when multiple OH components coincide with one \hi\ component. 
+
+For non-detections, an upper limit was estimated based on the 1667 MHz spectrum alone, assuming a single Gaussian optical depth spectrum, with a FWHM of 1.0 km/s and peak $\tau$ equal to 3 times the spectral RMS. $T_{ex}$ was assumed to be equal to 3.5K, the peak of the lognormal function fitted to the $T_{ex}$ distribution in Fig.\ref{fig:Tex_hist_fit}. These values are plotted as triangles in Fig. \ref{fig:Noh_vs_NHI}. Our absorption data set typically has a detection limit around $N(\mathrm{OH})\simeq 10^{12}$ cm$^{-2}$, with a number of higher limits occurring towards weaker continuum background sources.
+%（[\textbf{\sout{\color{red}1$\sigma$? shouldn't it be 3$\sigma$? - Hiep: Yes, you're right. 3$\sigma$ is better. I'll change, thank you}}]. 
+%and a $T_{ex}$ according to the  distribution in Fig. \ref{fig:Tex_hist}.（[\textbf{\color{red}does this mean $\Delta T_{ex}+T_{bg}$ at that location? Hiep: I mean: to calculate $N_{OH}$, we need a Tex, I choose a single value of Tex from its distribution in Fig.5 which is the Mode. I'll change this text. Thank you}  ] ）
+
+%We also estimate column density upper limits where OH was not detected. These were computed  These values are plotted as triangles in Fig. \ref{fig:Noh_vs_NHI}. Our absorption data set have a detection limit around $N(\mathrm{OH})\simeq 10^{12}$ cm$^{-2}$. A number of higher limits occur towward weaker continuum background sources.
+
+Many \hi\ components have no detectable OH. Where OH is detected, there is some suggestion of a weak correlation between the OH and \hi\ column densities. [\textbf{\color{red}WHAT CAN WE CONCLUDE FROM THIS?}] 
+
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/Noh_vs_NHI.eps}
+\caption{OH column densities derived from the 1667 line, $N(\mathrm{OH})$, versus HI column densities, $N(\mathrm{HI})$, both on a Gaussian component-by-component basis. The triangles depict approximate upper limits for \hi\ components where OH was not detected (see Section \ref{subsec:hioh}). \sout{[\color{magenta}JO NOTE: Plot triangles in different colour?]}}
+\label{fig:Noh_vs_NHI} 
+\end{figure}
+
+\subsection{OH and CO}
+\label{subsec:ohco}
+
+\begin{figure}[htp]
+\includegraphics[width=0.98\linewidth]{fig/co_vs_oh.eps}
+\caption{CO column densities, $N(CO)$, versus OH column densities, $N(\mathrm{OH})$ for clouds with CO detection (black filled circles) and two DMG clouds without CO detection (blue filled triangles). The values of N(CO) for DMG clouds are upper limits with 3 $\sigma$ $^{12}$CO(1-0) detection. }
+\label{fig:co_vs_oh} 
+\end{figure}
+
+Both CO and OH are widely used molecular traces in ISM. Our explicit measurements of CO and OH properties allow us to check the correlation between CO and OH again. \textbf{[\color{magenta} Better to say something explicit about dark gas here?]}
+
+CO emission was detected toward 40 OH components.  CO column density, $N$(CO), is calculated depending on the following three cases.
+
+\begin{enumerate}
+\item   Detection of only $^{12}$CO(1-0).
+\item   Detections of both $^{12}$CO(1-0) and $^{12}$CO(2-1).
+\item   Detections of three lines, $^{12}$CO(1-0), $^{12}$CO(2-1), and $^{13}$CO(1-0) simultaneously.
+\end{enumerate}
+
+In LTE, total $N\rm_{tot}$ of a two-level transition from upper level $u$ to lower level $l$ is given by
+\begin{equation}
+N_{\textrm{tot}}=\frac{8\pi\nu^3}{c^3A_{ul}}\frac{Q_{rot}}{g_u}\frac{e^{E_u/kT_\textrm{ex}}}{e^{h\nu}-1} \int \tau_{\nu} d\upsilon
+\label{eq:col}
+\end{equation}
+where $A\rm_{ul}$ is the spontaneous emission coefficient between $u$ and $l$ levels; $g_{u}$ is the level degeneracy of level $u$;  $E_u$ is the energy of level $u$, $T\rm_{ex}$ is the excitation temperature; $Q\rm_{rot}$ is the rotational partition function that described by 
+
+\begin{equation}
+Q_\textrm{rot} = \frac{kT_\textrm{ex}}{hB_0}+\frac{1}{3}+\frac{1}{15}(\frac{hB_0}{kT_\textrm{ex}})+\frac{4}{315}(\frac{hB_0}{kT_\textrm{ex}})^2+\frac{1}{315}(\frac{hB_0}{kT_\textrm{ex}})^3
+\label{eq:roteq}
+\end{equation}
+which is good to $<1$\% even when $T> 2$ K. $B_0$ is rotational constant of the molecule.
+
+$\tau_{\nu}$ is the optical depth of the line, and is related to brightness temperature, $T_R$, through the radiative transfer equation
+
+\begin{equation}
+ T_R = f[J(T_{ex})-J(T_{bg})][1-e^{-\tau_{\nu}}]
+ \label{eq:rtran}
+ \end{equation}
+where $f$ is the beam filling factor and $J(T)=(h\nu/k)/(e^{h\nu/kT}-1)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[htp]
+\includegraphics[width=0.34\linewidth]{fig/3C192.eps}
+\includegraphics[width=0.34\linewidth]{fig/3C132.eps}
+\includegraphics[width=0.34\linewidth]{fig/3C133.eps}
+\caption{Representative spectra. 3C192 sightline has only \hi\ seen in absorption. One component of 3C133 sightline has OH and \hi\ in absorption and CO and its isotopologues in emission. 3C132 sightline has one gas component with both OH and \hi\ , but no detectable CO transitions.}
+\label{fig4}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+When only $^{12}$CO(1-0) is detected (case 1), we adopt the assumption that  excitation temperatures between $^{12}$CO and OH are same. \textbf{\color{magenta}[JO NOTE: Is this assumption really justified? It would result in very sub-thermal excitations for CO in places.]} The total column density of $^{12}$CO can be derived through combination of equations \ref{eq:col}, \ref{eq:roteq}, and \ref{eq:rtran}.
+
+For case 2, we adopted the assumptions of optically thin of both $^{12}$CO(1-0) and $^{12}$CO(2-1) lines. This is reasonable since there is no $^{13}$CO(1-0) detection. \textbf{\color{magenta}[JO NOTE: In my experience, people tend to assume that 12CO is optically thick even when no 13CO is present, so we may need to justify this assumption more carefully.]} Excitation temperature of $^{12}$CO, $T\rm_{ex}$, is solved through the following equation
+
+\begin{multline}
+\frac{e^{11.06/T_\textrm{bg}-16.59/T_\textrm{ex}}-e^{-5.53/T_\textrm{ex}}}{e^{5.53/T_\textrm{bg}-5.53/T_\textrm{ex}}-1} = \frac{\nu_{21}^3A_{10}g_1}{2\nu_{10}^3A_{21}g_2}\times \\
+\frac{e^{11.06/T_{bg}}-1}{e^{5.53/T_\textrm{bg}}-1}\frac{\int T^{21}_R d\upsilon}{\int T^{10}_R d\upsilon}.
+\label{eq:tspinco}
+\end{multline}
+Once $T\rm_{ex}$ in equation \ref{eq:tspinco} is determined, $N(^{12}$CO) is derived as that in case 1. 
+
+When both $^{12}$CO(1-0) and $^{13}$CO(1-0) are detected, we assumed  $\tau_{10}(\rm ^{12}CO)\gg 1$ and calculated $T\rm_{ex}$ and $\tau_{10}(\rm ^{13}CO)$ through
+
+\begin{equation}
+ T_\textrm{ex}=5.53\left\{\rm ln[1+\frac{5.532}{\textit{T}_R(^{12}CO)+0.819}]  \right\}^{-1}  
+\label{eq:tspin13}
+\end{equation}
+
+\begin{multline}
+\tau_{10}(\rm ^{13}CO) = -ln[ 1-\frac{\textit{T}_R(^{13}CO)}{5.29}([\textit{e}^{5.29/\textit{T}_{ex}}-1]^{-1} \\
+  -0.16)^{-1} ]
+\label{eq:tau13}
+\end{multline}
+
+$N\rm_{tot}(^{13}CO)$ is then obtained with With equation \ref{eq:roteq} and $N\rm_{tot}(^{12}CO)$, assuming $\rm [^{12}C]/[^{13}C]$=68 (Milam et al.\ 2005).
+
+The fitted components of CO are shown in Table \ref{table:2}. We plot the relation between OH and CO column densities in Fig. \ref{fig:co_vs_oh}. As expected from chemical models, a positive correlation between log(N(OH)) and log(N(CO)) was found.  The fitting relation can be described with, log(N(OH)) = 8.16$\pm 0.898$+ 0.316$\pm 0.054$ log(N(CO)). The linear Pearson correlation coefficient is 0.69, indicating strong correlation.
+
+
+\subsection{CO-Dark Molecular Gas}
+\label{subsec:darkgas}
+
+We compare the Gaussian components seen in \hi\ absorption, OH absorption, and CO emission.
+A total of 149  Gaussian \hi\ components were detected as specified in Heiles \& Troland (2003). 
+Forty-eight such gas components have OH absorption. The majority of these components  have corresponding CO emission, except for 2 components \textbf{\color{magenta}[JO NOTE: flagged for updating]}, which are DMG candidates. 
+Three representative sets of spectra are shown in Fig.~\ref{fig4}.  Toward 3C192, only \hi\ is present, typical of CNM. 
+Toward 3C133, there is a  component with \hi, OH, and several CO and CO isotopologue transitions, which should be 
+representative of `normal' molecular clouds. Toward 3C132, there exists a component with \hi\ and OH absorption, but no CO emission in any transition observed. We posit that this is typical of DMG.  The percentage of these three categories are 80\% CNM,  11\% molecular clouds, and 1.4\% DMG.
+
+
+
+%The CO column densities were calculated in two categories. If only the J=1-0 transition of \co\ is detected, the optical depth is assumed to be small and the excitation temperature is assumed to be the same as that of OH. If both \co\ and \13co\ are detected, we derive the optical depth and the excitation temperature based on multiple transitions and Local Thermodynamic Equilibrium (LTE) assumptions. The recipe for deriving CO column densities can be found in Li (2002).
+
+The statistics of \hi\ column density are present in Figure \ref{fig:hist_hi_dg_mo}. The \hi\ column density of DMG locates in the gap between that of CNM and molecular gas. This comes to the conclusion that OH turns out be a good tracer of diffuse gas with `intermediate' extinction, namely, between the self-shielding threshold for \h2\ and $^{12}$CO.
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/hist_hi_dg_mo.eps}
+\caption{The histogram of \hi\ column density, $N$(\hi), for the cold neutron medium (CNM; blue rectangle), molecular gas( green line filled rectangle) and dark gas ( red filled rectangle). The left and right dashed lines represent peak distribution of  CNM and molecular cloud. According to chemical model, $N$(\hi) in the dark gas may locate between these two values. }
+\label{fig:hist_hi_dg_mo}
+\end{figure}
+
+\section{Implication of Absorption Survey}
+\label{sec:abs_survey}
+
+%The expected location, abundance, and optical depth of OH should make it an excellent tracer of DMG. Due to insufficient collision in diffuse gas, however, OH is hard to
+%detect in emission. This is likely the main reason why a galactic scale or even any large-scale OH map has not 
+%been accomplished. 
+The expected location and abundance of OH should make it an excellent tracer of DMG. However, due both to low optical depths and low contrast between the main line excitation temperatures and the Galactic diffuse continuum background, OH is generally difficult to detect in emission. Large-scale mapping of OH therefore requires extremely high sensitivity observations and/or the existence of bright continuum background against which the lines may be seen in absorption. A handful of studies of have accomplished the former over very limited regions in the Northern Hemisphere local ISM (Barriault et al. 2010, Allen et al. 2012, 2015, Cotten et al. 2012). The SPLASH project (Dawson et al. 2014) has greatly improved on the sensitivities of previous large-scale surveys in the South, to map OH (primarily in absorption) over $> 150$ square degrees of the bright Inner Galaxy. However, for outer-Galaxy and off-Plane regions, the most practical approach %in using OH to quantify 
+%detect in emission. This is likely the main reason why a galactic scale or even any large-scale OH map has not 
+%been accomplished. 
+%To realize its potential in quantifying 
+%dark gas throughout the ISM 
+will make use of upcoming radio telescopes to conduct comprehensive absorption surveys, of the kind piloted here. 
+
+The Five-hundred-meter Aperture Spherical radio Telescope (FAST)
+started observation in September, 2016. The unprecedented sensitivity of FAST and its early science instruments (Li et al.\ 2013) 
+should make feasible a \hi+OH absorption survey, in the mode of the Millennium survey, but with 10 times more sources. Figure \ref{fig:fast_survey} shows distribution of  potential continuum sources those are available to FAST.  The SKA1 will have the survey speed and sensitivity to measure gas absorption with a source density between a few to a few tens per square degree (McClure-Griffiths et al.\ 2015), which means that an all sky ``absorption-image" is feasible and we will have ISM temperature and density  everywhere! Based on similar excitation  and sensitivity considerations,  ALMA is a powerful instrument to obtain systematic and sensitive absorption measurements of millimeter lines in diffuse gas. CO and HCO$^+$ in diffuse gas, in particular, will be much better constrained in terms of excitation temperature and column densities through ALMA absorption observation than emission measurements. Combining both radio and millimeter absorption surveys in the coming decade, we will quantify DMG and provide definitive answers to questions like the global star formation efficiency. 
+
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{fig/FAST_lab_intg_car.eps}
+\caption{Distribution of 1773 point continuum sources (blue dots) that are in FAST sky coverage, which is declination range of (-14, 66) degree.  These sources have peak intensity that is greater than 0.75 Jy/beam in NVSS survey. In front observation periods, FAST will adopt drift scan mode. The criteria of 0.75 Jy/beam corresponds 3$\sigma$ detection in absorption for \hi\ gas with optical depth of 0.05 in a drift scan of 10s.  The grey background is integrated \hi\ intensity map from LAB \hi\ survey (Hartmann \& Burton 1997; Arnal et al.\ 2000; Bajaja et al.\ 2005). The coverage of FAST and Arecibo are shown with red and green solid lines, respectively.  The position of 43 point sources used in this paper are plotted with yellow squares. }
+\label{fig:fast_survey}
+\end{figure}
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+Utilizing unpublished OH absorption measurements from the Millennium survey and our own follow up CO surveys, we carried out an analysis of the excitation conditions and quantities of OH in the Galaxy. The conclusions are shown as follows, 
+
+\begin{enumerate}
+\item  The excitation temperatures of OH peaks around 5 K and follows an empeircal log-normal distribution ???. The majority of Milkyway OH gas thus have excitation temperature close to the background (CMB plus synchrotron) , which explains why OH has been difficult to detect in emission both in and outside of the Galaxy.
+\item OH main lines are generally in non-LTE, with moderate excitation temperature difference of $|T\rm^{1667}\rm_{ex}-T\rm^{1665}\rm_{ex}| < 2$ K.
+\item The OH emission is optically thin, with $\tau_{1667} < 0.25$ .
+
+\item A weak correction between $N$(OH) and $N$(\hi) was found.
+
+\item $N$(OH) and $N$(CO) are linearly correlated in molecular clouds, which is expected according to chemical model. 
+
+\item  Two CO dark clouds are present in OH absorption, implying that OH serves as a more effective tracer of transient molecular gas than CO. The \hi\ column density in CO dark clouds is between the peak of $N$(\hi) in atomic and CO-traced molecular gas. 
+
+\end{enumerate}
+
+\section*{Acknowledgments}
+
+This work is supported by  International Partnership Program of Chinese Academy of Sciences  No.114A11KYSB20160008, National Natural Science Foundation of China No. 11373038.  D.L. acknowledges support from "CAS Interdisciplinary Innovation Team” program. 
+We thank Lei Qian and Lei Zhu for their help in CSO observation. 
+%The 3$\times$3 multibeam sideband separation superconductor-insulator-superconductor (SIS) receiver with sideband separation (Zuo et al. 2011, Shan et al. 2012) was used for observation. 
+The \co\ ,\13co\  and \c18o\  spectra was obtained with position switch mode, the reference position is selected from IRAS Sky Survey Atlas\footnote{$http://irsa.ipac.caltech.edu/data/ISSA/$}. 
+The authors appreciate all the staff members of the PMODLH for their help during the observation. 
+This material is partly based upon work at the Caltech Submillimeter Observatory, which is operated by the California Institute of Technology. 
+
+\begin{thebibliography}{}
+%\bibliographystyle{apj}
+%\bibliography{apj-jour,bibliography}
+
+\bibitem[Allen et al.(2015)]{2015AJ....149..123A} Allen, R.~J., Hogg, D.~E., \& Engelke, P.~D.\ 2015, \aj, 149, 123 
+
+
+\bibitem[Allen et al.(2012)]{2012AJ....143...97A} Allen, R.~J., Ivette Rodr{\'{\i}}guez, M., Black, J.~H., \& Booth, R.~S.\ 2012, \aj, 143, 97 
+
+
+\bibitem[Barriault et al.(2010)]{2010MNRAS.407.2645B} Barriault, L., Joncas, G., Lockman, F.~J., \& Martin, P.~G.\ 2010, \mnras, 407, 2645 
+
+
+\bibitem[Bihr et al.(2015)]{2015A&A...580A.112B} Bihr, S., Beuther, H., Ott, J., et al.\ 2015, \aap, 580, A112 
+
+
+\bibitem[Boyce \& Cohen(1994)]{1994A&AS..107..563B} Boyce, P.~J., \& Cohen, R.~J.\ 1994, \aaps, 107,  
+
+
+\bibitem[Caswell \& Haynes(1975)]{1975MNRAS.173..649C} Caswell, J.~L., \& Haynes, R.~F.\ 1975, \mnras, 173, 649 
+
+
+\bibitem[Colgan et al.(1989)]{1989ApJ...336..231C} Colgan, S.~W.~J., Salpeter, E.~E., \& Terzian, Y.\ 1989, \apj, 336, 231 
+
+
+\bibitem[Cotten et al.(2012)]{2012AJ....144..163C} Cotten, D.~L., Magnani, L., Wennerstrom, E.~A., Douglas, K.~A., \& Onello, J.~S.\ 2012, \aj, 144, 163 
+
+
+\bibitem[Crutcher(1979)]{1979ApJ...234..881C} Crutcher, R.~M.\ 1979, \apj, 234, 881 
+
+
+\bibitem[Crutcher(1977)]{1977ApJ...216..308C} Crutcher, R.~M.\ 1977, \apj, 216, 308 
+
+
+\bibitem[Dawson et al.(2014)]{2014MNRAS.439.1596D} Dawson, J.~R., Walsh, A.~J., Jones, P.~A., et al.\ 2014, \mnras, 439, 1596 
+
+
+\bibitem[de Vries et al.(1987)]{1987ApJ...319..723D} de Vries, H.~W., Heithausen, A., \& Thaddeus, P.\ 1987, \apj, 319, 723 
+
+
+\bibitem[Destombes et al.(1977)]{1977A&A....60...55D} Destombes, J.~L., Marliere, C., Baudry, A., \& Brillet, J.\ 1977, \aap, 60, 55 
+
+
+\bibitem[Dickey et al.(1981)]{1981A&A....98..271D} Dickey, J.~M., Crovisier, J., \& Kazes, I.\ 1981, \aap, 98, 271 
+
+
+\bibitem[Field et al.(1969)]{1969ApJ...155L.149F} Field, G.~B., Goldsmith, D.~W., \& Habing, H.~J.\ 1969, \apjl, 155, L149 
+
+
+\bibitem[Fukui et al.(2014)]{2014ApJ...780...36F} Fukui, Y., Ohama, A., Hanaoka, N., et al.\ 2014, \apj, 780, 36 
+
+
+\bibitem[Grenier et al.(2005)]{2005Sci...307.1292G} Grenier, I.~A., Casandjian, J.-M., \& Terrier, R.\ 2005, Science, 307, 1292 
+
+
+\bibitem[Guibert et al.(1978)]{1978A&A....66..395G} Guibert, J., Rieu, N.~Q., \& Elitzur, M.\ 1978, \aap, 66, 395 
+
+
+\bibitem[Harju et al.(2000)]{2000A&A...353.1065H} Harju, J., Winnberg, A., \& Wouterloot, J.~G.~A.\ 2000, \aap, 353, 1065 
+
+
+\bibitem[Haslam et al.(1982)]{1982A&AS...47....1H} Haslam, C.~G.~T., Salter, C.~J., Stoffel, H., \& Wilson, W.~E.\ 1982, \aaps, 47, 1 
+
+
+\bibitem[Heiles(2001)]{2001ApJ...551L.105H} Heiles, C.\ 2001, \apjl, 551, L105 
+
+
+\bibitem[Heiles \& Troland(2003)]{2003ApJ...586.1067H} Heiles, C., \& Troland, T.~H.\ 2003, \apj, 586, 1067 
+
+
+\bibitem[Heiles \& Troland(2003)]{2003ApJS..145..329H} Heiles, C., \& Troland, T.~H.\ 2003, \apjs, 145, 329 
+
+
+\bibitem[Langer et al.(2010)]{2010A&A...521L..17L} Langer, W.~D., Velusamy, T., Pineda, J.~L., et al.\ 2010, \aap, 521, L17 
+
+
+\bibitem[Li \& Goldsmith(2003)]{2003ApJ...585..823L} Li, D., \& Goldsmith, P.~F.\ 2003, \apj, 585, 823 
+
+
+\bibitem[Li et al.(2013)]{2013IAUS..291..325L} Li, D., Nan, R., \& Pan, Z.\ 2013, Neutron Stars and Pulsars: Challenges and Opportunities after 80 years, 291, 325 
+
+
+\bibitem[Liszt \& Lucas(1996)]{1996A&A...314..917L} Liszt, H., \& Lucas, R.\ 1996, \aap, 314, 917 
+
+
+\bibitem[Lucas \& Liszt(1996)]{1996A&A...307..237L} Lucas, R., \& Liszt, H.\ 1996, \aap, 307, 237 
+
+
+\bibitem[McClure-Griffiths et al.(2015)]{2015aska.confE.130M} McClure-Griffiths, N.~M., Stanimirovic, S., Murray, C., et al.\ 2015, Advancing Astrophysics with the Square Kilometre Array (AASKA14), 130 
+
+
+\bibitem[McKee \& Ostriker(1977)]{1977ApJ...218..148M} McKee, C.~F., \& Ostriker, J.~P.\ 1977, \apj, 218, 148 
+
+
+\bibitem[Milam et al.(2005)]{2005ApJ...634.1126M} Milam, S.~N., Savage, C., Brewster, M.~A., Ziurys, L.~M., \& Wyckoff, S.\ 2005, \apj, 634, 1126 
+
+
+\bibitem[Nguyen-Q-Rieu et al.(1976)]{1976A&A....46..413N} Nguyen-Q-Rieu, Winnberg, A., Guibert, J., et al.\ 1976, \aap, 46, 413 
+
+
+\bibitem[Pineda et al.(2013)]{2013A&A...554A.103P} Pineda, J.~L., Langer, W.~D., Velusamy, T., \& Goldsmith, P.~F.\ 2013, \aap, 554, A103 
+
+
+\bibitem[Pineda et al.(2010)]{2010ApJ...721..686P} Pineda, J.~L., Goldsmith, P.~F., Chapman, N., et al.\ 2010, \apj, 721, 686 
+
+
+\bibitem[Planck Collaboration et al.(2011)]{2011A&A...536A..19P} Planck Collaboration, Ade, P.~A.~R., Aghanim, N., et al.\ 2011, \aap, 536, A19 
+
+
+\bibitem[Sancisi et al.(1974)]{1974A&A....35..445S} Sancisi, R., Goss, W.~M., Anderson, C., Johansson, L.~E.~B., \& Winnberg, A.\ 1974, \aap, 35, 445 
+
+
+\bibitem[Stanimirovi{\'c} et al.(2014)]{2014ApJ...793..132S} Stanimirovi{\'c}, S., Murray, C.~E., Lee, M.-Y., Heiles, C., \& Miller, J.\ 2014, \apj, 793, 132 
+
+
+\bibitem[Turner(1979)]{1979A&AS...37....1T} Turner, B.~E.\ 1979, \aaps, 37, 1 
+
+
+\bibitem[Wannier et al.(1993)]{1993ApJ...407..163W} Wannier, P.~G., Andersson, B.-G., Federman, S.~R., et al.\ 1993, \apj, 407, 163 
+
+
+\bibitem[Weinreb et al.(1963)]{1963Natur.200..829W} Weinreb, S., Barrett, A.~H., Meeks, M.~L., \& Henry, J.~C.\ 1963, \nat, 200, 829 
+
+
+\bibitem[Wolfire et al.(2010)]{2010ApJ...716.1191W} Wolfire, M.~G., Hollenbach, D., \& McKee, C.~F.\ 2010, \apj, 716, 1191 
+
+
+\bibitem[Wouterloot \& Habing(1985)]{1985A&AS...60...43W} Wouterloot, J.~G.~A., \& Habing, H.~J.\ 1985, \aaps, 60, 43 
+%
+%
+\end{thebibliography}
+\clearpage
+
+\begin{sidewaystable}[h!]
+\fontsize{7}{6}\selectfont
+\centering
+\caption{Table of Gaussian Fit Parameters}
+\label{table:1}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{ lllllllclllll  }
+ \hline
+ \hline
+\multirow{2}{*}{$Source$} & \multicolumn{1}{c}{\multirow{2}{*}{$l/b$}} & \multicolumn{6}{c}{OH(1665)} & \multicolumn{5}{c}{OH(1667)}\\
+\cline{3-7}
+\cline{9-13}
+ & & \multicolumn{1}{c}{$\tau$} & \multicolumn{1}{c}{$V_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} & \multicolumn{1}{c}{$T_{ex}$} & \multicolumn{1}{c}{$N(OH)$} & & \multicolumn{1}{c}{$\tau$} & \multicolumn{1}{c}{$V_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} & \multicolumn{1}{c}{$T_{ex}$} & \multicolumn{1}{c}{$N(OH)$} \\
+ 
+(Name) & \multicolumn{1}{c}{$(^{o})$} & \multicolumn{1}{c}{$\ $} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(K)$} & \multicolumn{1}{c}{$(10^{14}cm^{-2})$} & & \multicolumn{1}{c}{$\ $} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(km s^{-1})$} & \multicolumn{1}{c}{$(K)$} & \multicolumn{1}{c}{$(10^{14}cm^{-2})$} \\ 
+\hline
+
+
+3C105 & 187.6/-33.6 & 0.0158 $\pm$ 0.0003 & 8.14 $\pm$ 0.01 & 0.97 $\pm$ 0.02 & 4.93 $\pm$ 0.5 & 0.32 $\pm$ 0.26 & &  0.0268 $\pm$ 0.0003 & 8.17 $\pm$ 0.0 & 0.96 $\pm$ 0.01 & 3.96 $\pm$ 0.34 & 0.24 $\pm$ 0.13 \\
+3C105 & 187.6/-33.6 & 0.0062 $\pm$ 0.0003 & 10.23 $\pm$ 0.02 & 1.03 $\pm$ 0.05 & 8.49 $\pm$ 1.26 & 0.23 $\pm$ 0.44 & &  0.0107 $\pm$ 0.0003 & 10.26 $\pm$ 0.01 & 1.03 $\pm$ 0.03 & 7.64 $\pm$ 0.88 & 0.2 $\pm$ 0.22 \\
+3C109 & 181.8/-27.8 & 0.0022 $\pm$ 0.0003 & 9.16 $\pm$ 0.1 & 1.0 $\pm$ 0.24 & 23.68 $\pm$ 3.66 & 0.22 $\pm$ 0.73 & &  0.0036 $\pm$ 0.0004 & 9.22 $\pm$ 0.07 & 1.02 $\pm$ 0.17 & 24.13 $\pm$ 2.5 & 0.21 $\pm$ 0.36 \\
+3C109 & 181.8/-27.8 & 0.0035 $\pm$ 0.0003 & 10.44 $\pm$ 0.06 & 0.95 $\pm$ 0.15 & 14.76 $\pm$ 2.33 & 0.21 $\pm$ 0.56 & &  0.0057 $\pm$ 0.0004 & 10.58 $\pm$ 0.05 & 1.04 $\pm$ 0.11 & 13.92 $\pm$ 1.58 & 0.19 $\pm$ 0.29 \\
+3C123 & 170.6/-11.7 & 0.0191 $\pm$ 0.0008 & 3.65 $\pm$ 0.06 & 1.19 $\pm$ 0.11 & 11.08 $\pm$ 1.79 & 1.08 $\pm$ 1.26 & &  0.0347 $\pm$ 0.0012 & 3.71 $\pm$ 0.06 & 1.22 $\pm$ 0.1 & 11.2 $\pm$ 1.26 & 1.13 $\pm$ 0.69 \\
+3C123 & 170.6/-11.7 & 0.0431 $\pm$ 0.0023 & 4.43 $\pm$ 0.01 & 0.53 $\pm$ 0.03 & 6.42 $\pm$ 1.22 & 0.62 $\pm$ 0.57 & &  0.0919 $\pm$ 0.004 & 4.46 $\pm$ 0.01 & 0.53 $\pm$ 0.02 & 7.31 $\pm$ 0.75 & 0.84 $\pm$ 0.29 \\
+3C123 & 170.6/-11.7 & 0.0338 $\pm$ 0.0008 & 5.37 $\pm$ 0.01 & 0.92 $\pm$ 0.04 & 11.62 $\pm$ 1.11 & 1.53 $\pm$ 0.8 & &  0.0784 $\pm$ 0.0012 & 5.47 $\pm$ 0.01 & 0.92 $\pm$ 0.02 & 8.13 $\pm$ 0.61 & 1.38 $\pm$ 0.37 \\
+3C131 & 171.4/-7.8 & 0.0065 $\pm$ 0.0005 & 4.55 $\pm$ 0.02 & 0.56 $\pm$ 0.06 & 12.67 $\pm$ 1.53 & 0.2 $\pm$ 0.3 & &  0.0103 $\pm$ 0.0006 & 4.56 $\pm$ 0.02 & 0.62 $\pm$ 0.05 & 7.51 $\pm$ 1.04 & 0.11 $\pm$ 0.16 \\
+3C131 & 171.4/-7.8 & 0.0074 $\pm$ 0.0006 & 6.8 $\pm$ 0.06 & 2.97 $\pm$ 0.2 & 10.46 $\pm$ 0.86 & 0.98 $\pm$ 0.94 & &  0.0111 $\pm$ 0.0005 & 6.68 $\pm$ 0.05 & 3.32 $\pm$ 0.15 & 11.08 $\pm$ 0.59 & 0.96 $\pm$ 0.49 \\
+3C131 & 171.4/-7.8 & 0.0167 $\pm$ 0.0007 & 6.59 $\pm$ 0.01 & 0.42 $\pm$ 0.02 & 2.66 $\pm$ 0.84 & 0.08 $\pm$ 0.19 & &  0.0259 $\pm$ 0.0008 & 6.58 $\pm$ 0.01 & 0.43 $\pm$ 0.02 & 4.15 $\pm$ 0.58 & 0.11 $\pm$ 0.1 \\
+3C131 & 171.4/-7.8 & 0.0521 $\pm$ 0.0007 & 7.23 $\pm$ 0.0 & 0.55 $\pm$ 0.01 & 5.03 $\pm$ 0.25 & 0.62 $\pm$ 0.13 & &  0.0858 $\pm$ 0.0007 & 7.23 $\pm$ 0.0 & 0.59 $\pm$ 0.01 & 5.43 $\pm$ 0.16 & 0.65 $\pm$ 0.07 \\
+3C132 & 178.9/-12.5 & 0.0033 $\pm$ 0.0002 & 7.82 $\pm$ 0.03 & 0.89 $\pm$ 0.08 & 15.72 $\pm$ 2.08 & 0.19 $\pm$ 0.45 & &  0.0056 $\pm$ 0.0003 & 7.79 $\pm$ 0.02 & 0.81 $\pm$ 0.05 & 23.1 $\pm$ 1.27 & 0.25 $\pm$ 0.18 \\
+3C133 & 177.7/-9.9 & 0.1009 $\pm$ 0.001 & 7.66 $\pm$ 0.0 & 0.53 $\pm$ 0.0 & 2.97 $\pm$ 0.22 & 0.68 $\pm$ 0.16 & &  0.2132 $\pm$ 0.0016 & 7.68 $\pm$ 0.0 & 0.52 $\pm$ 0.0 & 1.33 $\pm$ 1.24 & 0.35 $\pm$ 0.7 \\
+3C133 & 177.7/-9.9 & 0.0148 $\pm$ 0.001 & 7.94 $\pm$ 0.02 & 1.23 $\pm$ 0.03 & 5.9 $\pm$ 3.41 & 0.46 $\pm$ 2.18 & &  0.0333 $\pm$ 0.0015 & 7.96 $\pm$ 0.02 & 1.23 $\pm$ 0.02 & 6.11 $\pm$ 2.22 & 0.59 $\pm$ 1.18 \\
+3C154 & 185.6/4.0 & 0.0266 $\pm$ 0.0006 & -2.32 $\pm$ 0.01 & 0.74 $\pm$ 0.03 & 2.61 $\pm$ 0.57 & 0.22 $\pm$ 0.3 & &  0.0428 $\pm$ 0.0007 & -2.34 $\pm$ 0.01 & 0.71 $\pm$ 0.02 & 2.69 $\pm$ 0.35 & 0.19 $\pm$ 0.12 \\
+3C154 & 185.6/4.0 & 0.01 $\pm$ 0.0005 & -1.39 $\pm$ 0.04 & 0.83 $\pm$ 0.09 & 6.15 $\pm$ 1.43 & 0.22 $\pm$ 0.51 & &  0.0179 $\pm$ 0.0006 & -1.34 $\pm$ 0.03 & 0.91 $\pm$ 0.06 & 4.7 $\pm$ 0.74 & 0.18 $\pm$ 0.21 \\
+3C154 & 185.6/4.0 & 0.0038 $\pm$ 0.0004 & 2.23 $\pm$ 0.06 & 1.12 $\pm$ 0.16 & 6.62 $\pm$ 3.22 & 0.12 $\pm$ 0.95 & &  0.0054 $\pm$ 0.0005 & 2.18 $\pm$ 0.06 & 1.33 $\pm$ 0.14 & 2.1 $\pm$ 1.99 & 0.04 $\pm$ 0.46 \\
+3C167 & 207.3/1.2 & 0.0109 $\pm$ 0.0019 & 18.53 $\pm$ 0.11 & 1.27 $\pm$ 0.26 & 4.87 $\pm$ 2.23 & 0.29 $\pm$ 1.26 & &  0.0108 $\pm$ 0.0013 & 17.66 $\pm$ 0.16 & 2.71 $\pm$ 0.4 & 4.65 $\pm$ 1.49 & 0.32 $\pm$ 1.0 \\
+3C18 & 118.6/-52.7 & 0.003 $\pm$ 0.0003 & -8.53 $\pm$ 0.11 & 2.5 $\pm$ 0.19 & 10.93 $\pm$ 1.99 & 0.35 $\pm$ 1.16 & &  0.006 $\pm$ 0.0003 & -8.33 $\pm$ 0.05 & 2.5 $\pm$ 0.1 & 9.27 $\pm$ 0.86 & 0.33 $\pm$ 0.39 \\
+3C18 & 118.6/-52.7 & 0.0056 $\pm$ 0.0004 & -7.82 $\pm$ 0.02 & 0.68 $\pm$ 0.06 & 2.05 $\pm$ 2.03 & 0.03 $\pm$ 0.44 & &  0.0078 $\pm$ 0.0005 & -7.85 $\pm$ 0.01 & 0.6 $\pm$ 0.04 & 1.0 $\pm$ 0.0 & 0.01 $\pm$ 0.0 \\
+3C207 & 213.0/30.1 & 0.0152 $\pm$ 0.0002 & 4.55 $\pm$ 0.01 & 0.77 $\pm$ 0.01 & 3.17 $\pm$ 0.42 & 0.16 $\pm$ 0.17 & &  0.0268 $\pm$ 0.0002 & 4.55 $\pm$ 0.0 & 0.78 $\pm$ 0.01 & 2.57 $\pm$ 0.2 & 0.13 $\pm$ 0.06 \\
+3C409 & 63.4/-6.1 & 0.0062 $\pm$ 0.0007 & 14.63 $\pm$ 0.14 & 1.86 $\pm$ 0.15 & 11.37 $\pm$ 1.9 & 0.55 $\pm$ 1.19 & &  0.0057 $\pm$ 0.0008 & 14.7 $\pm$ 0.18 & 1.68 $\pm$ 0.18 & 7.8 $\pm$ 3.86 & 0.18 $\pm$ 1.15 \\
+3C409 & 63.4/-6.1 & 0.0199 $\pm$ 0.0012 & 15.4 $\pm$ 0.01 & 0.89 $\pm$ 0.04 & 0.17 $\pm$ 0.86 & 0.01 $\pm$ 0.46 & &  0.0273 $\pm$ 0.0016 & 15.41 $\pm$ 0.01 & 0.86 $\pm$ 0.03 & 0.2 $\pm$ 0.0 & 0.01 $\pm$ 0.0 \\
+3C410 & 69.2/-3.8 & 0.0121 $\pm$ 0.0003 & 6.25 $\pm$ 0.01 & 1.03 $\pm$ 0.03 & 9.4 $\pm$ 0.97 & 0.5 $\pm$ 0.47 & &  0.025 $\pm$ 0.0004 & 6.29 $\pm$ 0.01 & 1.19 $\pm$ 0.02 & 4.31 $\pm$ 0.43 & 0.3 $\pm$ 0.19 \\
+3C410 & 69.2/-3.8 & 0.0043 $\pm$ 0.0003 & 10.7 $\pm$ 0.04 & 0.7 $\pm$ 0.09 & 11.26 $\pm$ 3.32 & 0.14 $\pm$ 0.65 & &  0.0084 $\pm$ 0.0005 & 10.72 $\pm$ 0.04 & 0.8 $\pm$ 0.09 & 4.42 $\pm$ 1.55 & 0.07 $\pm$ 0.27 \\
+3C410 & 69.2/-3.8 & 0.0053 $\pm$ 0.0003 & 11.67 $\pm$ 0.04 & 0.84 $\pm$ 0.09 & 5.74 $\pm$ 2.44 & 0.11 $\pm$ 0.64 & &  0.0114 $\pm$ 0.0005 & 11.68 $\pm$ 0.03 & 0.81 $\pm$ 0.07 & 2.92 $\pm$ 1.14 & 0.06 $\pm$ 0.23 \\
+3C454.3 & 86.1/-38.2 & 0.0023 $\pm$ 0.0001 & -9.67 $\pm$ 0.03 & 1.63 $\pm$ 0.07 & 4.61 $\pm$ 2.14 & 0.07 $\pm$ 0.72 & &  0.0044 $\pm$ 0.0001 & -9.55 $\pm$ 0.02 & 1.37 $\pm$ 0.04 & 8.25 $\pm$ 1.22 & 0.12 $\pm$ 0.26 \\
+3C75 & 170.3/-44.9 & 0.0072 $\pm$ 0.0003 & -10.36 $\pm$ 0.03 & 1.32 $\pm$ 0.07 & 3.64 $\pm$ 1.09 & 0.15 $\pm$ 0.52 & &  0.0142 $\pm$ 0.0003 & -10.36 $\pm$ 0.02 & 1.25 $\pm$ 0.04 & 3.91 $\pm$ 0.6 & 0.16 $\pm$ 0.21 \\
+4C13.67 & 43.5/9.2 & 0.0474 $\pm$ 0.0037 & 4.88 $\pm$ 0.05 & 1.3 $\pm$ 0.12 & 10.43 $\pm$ 0.9 & 2.73 $\pm$ 1.13 & &  0.057 $\pm$ 0.004 & 4.95 $\pm$ 0.05 & 1.46 $\pm$ 0.12 & 10.37 $\pm$ 0.62 & 2.04 $\pm$ 0.56 \\
+4C22.12 & 188.1/0.0 & 0.0059 $\pm$ 0.0009 & -2.84 $\pm$ 0.06 & 0.79 $\pm$ 0.17 & 6.91 $\pm$ 2.35 & 0.14 $\pm$ 0.61 & &  0.0103 $\pm$ 0.001 & -2.73 $\pm$ 0.04 & 0.8 $\pm$ 0.11 & 6.75 $\pm$ 1.28 & 0.13 $\pm$ 0.25 \\
+4C22.12 & 188.1/0.0 & 0.0172 $\pm$ 0.0011 & -1.78 $\pm$ 0.02 & 0.56 $\pm$ 0.05 & 4.67 $\pm$ 0.95 & 0.19 $\pm$ 0.3 & &  0.0356 $\pm$ 0.0012 & -1.78 $\pm$ 0.01 & 0.54 $\pm$ 0.02 & 3.8 $\pm$ 0.46 & 0.17 $\pm$ 0.11 \\
+G196.6+0.2 & 196.6/0.2 & 0.0043 $\pm$ 0.0005 & 3.22 $\pm$ 0.1 & 1.67 $\pm$ 0.25 & 10.95 $\pm$ 2.34 & 0.34 $\pm$ 1.1 & &  0.0065 $\pm$ 0.0005 & 3.43 $\pm$ 0.09 & 2.5 $\pm$ 0.24 & 8.85 $\pm$ 1.24 & 0.34 $\pm$ 0.59 \\
+G197.0+1.1 & 197.0/1.1 & 0.0124 $\pm$ 0.0005 & 4.83 $\pm$ 0.03 & 1.84 $\pm$ 0.09 & 5.2 $\pm$ 0.65 & 0.5 $\pm$ 0.57 & &  0.0188 $\pm$ 0.0007 & 4.72 $\pm$ 0.03 & 1.59 $\pm$ 0.07 & 5.51 $\pm$ 0.5 & 0.39 $\pm$ 0.26 \\
+G197.0+1.1 & 197.0/1.1 & 0.0057 $\pm$ 0.0008 & 7.46 $\pm$ 0.04 & 0.61 $\pm$ 0.1 & 1.0 $\pm$ 0.0 & 0.01 $\pm$ 0.0 & &  0.0075 $\pm$ 0.0011 & 7.34 $\pm$ 0.04 & 0.6 $\pm$ 0.1 & 1.0 $\pm$ 0.0 & 0.01 $\pm$ 0.0 \\
+G197.0+1.1 & 197.0/1.1 & 0.0053 $\pm$ 0.0006 & 16.41 $\pm$ 0.09 & 1.17 $\pm$ 0.22 & 8.76 $\pm$ 1.91 & 0.23 $\pm$ 0.69 & &  0.0094 $\pm$ 0.0017 & 16.34 $\pm$ 0.12 & 0.95 $\pm$ 0.19 & 7.07 $\pm$ 1.33 & 0.15 $\pm$ 0.29 \\
+G197.0+1.1 & 197.0/1.1 & 0.0069 $\pm$ 0.0008 & 17.65 $\pm$ 0.05 & 0.71 $\pm$ 0.12 & 5.35 $\pm$ 1.88 & 0.11 $\pm$ 0.47 & &  0.0124 $\pm$ 0.001 & 17.45 $\pm$ 0.12 & 1.22 $\pm$ 0.21 & 7.15 $\pm$ 0.89 & 0.26 $\pm$ 0.29 \\
+G197.0+1.1 & 197.0/1.1 & 0.0237 $\pm$ 0.0009 & 32.01 $\pm$ 0.01 & 0.56 $\pm$ 0.02 & 3.41 $\pm$ 0.62 & 0.19 $\pm$ 0.23 & &  0.0428 $\pm$ 0.0012 & 32.01 $\pm$ 0.01 & 0.53 $\pm$ 0.02 & 4.35 $\pm$ 0.39 & 0.23 $\pm$ 0.1 \\
+P0428+20 & 176.8/-18.6 & 0.0015 $\pm$ 0.0002 & 3.6 $\pm$ 0.08 & 1.06 $\pm$ 0.2 & 13.3 $\pm$ 4.09 & 0.09 $\pm$ 0.71 & &  0.0029 $\pm$ 0.0003 & 3.55 $\pm$ 0.04 & 0.75 $\pm$ 0.09 & 4.56 $\pm$ 2.56 & 0.02 $\pm$ 0.25 \\
+P0428+20 & 176.8/-18.6 & 0.0076 $\pm$ 0.0002 & 10.7 $\pm$ 0.02 & 1.1 $\pm$ 0.04 & 13.29 $\pm$ 0.79 & 0.47 $\pm$ 0.32 & &  0.0137 $\pm$ 0.0003 & 10.7 $\pm$ 0.01 & 1.11 $\pm$ 0.02 & 11.71 $\pm$ 0.45 & 0.42 $\pm$ 0.14 \\
+T0526+24 & 181.4/-5.2 & 0.0158 $\pm$ 0.0058 & 7.58 $\pm$ 0.29 & 1.66 $\pm$ 0.74 & 13.57 $\pm$ 2.78 & 1.51 $\pm$ 2.61 & &  0.0359 $\pm$ 0.0059 & 7.49 $\pm$ 0.15 & 1.97 $\pm$ 0.39 & 10.21 $\pm$ 1.2 & 1.7 $\pm$ 1.15 \\
+T0629+10 & 201.5/0.5 & 0.004 $\pm$ 0.0026 & 0.16 $\pm$ 0.19 & 0.64 $\pm$ 0.49 & 4.07 $\pm$ 2.23 & 0.05 $\pm$ 0.39 & &  0.0113 $\pm$ 0.0023 & 0.33 $\pm$ 0.22 & 0.97 $\pm$ 0.43 & 3.22 $\pm$ 0.96 & 0.08 $\pm$ 0.24 \\
+T0629+10 & 201.5/0.5 & 0.0378 $\pm$ 0.0129 & 3.13 $\pm$ 0.28 & 0.99 $\pm$ 0.43 & 0.59 $\pm$ 0.66 & 0.09 $\pm$ 0.54 & &  0.0769 $\pm$ 0.0046 & 4.17 $\pm$ 0.06 & 3.17 $\pm$ 0.22 & 0.92 $\pm$ 1.87 & 0.53 $\pm$ 3.88 \\
+T0629+10 & 201.5/0.5 & 0.0168 $\pm$ 0.0016 & 1.47 $\pm$ 0.11 & 1.43 $\pm$ 0.44 & 1.49 $\pm$ 0.46 & 0.15 $\pm$ 0.37 & &  0.0206 $\pm$ 0.0034 & 1.3 $\pm$ 0.1 & 0.8 $\pm$ 0.2 & 0.5 $\pm$ 0.0 & 0.02 $\pm$ 0.01 \\
+T0629+10 & 201.5/0.5 & 0.163 $\pm$ 0.0281 & 3.61 $\pm$ 0.02 & 0.61 $\pm$ 0.04 & 2.33 $\pm$ 0.13 & 0.98 $\pm$ 0.22 & &  0.2147 $\pm$ 0.0045 & 3.55 $\pm$ 0.0 & 0.6 $\pm$ 0.02 & 3.1 $\pm$ 0.13 & 0.95 $\pm$ 0.09 \\
+T0629+10 & 201.5/0.5 & 0.0812 $\pm$ 0.002 & 4.62 $\pm$ 0.01 & 0.78 $\pm$ 0.03 & 1.23 $\pm$ 0.29 & 0.33 $\pm$ 0.27 & &  0.1004 $\pm$ 0.0044 & 4.64 $\pm$ 0.01 & 0.36 $\pm$ 0.02 & 1.48 $\pm$ 0.26 & 0.13 $\pm$ 0.07 \\
+T0629+10 & 201.5/0.5 & 0.075 $\pm$ 0.0018 & 6.09 $\pm$ 0.02 & 1.05 $\pm$ 0.05 & 3.74 $\pm$ 0.2 & 1.25 $\pm$ 0.25 & &  0.1011 $\pm$ 0.0043 & 6.1 $\pm$ 0.01 & 0.64 $\pm$ 0.04 & 4.46 $\pm$ 0.25 & 0.69 $\pm$ 0.13 \\
+T0629+10 & 201.5/0.5 & 0.0371 $\pm$ 0.0031 & 6.99 $\pm$ 0.02 & 0.49 $\pm$ 0.06 & 4.28 $\pm$ 0.29 & 0.33 $\pm$ 0.13 & &  0.0744 $\pm$ 0.0036 & 6.93 $\pm$ 0.02 & 0.64 $\pm$ 0.05 & 3.99 $\pm$ 0.22 & 0.45 $\pm$ 0.1 \\
+T0629+10 & 201.5/0.5 & 0.0174 $\pm$ 0.0018 & 7.9 $\pm$ 0.05 & 0.83 $\pm$ 0.13 & 3.54 $\pm$ 0.46 & 0.22 $\pm$ 0.22 & &  0.0295 $\pm$ 0.0025 & 7.95 $\pm$ 0.03 & 0.71 $\pm$ 0.08 & 3.46 $\pm$ 0.42 & 0.17 $\pm$ 0.12 \\
+
+
+
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+
+% For fitting information of CO
+
+\clearpage 
+\begin{sidewaystable}[h!]
+\fontsize{5}{4}\selectfont
+\centering
+\caption{Table of Gaussian Fit Parameters of CO Data}
+\label{table:2}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{ lllllllccllllcc  }
+ \hline
+ \hline
+\multirow{2}{*}{$Source$} & \multicolumn{1}{c}{\multirow{2}{*}{$l/b$}} & \multicolumn{4}{c}{$^{12}$CO(1-0)} &  \multicolumn{4}{c}{$^{12}$CO(2-1)}   & \multicolumn{3}{c}{$^{13}$CO(1-0)} & \multicolumn{1}{c}{\multirow{2}{*}{ $O$ \tablenotemark{b}}} & \multicolumn{1}{c}{\multirow{2}{*}{N($^{12}$CO)}} \\
+\cline{3-5}
+\cline{7-9}
+\cline{11-13}
+ & & \multicolumn{1}{c}{$T\rm_{peak}$\tablenotemark{a}} & \multicolumn{1}{c}{$V_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} &  & \multicolumn{1}{c}{$T\rm_{peak}$\tablenotemark{a}} & \multicolumn{1}{c}{$V\rm_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} &  & \multicolumn{1}{c}{$T\rm_{peak}$\tablenotemark{a}} & \multicolumn{1}{c}{$V\rm_{lsr}$} & \multicolumn{1}{c}{$\Delta V$} & & \\
+ 
+ 
+(Name) & \multicolumn{1}{c}{$(^{\circ})$} & \multicolumn{1}{c}{$\rm K $} & \multicolumn{1}{c}{$(\rm km\ s^{-1})$} & \multicolumn{1}{c}{$(\rm km s^{-1})$} & & \multicolumn{1}{c}{$\rm K $} & \multicolumn{1}{c}{$(\rm km\ s^{-1})$} & \multicolumn{1}{c}{$(\rm km\ s^{-1})$} & & \multicolumn{1}{c}{$K $} & \multicolumn{1}{c}{$(\rm km\ s^{-1})$} & \multicolumn{1}{c}{$(\rm km\ s^{-1})$} & & \multicolumn{1}{c}{$(10^{17})\rm\ cm^{-2}$} \\ 
+\hline
+
+
+3C105 & 187.6/-33.6 & 1.0 & 8.07 $\pm$ 0.03 & 0.77 $\pm$ 0.06 &  & 0.3 & 8.05 $\pm$ 0.03 & 0.45 $\pm$ 0.06 &  &  -  &  -  &  -  & 0 & 0.1032 $\pm$  0.0083 \\
+3C105 & 187.6/-33.6 & 0.9 & 10.81 $\pm$ 0.03 & 0.68 $\pm$ 0.09 &  & 0.3 & 10.20 $\pm$ 0.03 & 0.74 $\pm$ 0.08 &  &  -  &  -  &  -  & 1 & 0.0651 $\pm$  0.0082 \\
+3C109 & 181.8/-27.8 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 0 &  -  \\
+3C109 & 181.8/-27.8 & 0.1 & 10.69 $\pm$ 0.15 & 1.52 $\pm$ 0.42 &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 1 & 0.0206 $\pm$  0.0057 \\
+3C123 & 170.6/-11.7 & 2.8 & 3.99 $\pm$ 0.00 & 1.87 $\pm$ 0.03 &  & 1.4 & 3.75 $\pm$ 0.03 & 1.71 $\pm$ 0.10 &  & 0.1 & 3.87 $\pm$    0.23 & 1.33 $\pm$ 0.38 & 0 & 1.7736 $\pm$  0.0312 \\
+3C123 & 170.6/-11.7 & 3.2 & 4.18 $\pm$ 0.00 & 0.47 $\pm$ 0.01 &  & 2.2 & 4.07 $\pm$ 0.01 & 0.51 $\pm$ 0.03 &  & 1.1 & 4.41 $\pm$    0.01 & 0.48 $\pm$ 0.02 & 1 & 5.1962 $\pm$  0.1415 \\
+3C123 & 170.6/-11.7 & 3.2 & 5.21 $\pm$ 0.01 & 1.62 $\pm$ 0.02 &  & 1.8 & 5.14 $\pm$ 0.03 & 1.43 $\pm$ 0.07 &  & 0.3 & 5.17 $\pm$    0.06 & 0.93 $\pm$ 0.14 & 2 & 3.1336 $\pm$  0.0483 \\
+3C131 & 171.4/-7.8 & 0.7 & 4.59 $\pm$ 0.16 & 0.71 $\pm$ 0.16 &  & 0.4 & 4.56 $\pm$ 0.05 & 0.84 $\pm$ 0.13 &  &  -  &  -  &  -  & 0 & 0.0506 $\pm$  0.0113 \\
+3C131 & 171.4/-7.8 & 1.8 & 6.88 $\pm$ 0.16 & 2.07 $\pm$ 0.16 &  & 0.9 & 6.92 $\pm$ 0.01 & 1.64 $\pm$ 0.10 &  & 0.2 & 6.81 $\pm$    0.05 & 0.96 $\pm$ 0.12 & 1 & 3.2982 $\pm$  0.3194 \\
+3C131 & 171.4/-7.8 & 1.2 & 6.64 $\pm$ 0.16 & 0.72 $\pm$ 0.16 &  & 0.8 & 6.64 $\pm$ 0.03 & 0.67 $\pm$ 0.06 &  &  -  &  -  &  -  & 2 & 0.0842 $\pm$  0.0187 \\
+3C131 & 171.4/-7.8 & 0.7 & 7.18 $\pm$ 0.16 & 0.48 $\pm$ 0.16 &  & 0.3 & 7.10 $\pm$ 0.04 & 0.41 $\pm$ 0.01 &  &  -  &  -  &  -  & 3 & 0.0335 $\pm$  0.0112 \\
+3C132 & 178.9/-12.5 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 0 &  -  \\
+3C133 & 177.7/-9.9 & 3.1 & 7.43 $\pm$ 0.00 & 0.86 $\pm$ 0.01 &  & 2.0 & 7.50 $\pm$ 0.01 & 0.81 $\pm$ 0.02 &  & 0.3 & 7.36 $\pm$    0.03 & 0.70 $\pm$ 0.06 & 0 & 2.0087 $\pm$  0.0248 \\
+3C133 & 177.7/-9.9 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 1 &  -  \\
+3C154 & 185.6/4.0 & 3.7 & -2.41 $\pm$ 0.01 & 1.23 $\pm$ 0.02 &  & 2.1 & -2.37 $\pm$ 0.35 & 1.24 $\pm$ 0.35 &  & 0.9 & -2.06 $\pm$    0.01 & 1.13 $\pm$ 0.03 & 0 & 8.6360 $\pm$  0.1185 \\
+3C154 & 185.6/4.0 & 3.0 & -1.62 $\pm$ 0.01 & 0.94 $\pm$ 0.01 &  & 1.5 & -1.57 $\pm$ 0.35 & 0.79 $\pm$ 0.35 &  &  -  &  -  &  -  & 1 & 0.2972 $\pm$  0.0047 \\
+3C154 & 185.6/4.0 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 2 &  -  \\
+3C167 & 207.3/1.2 & 0.7 & 17.47 $\pm$ 0.31 & 1.59 $\pm$ 0.57 &  & 0.3 & 17.64 $\pm$ 0.25 & 1.62 $\pm$ 0.32 &  &  -  &  -  &  -  & 0 & 0.1098 $\pm$  0.0394 \\
+3C18 & 118.6/-52.7 & 0.5 & -8.22 $\pm$ 0.06 & 1.31 $\pm$ 0.14 &  & 0.1 & -8.32 $\pm$ 0.14 & 0.56 $\pm$ 0.32 &  &  -  &  -  &  -  & 0 & 0.1078 $\pm$  0.0117 \\
+3C18 & 118.6/-52.7 & 0.2 & -7.10 $\pm$ 0.08 & 0.40 $\pm$ 0.15 &  & 0.1 & -7.74 $\pm$ 0.17 & 0.33 $\pm$ 0.30 &  &  -  &  -  &  -  & 1 & 0.0082 $\pm$  0.0030 \\
+3C207 & 213.0/30.1 & 0.4 & 4.79 $\pm$ 0.02 & 1.00 $\pm$ 0.04 &  & 0.2 & 4.74 $\pm$ 0.09 & 0.80 $\pm$ 0.19 &  &  -  &  -  &  -  & 0 & 0.0443 $\pm$  0.0019 \\
+3C409 & 63.4/-6.1 & 0.2 & 13.82 $\pm$ 0.30 & 1.25 $\pm$ 0.44 &  & 0.2 & 14.44 $\pm$ 0.24 & 2.08 $\pm$ 0.23 &  &  -  &  -  &  -  & 0 & 0.0281 $\pm$  0.0099 \\
+3C409 & 63.4/-6.1 & 1.3 & 15.20 $\pm$ 0.04 & 1.13 $\pm$ 0.08 &  & 0.6 & 15.23 $\pm$ 0.01 & 1.02 $\pm$ 0.05 &  &  -  &  -  &  -  & 1 & 0.1479 $\pm$  0.0105 \\
+3C410 & 69.2/-3.8 & 1.4 & 5.96 $\pm$ 0.01 & 0.81 $\pm$ 0.04 &  & 1.1 & 5.92 $\pm$ 0.01 & 0.52 $\pm$ 0.03 &  & 0.1 & 5.74 $\pm$    0.06 & 0.73 $\pm$ 0.26 & 0 & 0.7262 $\pm$  0.0545 \\
+3C410 & 69.2/-3.8 & 0.2 & 10.97 $\pm$ 0.27 & 0.45 $\pm$ 0.64 &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 1 & 0.0154 $\pm$  0.0219 \\
+3C410 & 69.2/-3.8 & 0.2 & 11.54 $\pm$ 0.40 & 0.44 $\pm$ 0.50 &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 2 & 0.0168 $\pm$  0.0192 \\
+3C454.3 & 86.1/-38.2 & 0.9 & -9.41 $\pm$ 0.03 & 0.79 $\pm$ 0.07 &  & 0.2 & -9.62 $\pm$ 0.05 & 1.20 $\pm$ 0.14 &  &  -  &  -  &  -  & 0 & 0.0713 $\pm$  0.0063 \\
+3C75 & 170.3/-44.9 & 1.6 & -10.28 $\pm$ 0.01 & 0.90 $\pm$ 0.03 &  & 1.1 & -10.29 $\pm$ 0.02 & 0.62 $\pm$ 0.05 &  &  -  &  -  &  -  & 0 & 0.1420 $\pm$  0.0042 \\
+4C13.67 & 43.5/9.2 & 6.6 & 4.75 $\pm$ 0.01 & 1.54 $\pm$ 0.02 &  & 3.5 & 4.89 $\pm$ 0.01 & 1.65 $\pm$ 0.02 &  & 1.2 & 4.91 $\pm$    0.01 & 0.99 $\pm$ 0.03 & 0 & 15.6457 $\pm$  0.1521 \\
+4C22.12 & 188.1/0.0 & 1.6 & -2.58 $\pm$ 0.16 & 0.94 $\pm$ 0.16 &  & 1.0 & -2.44 $\pm$ 0.01 & 1.19 $\pm$ 0.03 &  & 0.2 & -2.47 $\pm$    0.12 & 0.82 $\pm$ 0.21 & 0 & 1.9370 $\pm$  0.2582 \\
+4C22.12 & 188.1/0.0 & 1.3 & -1.96 $\pm$ 0.16 & 0.67 $\pm$ 0.16 &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 1 & 0.1639 $\pm$  0.0387 \\
+G196.6+0.2 & 196.6/0.2 & 0.3 & 3.42 $\pm$ 0.14 & 2.14 $\pm$ 0.25 &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 0 & 0.0575 $\pm$  0.0067 \\
+G197.0+1.1 & 197.0/1.1 & 2.9 & 5.07 $\pm$ 0.16 & 1.93 $\pm$ 0.16 &  & 1.4 & 4.92 $\pm$ 0.03 & 1.90 $\pm$ 0.05 &  & 0.2 & 5.04 $\pm$    0.10 & 1.39 $\pm$ 0.24 & 0 & 2.2626 $\pm$  0.1892 \\
+G197.0+1.1 & 197.0/1.1 & 0.8 & 7.18 $\pm$ 0.16 & 1.01 $\pm$ 0.16 &  & 0.6 & 7.33 $\pm$ 0.04 & 1.20 $\pm$ 0.08 &  &  -  &  -  &  -  & 1 & 0.0825 $\pm$  0.0130 \\
+G197.0+1.1 & 197.0/1.1 & 0.4 & 16.34 $\pm$ 0.16 & 0.97 $\pm$ 0.16 &  & 0.0 & 16.63 $\pm$ 0.35 & 2.60 $\pm$ 0.35 &  &  -  &  -  &  -  & 2 & 0.0395 $\pm$  0.0065 \\
+G197.0+1.1 & 197.0/1.1 & 0.4 & 17.39 $\pm$ 0.16 & 1.18 $\pm$ 0.16 &  & 0.1 & 17.52 $\pm$ 0.35 & 1.86 $\pm$ 0.35 &  &  -  &  -  &  -  & 3 & 0.0489 $\pm$  0.0066 \\
+G197.0+1.1 & 197.0/1.1 & 0.5 & 32.24 $\pm$ 0.05 & 1.24 $\pm$ 0.02 &  & 0.3 & 32.28 $\pm$ 0.35 & 0.76 $\pm$ 0.35 &  &  -  &  -  &  -  & 4 & 0.0704 $\pm$  0.0010 \\
+P0428+20 & 176.8/-18.6 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 0 &  -  \\
+P0428+20 & 176.8/-18.6 & 0.9 & 10.71 $\pm$ 0.02 & 0.89 $\pm$ 0.05 &  & 0.3 & 10.59 $\pm$ 0.06 & 0.98 $\pm$ 0.14 &  &  -  &  -  &  -  & 1 & 0.0857 $\pm$  0.0049 \\
+T0526+24 & 181.4/-5.2 & 8.0 & 6.86 $\pm$ 0.00 & 1.07 $\pm$ 0.01 &  & 6.3 & 6.90 $\pm$ 0.00 & 0.89 $\pm$ 0.01 &  & 0.5 & 6.95 $\pm$    0.02 & 0.83 $\pm$ 0.04 & 0 & 3.3663 $\pm$  0.0226 \\
+T0629+10 & 201.5/0.5 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 0 &  -  \\
+T0629+10 & 201.5/0.5 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 1 &  -  \\
+T0629+10 & 201.5/0.5 & 1.2 & 1.13 $\pm$ 0.16 & 2.20 $\pm$ 0.16 &  & 0.5 & 1.30 $\pm$ 0.16 & 2.24 $\pm$ 0.16 &  &  -  &  -  &  -  & 2 & 0.2812 $\pm$  0.0203 \\
+T0629+10 & 201.5/0.5 & 5.5 & 2.85 $\pm$ 0.16 & 1.25 $\pm$ 0.16 &  & 5.0 & 2.74 $\pm$ 0.16 & 1.15 $\pm$ 0.16 &  & 4.1 & 3.71 $\pm$    0.17 & 1.64 $\pm$ 0.17 & 3 & 59.8330 $\pm$  8.2582 \\
+T0629+10 & 201.5/0.5 & 8.3 & 4.49 $\pm$ 0.16 & 1.85 $\pm$ 0.16 &  & 7.4 & 4.58 $\pm$ 0.16 & 1.63 $\pm$ 0.16 &  & 2.5 & 4.99 $\pm$    0.17 & 1.06 $\pm$ 0.17 & 4 & 36.1908 $\pm$  3.5195 \\
+T0629+10 & 201.5/0.5 & 6.6 & 6.19 $\pm$ 0.16 & 1.40 $\pm$ 0.16 &  & 6.1 & 6.36 $\pm$ 0.16 & 1.33 $\pm$ 0.16 &  & 3.7 & 6.01 $\pm$    0.17 & 0.74 $\pm$ 0.17 & 5 & 51.6879 $\pm$  6.1885 \\
+T0629+10 & 201.5/0.5 & 1.9 & 7.16 $\pm$ 0.16 & 1.57 $\pm$ 0.16 &  & 1.4 & 7.28 $\pm$ 0.16 & 1.39 $\pm$ 0.16 &  & 1.2 & 6.66 $\pm$    0.17 & 0.75 $\pm$ 0.17 & 6 & 21.8699 $\pm$  2.4927 \\
+T0629+10 & 201.5/0.5 &  -  &  -  &  -  &  &  -  &  -  &  -  &  &  -  &  -  &  -  & 7 &  -  \\
+
+
+\hline
+\end{tabular}
+\tablenotetext{1}{$T\rm_{peak}$: Brightness temperature in which main-beam efficiency of the telescope has been corrected.}
+\tablenotetext{2}{$O$: Order of the cold components along the line of sight, beginning with 0; larger numbers mean larger distances along the line of sight.}
+\end{sidewaystable}
+
+
+
+
+\end{document}
+
+%%% THE END %%%
+
+
+

@@ -1,0 +1,50 @@
+@Sydney2016
+smb://darwin.science.mq.edu.au/share/
+Hoanglaota08101988
+
+CLeaning:
+Remove Old Kernels (If No Longer Required)
+sudo apt-get autoremove --purge
+
+ssh -X vanhiep@gesualdo.science.mq.edu.au
+vanhiep, pwd: welcome2016
+gedit fitgauss.pro 3C120_fitgauss0.idl gcurv.pro get408.pro tbgfitflex_exp.pro tst6.idl tst7.idl gfit_test.pro setup_fitgauss.idl tb_exp.pro &
+
+scp vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/idl /home/vnguyen/Downloads/OH/
+scp /home/vnguyen/dark_gas/gas_col_density/26src_no_co_info.dat vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/idl/data
+scp /home/vnguyen/Downloads/data/OH/bd0/* vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/idl/arcb/bd0/
+
+scp -r /home/vnguyen/dark/* vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/dark/
+scp -r /home/vnguyen/Videos/HI_GFIT_EXAMPLES/* vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/HI_GFIT_EXAMPLES/
+
+scp /home/vnguyen/dark_gas/oh/idl/26src_radec_no_co.dat vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/idl/data
+scp /home/vnguyen/Downloads/OH/bonn408/* vanhiep@gesualdo.science.mq.edu.au:/data2/home/vanhiep/idl/arcb/bonn408/
+
+
+scp heiles@192.65.176.42:/home/heiles/idlzmn/z16hdrdef_sep00.pro /home/vnguyen/Downloads/data/OH/
+scp heiles@192.65.176.42:/share/heiles4/vermi/dzd2/papers/oh_co/* /home/vnguyen/Downloads/data/OH/papers/
+scp heiles@192.65.176.42:/share/heiles4/carl_millOH/bd0/* /home/vnguyen/Downloads/data/OH/bd0/
+
+scp heiles@192.65.176.42:/home/heiles/arecibo_procs/cnmfit/* /home/vnguyen/Downloads/data/OH/arecibo/
+scp heiles@192.65.176.42:/home/heiles/pro/gen/* /home/vnguyen/Downloads/data/OH/arecibo/arcb_procs/gen/
+
+/share/heiles4/tom_millOH/z16_1665
+/share/heiles4/tom_millOH/z16_1667
+/share/heiles4/tom_millOH/z16_bd0
+
+scp heiles@192.65.176.42:/share/heiles4/tom_millOH/z16_1665/* /home/vnguyen/Downloads/data/OH/z16_bd1/
+
+ssh -X heiles@192.65.176.42
+ssh -X heiles@remote.naic.edu
+3141carl
+
+
+Because you say you can log into arecibo, i won't attach these files to this email, but rather give you the locations at arecibo. please tell me if there's any problem in finding these files, or using them, or whatever.
+
+/share/heiles4/vermi/dzd4/arecibo/millennium/carl_millOH/lines/makelines.sav
+/share/heiles4/vermi/dzd4/arecibo/millennium/carl_millOH/lines/idl/amgemg.sav
+/share/heiles4/vermi/dzd4/arecibo/millennium/carl_millOH/lines/idl/doall_fitgauss.sav
+
+--cark
+
+https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mnras/407/4/10.1111/j.1365-2966.2010.17105.x/2/mnras0407-2645.pdf?Expires=1497429730&Signature=ajUv5hH8hT~G4WEwYREvnhEyWMY6b3DP5PvKUT~UEMvrv6-yDTIs3~jxuHWNeTRLfM1NoO-qpfDZ2XOvuv0vGDzrKoJX4MdpkF0CdfW1pCDFBs-EdEvwVnTxQc7wsXrcpbLdrJnU-OM7dB-M-m2MZ5PBQE5hYPbBiFJXztUfV~J9OltbQ4kno1Eqr2w6yF9COjnNf94kHXCtrdhiaDgqRmdehS1ok7kY0ANPxIxe1RhDR9hNkiLTkRuYY6kSoWrpFjL1yEwbDr5aWufUhalBSLBhi3eJ5BmGZUZt0Gkr-aXkutq5MT71Ok6kV3lc5f5VGkKdsCgefOMNO7izmkIvOw__&Key-Pair-Id=APKAIUCZBIA4LVPAVW3Q

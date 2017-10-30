@@ -1,0 +1,64 @@
+\begin{figure*}
+\centering     
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r0c1.eps}
+\includegraphics[scale=0.23, trim=1.0cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r0c2.eps}
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r0c3.eps}
+\includegraphics[scale=0.23, trim=0.9cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r0c4.eps}
+%
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r1c1.eps}
+\includegraphics[scale=0.23, trim=1.0cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r1c2.eps}
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r1c3.eps}
+\includegraphics[scale=0.23, trim=0.9cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r1c4.eps}
+%
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r2c1.eps}
+\includegraphics[scale=0.23, trim=1.0cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r2c2.eps}
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r2c3.eps}
+\includegraphics[scale=0.23, trim=0.9cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r2c4.eps}
+%
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r3c1.eps}
+\includegraphics[scale=0.23, trim=1.0cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r3c2.eps}
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r3c3.eps}
+\includegraphics[scale=0.23, trim=0.9cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r3c4.eps}
+%
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r4c1.eps}
+\includegraphics[scale=0.23, trim=1.0cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r4c2.eps}
+\includegraphics[scale=0.23, trim=0.5cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r4c3.eps}
+\includegraphics[scale=0.23, trim=0.9cm 0.cm 1.0cm 1.4cm, clip]{fig/src_eg_apd0_r4c4.eps}
+%
+\caption{\protect\footnotesize{{First column:} companion velocity (solid line), local average gas velocity projected on the direction of the companion velocity ($\left< v_{\mathrm{gas,\|}} \right>$, dashed line) and local average gas velocity perpendicular to the direction of the companion velocity ($\left< v_{\mathrm{gas,\bot}} \right>$, dotted line). From top to bottom we plot SIM1-SIM5.
+{Second column:} companion Mach number (solid line) and normalised average gas density in the companion's proximity (dashed line). From top to bottom we plot SIM1-SIM5.
+{Third column:} same as the first, but from top to bottom we plot SIM6-SIM10.
+{Fourth column:} same as the second, but from top to bottom we plot SIM6-SIM10.
+The vertical lines approximately represent the points where the rapid in-spiral terminates.}}
+\label{fig:gravodrag}
+\end{figure*}
+
+
+\begin{figure*}
+\centering     
+\includegraphics[scale=0.18]{fig/src_eg_apd0_r0c0.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r0c1.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r0c2.eps}
+\includegraphics[scale=0.17]{fig/src_eg_apd0_r0c3.eps}
+%
+
+\includegraphics[scale=0.18]{fig/src_eg_apd0_r1c0.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r1c1.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r1c2.eps}
+\includegraphics[scale=0.17]{fig/src_eg_apd0_r1c3.eps}
+%
+
+\includegraphics[scale=0.18]{fig/src_eg_apd0_r2c0.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r2c1.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r2c2.eps}
+\includegraphics[scale=0.17]{fig/src_eg_apd0_r2c3.eps}
+%
+
+\includegraphics[scale=0.18]{fig/src_eg_apd0_r3c0.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r3c1.eps}
+\includegraphics[scale=0.16]{fig/src_eg_apd0_r3c2.eps}
+\includegraphics[scale=0.17]{fig/src_eg_apd0_r3c3.eps}
+%
+\caption{abc-abc-abc-abc-abc}
+\label{fig:apd0}
+\end{figure*}
