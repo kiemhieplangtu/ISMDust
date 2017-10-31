@@ -1,5 +1,5 @@
 import sys, os
-sys.path.insert(0, os.getenv("HOME")+'/dark/common') # add folder of Class
+sys.path.insert(0, os.getenv("HOME")+'/ISMDust/common') # add folder of Class
 
 import matplotlib.pyplot as plt
 import matplotlib        as mpl
@@ -17,7 +17,7 @@ from astropy.io              import fits
 deg2rad  = np.pi/180.
 pth      = os.getenv("HOME")+'/hdata/hi/HI4pi/'
 # map_file = pth + 'CAR_A02.fits'
-map_file = pth + 'MOL.fits'
+map_file = pth + 'CAR.fits'
 dbeam    = 3.5/120.0 # Beam = 3.5' -> dbeam = beam/60/2
 
 
@@ -64,14 +64,22 @@ print ''
 cdelt1 = header['CDELT1']
 print cdelt1
 
-glStart = 180.
+ddeg    = 0.08333333330000001
+xlStart = 180.0 + ddeg
+xlEnd   = -xlStart
+xbStart = -90.0 - ddeg
+xbEnd   = xbStart
 
-nglBin = 3891
-ngbBin = 1947
+
+# nglBin = 3891
+# ngbBin = 1947
+# vBin   = 945
+nglBin = 4323
+ngbBin = 2163
 vBin   = 945
 
-xglong = np.arange(180., -180., -360./nglBin)
-xglat  = np.arange(-90., 90., 180./ngbBin)
+xglong = np.arange(xlStart, xlEnd, -ddeg)
+xglat  = np.arange(xbStart, xbEnd, ddeg)
 vlsr   = np.arange(-470., 470., 940./vBin)
 
 print nglBin
@@ -110,6 +118,8 @@ for i in range(78):
 	plt.xlabel('VLSR (km/s)', fontsize = 35)
 	plt.tick_params(axis='x', labelsize=20)
 	plt.tick_params(axis='y', labelsize=20)
+
+	plt.xlim(-100, 100)
 
 	plt.legend(loc='upper left', fontsize=18)
 

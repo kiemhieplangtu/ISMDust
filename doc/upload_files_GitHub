@@ -26,3 +26,16 @@ git pull
 
 
 for FILENAME in *; do mv $FILENAME Unix_$FILENAME; done 
+
+
+# Upload current codes
+Create Repo in github : <folder>
+
+At local:
+cd <folder>
+git init 
+git remote add origin https://github.com/kiemhieplangtu/ISMDust.git
+git add *
+git commit -m "MS vs LAB comparing"
+git push -u origin master
+

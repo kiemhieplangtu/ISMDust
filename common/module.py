@@ -732,6 +732,18 @@ def uncertainty_of_factors(factr, nhi, nhi_er, nh, nh_er):
 
 	return d
 
+## Calculate the uncertainty of Integrated Intensity #
+ #
+ # params int/float N       Number of channels
+ # params float     Sigma   Noise of Tb
+ # params float     dv      Channel width
+ #
+ # return float     Uncertainty of Integrated Intensity
+ # 
+ # Author Van Hiep ##
+def uncertainty_of_WI(N, sigma, dv):
+	return np.sqrt(N)*sigma*dv
+
 #######################################################################
 # End - Block for Correlation
 # Author: Van Hiep
@@ -836,6 +848,44 @@ def get_tau(tauMap, errMap, info):
 			sys.exit()
 
 	return tau353, tauer
+
+
+## Get N(HI) from HI4PI #
+ #
+ # params array HImap  Map of N(HI) from HI4pi
+ # params dict  info    Infor of the sources
+ #
+ # return 1-D arrays N(HI)
+ # 
+ # version 12/2016
+ # Author Van Hiep ##
+def get_HI4pi(xmap, info):
+	# src and l,b
+	src = info['src']
+	xl  = info['l']
+	xb  = info['b']
+	n   = len(src)
+
+	# Define constants
+	deg2rad = np.pi/180.
+	nside   = hp.get_nside(xmap)
+	res     = hp.nside2resol(nside, arcmin=False)
+
+	# OK - Go #
+	nhi = np.zeros(n)
+	for i in range(n):
+		# Find the values of nhi 
+		theta = (90.0-xb[i])*deg2rad
+		phi   = xl[i]*deg2rad
+		pix   = hp.ang2pix(nside, theta, phi, nest=False)
+
+		if ( xmap[pix] > -1.0e30 ): # Checked Invalid error & Some pixels not defined
+			nhi[i] = xmap[pix] 
+		else:
+			print("Error! Error!")
+			sys.exit()
+
+	return nhi/1e20
 
 
 ## Get Radiance #
@@ -1390,7 +1440,7 @@ def read_coord_ms_78src(fname = '../source/hi/data/78src_radec_lb.txt'):
  # version 12/2016
  # Author Van Hiep ##
 def read_info_ms_79sc(fname = '../rearrange/nhi_lb_thin_78src.txt', asarray=False):
-	cols = ['idx','src','l', 'b', 'nhi','nhi_er','thin','thin_er', 'cnm','cnm_er','wnm','wnm_er']
+	cols = ['idx','src','l', 'b', 'nhi','nhier','thin','thiner', 'cnm','cnmer','wnm','wnmer']
 	fmt  = ['i',  's',  'f', 'f', 'f',   'f',     'f',    'f'    , 'f',   'f',     'f',  'f'    ]
 	data = restore(fname, 2, cols, fmt)
 	dat  = data.read(asarray=asarray)

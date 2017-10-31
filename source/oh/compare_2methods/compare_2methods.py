@@ -1,5 +1,5 @@
 import os, sys
-sys.path.insert(0, os.getenv("HOME")+'/dark/common') # add folder of Class
+sys.path.insert(0, os.getenv("HOME")+'/ISMDust/common') # add folder of Class
 
 import numpy             as np
 import matplotlib.pyplot as plt

@@ -1,5 +1,5 @@
 import os, sys, shutil
-sys.path.insert(0, os.getenv("HOME")+'/dark/common') # add fnewer of Class
+sys.path.insert(0, os.getenv("HOME")+'/ISMDust/common') # add fnewer of Class
 
 import numpy             as np
 import matplotlib.pyplot as plt
