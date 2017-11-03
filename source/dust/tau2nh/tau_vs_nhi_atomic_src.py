@@ -12,7 +12,7 @@ from restore             import restore
 
 ##================= MAIN ========================##
 # Cal tau353 from map or not
-readmap = False
+readmap = True
 
 ## Filename of the maps
 pth     = os.getenv("HOME")+'/hdata/dust/'
