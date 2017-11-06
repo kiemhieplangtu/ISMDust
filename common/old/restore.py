@@ -1,4 +1,6 @@
-from myImport import *
+import sys, os
+import csv
+import numpy as np
 
 ## Class - Read data from file to array, column by column ##
  # 

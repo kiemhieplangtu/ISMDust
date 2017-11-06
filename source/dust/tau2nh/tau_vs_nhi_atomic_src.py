@@ -1,14 +1,7 @@
-import os, sys
-sys.path.insert(0, os.getenv("HOME")+'/ISMDust/common') # add folder of Class
+import sys, os
+sys.path.insert(0, os.getenv("HOME")+'/ISMDust') # add folder of Class
 
-import matplotlib.pyplot as plt
-import numpy             as np
-import matplotlib        as mpl
-import healpy            as hp
-import pylab             as pl
-import module            as md
-
-from restore             import restore
+from common.myImport import *
 
 ##================= MAIN ========================##
 # Cal tau353 from map or not

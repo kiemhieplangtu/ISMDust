@@ -1,17 +1,7 @@
 import sys, os
-sys.path.insert(0, os.getenv("HOME")+'/ISMDust/common') # add folder of Class
+sys.path.insert(0, os.getenv("HOME")+'/ISMDust') # add folder of Class
 
-import matplotlib.pyplot as plt
-import matplotlib        as mpl
-import numpy             as np
-import healpy            as hp
-import pylab             as pl
-import module            as md
-import operator
-
-from   restore               import restore
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-from astropy.io              import fits
+from common.myImport import *
 
 ###================= MAIN ========================###
 deg2rad  = np.pi/180.

@@ -2,7 +2,19 @@
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from myImport import *
+import sys, os
+sys.path.insert(0, os.getenv("HOME")+'/dark/common') # add folder of Class
+
+import numpy             as np
+import matplotlib.pyplot as plt
+import healpy            as hp
+import scipy             as sp
+import inspect
+import copy
+
+from   restore           import restore
+from   mpfit             import mpfit
+from   scipy.odr         import *
 
 
 #######################################################################
@@ -88,7 +100,7 @@ def do_linMPfit(xdata, ydata, xerr, yerr, lguess=[1.0], xplot=[], plot=True):
 
 	parinfo = []
 	for i in range(len(guessp)):
-		parinfo.append(cp.deepcopy(parbase))
+		parinfo.append(copy.deepcopy(parbase))
 
 	for i in range(len(guessp)):
 		parinfo[i]['value']   = guessp[i]
@@ -214,7 +226,7 @@ def do_linODRfit(xdata, ydata, xerr, yerr, lguess=[1.0], xplot=[], plot=True):
 
 	parinfo = []
 	for i in range(len(guessp)):
-		parinfo.append(cp.deepcopy(parbase))
+		parinfo.append(copy.deepcopy(parbase))
 
 	for i in range(len(guessp)):
 		parinfo[i]['value']   = guessp[i]
