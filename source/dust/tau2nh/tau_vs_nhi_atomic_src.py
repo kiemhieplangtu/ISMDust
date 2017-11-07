@@ -8,13 +8,13 @@ from common.myImport import *
 readmap = True
 
 ## Filename of the maps
-pth     = os.getenv("HOME")+'/hdata/dust/'
-mapFile = pth + 'HFI_CompMap_ThermalDustModel_2048_R1.20.fits'
+pth     = const.DATPATH + 'dust/'
+mapFile = pth           + 'HFI_CompMap_ThermalDustModel_2048_R1.20.fits'
 
-# Some constants
-fk     = 4.77e-7 ## tau353 = 4.77e-27 N(HI) 
-plws   = 8.40e-7 ## tau353 = 8.4e-27 N(H) -> Whole sky
-pllow  = 6.60e-7 ## tau353 = 6.6e-27 N(H) -> Low NHI
+# # Some constants
+# fk     = 4.77e-7 ## tau353 = 4.77e-27 N(HI) 
+# plws   = 8.40e-7 ## tau353 = 8.4e-27 N(H) -> Whole sky
+# pllow  = 6.60e-7 ## tau353 = 6.6e-27 N(H) -> Low NHI
 
 ## Read Infor for 93 src
 dat   = md.read_info_93src_csv(fname = '../../../doc/observed_src.csv',asarray=True)

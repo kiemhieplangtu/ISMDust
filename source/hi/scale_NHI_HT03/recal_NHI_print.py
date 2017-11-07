@@ -1,17 +1,7 @@
-import os, sys
-sys.path.insert(0, os.getenv("HOME")+'/ISMDust/common') # add folder of Class
+import sys, os
+sys.path.insert(0, os.getenv("HOME")+'/ISMDust') # add folder of Class
 
-import matplotlib.pyplot as plt
-import numpy             as np
-import matplotlib        as mpl
-import healpy            as hp
-import pylab             as pl
-import module            as md
-
-from scipy.io.idl        import readsav
-from restore             import restore
-
-
+from common.myImport import *
 
 ##================= MAIN ========================##
 
@@ -21,13 +11,13 @@ sc79     = ms79sc['src']
 xl79     = ms79sc['l']
 xb79     = ms79sc['b']
 nhi03    = ms79sc['nhi']
-nhier03  = ms79sc['nhi_er']
+nhier03  = ms79sc['nhier']
 thin03   = ms79sc['thin']
-thin03er = ms79sc['thin_er']
+thin03er = ms79sc['thiner']
 cnm03    = ms79sc['cnm']
-cnm03er  = ms79sc['cnm_er']
+cnm03er  = ms79sc['cnmer']
 wnm03    = ms79sc['wnm']
-wnm03er  = ms79sc['wnm_er']
+wnm03er  = ms79sc['wnmer']
 
 old      = {}
 for i in range(len(sc79)):
@@ -68,13 +58,6 @@ tau       = inf['tau']
 tspin     = inf['tspin']
 tb        = inf['t_peak']
 err_tb    = inf['err_t_peak']
-
-
-# 	# print src[i], woc, tau[i], tspin[i], xTs
-# 	string = '{}   {:10s}   {}   {}   {:.2f}   {:.4f}   {:.4f}'\
-# 	.format(i,    src[i],   woc, tau[i], tspin[i], xTs, xTs/tspin[i]   )
-# 	print string
-
 
 ret = {}
 for i in range(len(src)):
@@ -154,7 +137,6 @@ for sc in ret:
 print ret['3C223']
 
 ### Fit ###
-
 print msnhi
 
 xfit, yfit, mu, sig, m, ea, b, eb = md.do_linODRfit(msnhi, newcl, msnhier, newcler, lguess=[1.25, 0.5], plot=False)

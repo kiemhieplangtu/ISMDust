@@ -1,16 +1,19 @@
-import matplotlib.pyplot     as plt
-import matplotlib            as mpl
-import numpy                 as np
-import healpy                as hp
-import pylab                 as pl
-import csv
+## Basic packages
+from   basicImport             import *
 
-from restore                 import restore
-from scipy.odr               import *
-from astropy.io              import fits
-from mpl_toolkits.axes_grid1 import make_axes_locatable
+from   astropy.io              import fits
+from   mpl_toolkits.axes_grid1 import make_axes_locatable ## for Plotting L.O.S Samples 
 
-import inspect
-import copy                  as cp
+## Add modules
+from   restore                 import restore
+import imgData                 as     imgdat
+import linFit                  as     lnfit
+import txtData                 as     txtDat
+import statistics              as     stats
+import hpxMap                  as     hpx
 
-import module                as md
+## Add style ##
+ # 1. Check dir: matplotlib.get_configdir() ; it's usually: '/home/vnguyen/.config/matplotlib'
+ # 2. mkdir stylelib
+ # 3. create files: stylelib/mystyle.mplstyle
+plt.style.use('mystyle')

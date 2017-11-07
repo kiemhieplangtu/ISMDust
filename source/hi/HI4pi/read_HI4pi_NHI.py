@@ -1,14 +1,11 @@
 import sys, os
 sys.path.insert(0, os.getenv("HOME")+'/ISMDust') # add folder of Class
-
 from common.myImport import *
 
 ###================= MAIN ========================###
-deg2rad  = np.pi/180.
-pth      = os.getenv("HOME")+'/hdata/hi/HI4pi/'
-map_file = pth + 'CAR_-465_465.fits'
-hpxfile  = pth + 'NHI_HPX.fits'
-dbeam    = 3.5/120.0 # Beam = 3.5' -> dbeam = beam/60/2
+hiDatPth = const.DATPATH + 'hi/HI4pi/'
+map_file = hiDatPth      + 'CAR_-465_465.fits'
+hpxfile  = hiDatPth      + 'NHI_HPX.fits'
 
 ## Infor for 78 MS sources
 src79   = md.read_info_ms_79sc(fname = '../result/nhi_lb_79src_HT03.txt', asarray=True)
@@ -20,10 +17,6 @@ thiner  = src79['thiner']
 
 ## N(HI) map ##
 HImap   = hp.read_map(hpxfile, field=4)
-# nside  = hp.get_nside(HImap)
-# res    = hp.nside2resol(nside, arcmin = False)
-# dd     = res/deg2rad/2.0
-
 info    = {'src':src, 'l':xl, 'b':xb}
 nhi4pi  = md.get_HI4pi(HImap, info)
 
@@ -102,7 +95,7 @@ for i in range(79):
 	thin4pi[i] = data[gbId, glId]/1e20
 
 # Plot
-fig = plt.figure(figsize=(12,12))
+fig = plt.figure()
 ax  = fig.add_subplot(111); #ax.set_rasterized(True)
 
 plt.plot(thin, nhi4pi, 'ro', label='')
@@ -110,8 +103,8 @@ plt.plot(thin, thin4pi, 'k.', label='')
 plt.plot([0,50], [0,50], 'k-')
 
 plt.title('HI4pi vs MS', fontsize = 35)
-plt.ylabel('N(HI) - HI4pi', fontsize = 35)
-plt.xlabel('N(HI) - MS', fontsize = 35)
+plt.ylabel(r'$N_{HI} - HI4\pi$', fontsize = 35)
+plt.xlabel('$N_{HI} - MS$', fontsize = 35)
 plt.tick_params(axis='x', labelsize=20)
 plt.tick_params(axis='y', labelsize=20)
 
@@ -124,10 +117,8 @@ plt.show()
 
 
 # Plot for 
-mpl.rcParams['axes.linewidth'] = 1.5
 plt.rc('font', weight='bold')
 plt.rc('text', usetex=True)
-plt.rc('xtick', labelsize=15)
 plt.rcParams['text.latex.preamble'] = [r'\usepackage{sfmath} \boldmath']
 
 fig          = plt.figure(figsize=(10,6))
@@ -164,7 +155,7 @@ if(0):
 	ax.set_xscale('log')
 	ax.set_yscale('log')
 
-	plt.savefig('HI4PI_vs_HT03_logscale.eps', bbox_inches='tight', pad_inches=0.08, format='eps', dpi=600)
+	plt.savefig('HI4PI_vs_HT03_logscale.eps', pad_inches=0.08, format='eps', dpi=600)
 
 	plt.legend(loc='upper left', fontsize=18)
 
@@ -178,7 +169,7 @@ else:
 	plt.legend(loc='upper left', fontsize=18)
 
 	plt.tight_layout()
-	# plt.savefig('HI4PI_vs_HT03.eps', bbox_inches='tight', pad_inches=0.08, format='eps', dpi=600)
+	# plt.savefig('HI4PI_vs_HT03.eps', pad_inches=0.08, format='eps', dpi=600)
 
 plt.show()
 
@@ -228,6 +219,6 @@ ax.tick_params(which='both', width=1.5)
 ax.tick_params(which='major', length=9)
 ax.tick_params(which='minor', length=4)
 
-plt.savefig('HI4PI_vs_LAB.eps', bbox_inches='tight', pad_inches=0.08, format='eps', dpi=600)
+plt.savefig('HI4PI_vs_LAB.eps', pad_inches=0.08, format='eps', dpi=600)
 
 plt.show()

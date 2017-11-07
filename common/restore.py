@@ -1,4 +1,4 @@
-from myImport import *
+from basicImport import *
 
 ## Class - Read data from file to array, column by column ##
  # 
